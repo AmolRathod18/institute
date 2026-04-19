@@ -525,6 +525,7 @@ img {
 .hero-image {
     position: relative;
     overflow: hidden;
+    background: linear-gradient(-45deg, rgba(0, 102, 204, 0.08) 0%, rgba(255, 107, 53, 0.08) 100%);
 }
 
 .hero-image::before {
@@ -534,10 +535,10 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(-45deg, rgba(0, 102, 204, 0.45) 0%, rgba(255, 107, 53, 0.35) 50%, rgba(0, 76, 153, 0.4) 100%);
+    background: linear-gradient(-45deg, rgba(0, 102, 204, 0.12) 0%, rgba(255, 107, 53, 0.08) 50%, rgba(0, 76, 153, 0.1) 100%);
     z-index: 2;
     pointer-events: none;
-    mix-blend-mode: overlay;
+    mix-blend-mode: multiply;
 }
 
 .hero-image img {
@@ -546,7 +547,7 @@ img {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     animation: slideInRight 0.8s ease-out 0.3s both;
     transition: transform 0.3s ease;
-    opacity: 0.95;
+    opacity: 1;
 }
 
 /* === TEXT UTILITIES === */

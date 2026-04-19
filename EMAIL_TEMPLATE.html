@@ -1,0 +1,206 @@
+<!-- 
+    PROFESSIONAL EMAIL TEMPLATE FOR EMAILJS
+    
+    HOW TO USE:
+    1. Go to EmailJS Dashboard → Email Templates → Your "Contact Us" template
+    2. Click "Edit Content"
+    3. Copy ALL the code below (from <!DOCTYPE to </html>)
+    4. Paste it in the Content section
+    5. Click Save
+    
+    This template uses EmailJS variables:
+    - {{from_name}} - Sender's name
+    - {{from_email}} - Sender's email
+    - {{phone}} - Sender's phone
+    - {{service}} - Selected service
+    - {{message}} - Message content
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 20px auto; 
+            background: #f9f9f9; 
+            padding: 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header { 
+            background: linear-gradient(135deg, #0066cc 0%, #ff6b35 100%); 
+            color: white; 
+            padding: 40px 30px; 
+            text-align: center;
+        }
+        .header h1 { 
+            margin: 0; 
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .header p { 
+            margin: 8px 0 0 0; 
+            font-size: 14px; 
+            opacity: 0.95; 
+            font-weight: 500;
+        }
+        .content { 
+            background: white; 
+            padding: 40px 30px;
+        }
+        .field { 
+            margin-bottom: 25px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 15px;
+        }
+        .field:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .field-label { 
+            font-weight: 700; 
+            color: #0066cc; 
+            font-size: 11px; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .field-label span {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        .field-value { 
+            color: #333; 
+            font-size: 16px; 
+            padding: 12px 15px; 
+            background: #f8f9fa; 
+            border-left: 4px solid #0066cc; 
+            border-radius: 4px;
+            line-height: 1.6;
+        }
+        .field-value a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .field-value a:hover {
+            text-decoration: underline;
+        }
+        .message-box { 
+            background: linear-gradient(135deg, #f0f8ff 0%, #fff5e6 100%);
+            border-left: 4px solid #ff6b35; 
+            padding: 20px 15px; 
+            border-radius: 4px; 
+            margin-top: 0;
+        }
+        .message-content {
+            color: #333; 
+            font-size: 15px;
+            line-height: 1.8;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+        .footer { 
+            text-align: center; 
+            padding: 30px; 
+            border-top: 2px solid #f0f0f0; 
+            font-size: 12px; 
+            color: #666;
+            background: #fafafa;
+        }
+        .footer p {
+            margin: 8px 0;
+        }
+        .footer a { 
+            color: #0066cc; 
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📨 New Contact Form Submission</h1>
+            <p>Frontend.Club</p>
+        </div>
+        
+        <div class="content">
+            <div class="field">
+                <div class="field-label">
+                    <span>👤</span>
+                    Sender Name
+                </div>
+                <div class="field-value">{{from_name}}</div>
+            </div>
+            
+            <div class="field">
+                <div class="field-label">
+                    <span>✉️</span>
+                    Email Address
+                </div>
+                <div class="field-value">
+                    <a href="mailto:{{from_email}}">{{from_email}}</a>
+                </div>
+            </div>
+            
+            <div class="field">
+                <div class="field-label">
+                    <span>📱</span>
+                    Phone Number
+                </div>
+                <div class="field-value">{{phone}}</div>
+            </div>
+            
+            <div class="field">
+                <div class="field-label">
+                    <span>🎯</span>
+                    Service Interested In
+                </div>
+                <div class="field-value">{{service}}</div>
+            </div>
+            
+            <div class="message-box">
+                <div class="field-label">
+                    <span>💬</span>
+                    Message
+                </div>
+                <div class="message-content">{{message}}</div>
+            </div>
+            
+            <div class="footer">
+                <div class="divider"></div>
+                <p><strong>📧 Email received via Contact Form</strong></p>
+                <p style="margin-top: 12px; font-size: 11px;">
+                    Visit: <a href="https://frontend.club">Frontend.Club</a>
+                </p>
+                <p style="margin-top: 8px; font-size: 10px; color: #999;">
+                    This is an automated message. Please reply directly to {{from_email}}
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

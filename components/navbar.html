@@ -1,0 +1,74 @@
+<!-- Navbar Component -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <img src="assets/img/logo.svg" alt="Frontend.Club Logo" height="40" class="logo-img">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" data-page="home"><i class="bi bi-house"></i> Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="services.html" id="servicesDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" data-page="services">
+                        <i class="bi bi-briefcase"></i> Services
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <li><a class="dropdown-item" href="services/testing.html"><i class="bi bi-bug"></i> Software
+                                Testing</a></li>
+                        <li><a class="dropdown-item" href="services/frontend.html"><i class="bi bi-code-slash"></i>
+                                Frontend Development</a></li>
+                        <li><a class="dropdown-item" href="services/uiux.html"><i class="bi bi-palette"></i> UI/UX
+                                Design</a></li>
+                        <li><a class="dropdown-item" href="services/staff-augmentation.html"><i
+                                    class="bi bi-people"></i> Staff Augmentation</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html" data-page="about"><i class="bi bi-info-circle"></i> About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="careers.html" data-page="careers"><i class="bi bi-briefcase"></i> Careers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html" data-page="contact"><i class="bi bi-envelope"></i>
+                        Contact</a>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center gap-2 ms-lg-3">
+                <div class="theme-toggle-wrapper">
+                    <button id="themeToggle" class="btn btn-sm theme-toggle" title="Toggle theme">
+                        <i class="bi bi-sun-fill"></i>
+                    </button>
+                    <div class="theme-dropdown" id="themeDropdown">
+                        <button class="theme-option" data-theme="light-blue">
+                            <i class="bi bi-circle-fill" style="color: #e3f2fd;"></i> Light Blue
+                        </button>
+                        <button class="theme-option" data-theme="light-green">
+                            <i class="bi bi-circle-fill" style="color: #e8f5e9;"></i> Light Green
+                        </button>
+                        <button class="theme-option" data-theme="light-gray">
+                            <i class="bi bi-circle-fill" style="color: #f5f5f5;"></i> Light Gray
+                        </button>
+                        <button class="theme-option" data-theme="purple-sunset">
+                            <i class="bi bi-circle-fill" style="color: #8B5CF6;"></i> Purple Sunset
+                        </button>
+                        <button class="theme-option" data-theme="ocean-teal">
+                            <i class="bi bi-circle-fill" style="color: #0891B2;"></i> Ocean Teal
+                        </button>
+                        <button class="theme-option" data-theme="dark">
+                            <i class="bi bi-circle-fill" style="color: #1a1a1a;"></i> Dark
+                        </button>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn btn-primary ms-lg-2"><i class="bi bi-lightning-charge"></i> Get
+                    Started</a>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -544,7 +544,9 @@ img {
     height: auto;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     animation: slideInRight 0.8s ease-out 0.3s both;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    /* Adjust image colors to match hero background gradient (blue-orange) */
+    filter: hue-rotate(-10deg) saturate(1.1) brightness(0.95);
 }
 
 /* === TEXT UTILITIES === */

@@ -534,7 +534,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 102, 204, 0.15) 0%, rgba(255, 107, 53, 0.15) 100%);
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.25) 0%, rgba(255, 107, 53, 0.2) 100%);
     z-index: 2;
     pointer-events: none;
 }
@@ -545,8 +545,8 @@ img {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     animation: slideInRight 0.8s ease-out 0.3s both;
     transition: transform 0.3s ease, filter 0.3s ease;
-    /* Adjust image colors to match hero background gradient (blue-orange) */
-    filter: hue-rotate(-10deg) saturate(1.1) brightness(0.95);
+    /* Strongly adjust image colors to match hero background gradient (blue-orange) */
+    filter: hue-rotate(-40deg) saturate(0.95) brightness(0.98) contrast(1.05);
 }
 
 /* === TEXT UTILITIES === */

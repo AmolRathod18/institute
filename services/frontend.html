@@ -5,28 +5,468 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend Development Services - Frontend.Club</title>
     <meta name="description" content="Professional frontend web development services using HTML, CSS, JavaScript, React, Angular, and Vue. Build modern, responsive web applications.">
-    
+
     <!-- Open Graph -->
     <meta property="og:title" content="Frontend Development Services - Frontend.Club">
     <meta property="og:description" content="Modern, responsive web applications built with cutting-edge technologies.">
     <meta property="og:type" content="website">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-    
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* ===== MODERN QA SERVICES PAGE - LIGHT THEME ===== */
+
+        /* Hero Section */
+        .qa-hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 50%, #f0f4ff 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .qa-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(100, 200, 255, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .qa-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(200, 100, 255, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .qa-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .qa-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #0f0f2e;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .qa-hero .lead {
+            font-size: 1.4rem;
+            color: #4b5563;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            animation: slideInUp 0.8s ease-out 0.1s both;
+        }
+
+        .qa-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+
+        .qa-cta-buttons .btn {
+            padding: 14px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-qa-primary {
+            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+            color: white;
+        }
+
+        .btn-qa-primary:hover {
+            background: linear-gradient(135deg, #0052A3 0%, #003d7a 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.2);
+            color: white;
+        }
+
+        .btn-qa-secondary {
+            background: white;
+            color: #0066CC;
+            border: 2px solid #0066CC;
+        }
+
+        .btn-qa-secondary:hover {
+            background: #f0f7ff;
+            border-color: #0052A3;
+            color: #0052A3;
+            transform: translateY(-3px);
+        }
+
+        .qa-hero-illustration {
+            position: relative;
+            z-index: 2;
+            animation: slideInRight 0.8s ease-out 0.3s both;
+        }
+
+        .qa-hero-illustration i {
+            font-size: 200px;
+            opacity: 0.1;
+            color: #0066CC;
+        }
+
+        /* Services Grid */
+        .qa-services {
+            background: #ffffff;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .qa-services-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .qa-services-header h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #0f0f2e;
+            margin-bottom: 1rem;
+        }
+
+        .qa-services-header p {
+            font-size: 1.2rem;
+            color: #6b7280;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .qa-service-card {
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 40px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 0.6s ease-out;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .qa-service-card:nth-child(1) { animation-delay: 0.1s; }
+        .qa-service-card:nth-child(2) { animation-delay: 0.2s; }
+        .qa-service-card:nth-child(3) { animation-delay: 0.3s; }
+        .qa-service-card:nth-child(4) { animation-delay: 0.4s; }
+        .qa-service-card:nth-child(5) { animation-delay: 0.5s; }
+        .qa-service-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .qa-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0066CC, #FF6B35);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .qa-service-card:hover {
+            border-color: #0066CC;
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0, 102, 204, 0.12);
+        }
+
+        .qa-service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .qa-service-icon {
+            font-size: 3.5rem;
+            color: #0066CC;
+            margin-bottom: 1.5rem;
+            transition: transform 0.4s ease;
+        }
+
+        .qa-service-card:hover .qa-service-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .qa-service-card h3 {
+            font-size: 1.5rem;
+            color: #0f0f2e;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .qa-service-card p {
+            color: #6b7280;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Tools Section */
+        .qa-tools {
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+            padding: 100px 0;
+        }
+
+        .qa-tools-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .qa-tools-header h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #0f0f2e;
+            margin-bottom: 1rem;
+        }
+
+        .qa-tools-header p {
+            font-size: 1.2rem;
+            color: #6b7280;
+        }
+
+        .qa-tool-item {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            animation: slideInUp 0.6s ease-out;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .qa-tool-item:nth-child(1) { animation-delay: 0.1s; }
+        .qa-tool-item:nth-child(2) { animation-delay: 0.15s; }
+        .qa-tool-item:nth-child(3) { animation-delay: 0.2s; }
+        .qa-tool-item:nth-child(4) { animation-delay: 0.25s; }
+        .qa-tool-item:nth-child(5) { animation-delay: 0.3s; }
+        .qa-tool-item:nth-child(6) { animation-delay: 0.35s; }
+
+        .qa-tool-item:hover {
+            border-color: #0066CC;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 102, 204, 0.12);
+        }
+
+        .qa-tool-icon {
+            font-size: 3rem;
+            color: #0066CC;
+            margin-bottom: 1rem;
+            transition: transform 0.4s ease;
+        }
+
+        .qa-tool-item:hover .qa-tool-icon {
+            transform: scale(1.15) rotate(-5deg);
+        }
+
+        .qa-tool-name {
+            font-weight: 700;
+            color: #0f0f2e;
+            font-size: 1.1rem;
+        }
+
+        /* Testimonials */
+        .qa-testimonials {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .qa-testimonials-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .qa-testimonials-header h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #0f0f2e;
+            margin-bottom: 1rem;
+        }
+
+        .qa-testimonial-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 40px;
+            height: 100%;
+            transition: all 0.4s ease;
+            animation: slideInUp 0.6s ease-out;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .qa-testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .qa-testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .qa-testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .qa-testimonial-card:hover {
+            border-color: #0066CC;
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0, 102, 204, 0.12);
+        }
+
+        .qa-testimonial-rating {
+            font-size: 1.2rem;
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+        }
+
+        .qa-testimonial-text {
+            font-size: 1.1rem;
+            color: #374151;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .qa-testimonial-author {
+            border-top: 2px solid #e5e7eb;
+            padding-top: 1.5rem;
+        }
+
+        .qa-testimonial-name {
+            font-weight: 700;
+            color: #0f0f2e;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .qa-testimonial-role {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Final Section */
+        .qa-final-cta {
+            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qa-final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .qa-final-cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .qa-final-cta h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .qa-final-cta p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .qa-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .qa-hero .lead {
+                font-size: 1.1rem;
+            }
+
+            .qa-cta-buttons {
+                flex-direction: column;
+            }
+
+            .qa-cta-buttons .btn {
+                width: 100%;
+            }
+
+            .qa-hero-illustration {
+                display: none;
+            }
+
+            .qa-services-header h2,
+            .qa-tools-header h2,
+            .qa-testimonials-header h2,
+            .qa-final-cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Skip to content -->
@@ -35,227 +475,201 @@
     <!-- Navigation will be loaded by component loader -->
 
     <main id="main-content">
-        <!-- Page Header -->
-        <section class="page-header">
-            <div class="container">
-                <nav class="breadcrumb-nav">
-                    <ol>
-                        <li><a href="../index.html"><i class="bi bi-house"></i> Home</a></li>
-                        <li><a href="../services.html"><i class="bi bi-briefcase"></i> Services</a></li>
-                        <li class="current"><i class="bi bi-code"></i> Frontend Development</li>
-                    </ol>
-                </nav>
-                <h1 class="page-title">Frontend Development Services</h1>
-                <p class="page-subtitle">Build modern, responsive web applications with clean code and exceptional user experiences</p>
-            </div>
-        </section>
-
-        <!-- Service Overview -->
-        <section class="service-overview section-padding">
+        <!-- HERO SECTION -->
+        <section class="qa-hero">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <img src="../assets/img/front-end.webp" alt="Modern frontend web development" class="img-fluid service-main-image">
+                        <div class="qa-hero-content">
+                            <h1>Build Modern, Responsive Web Applications</h1>
+                            <p class="lead">Expert frontend development services using cutting-edge technologies, frameworks, and best practices for dynamic user experiences.</p>
+                            <div class="qa-cta-buttons">
+                                <button class="btn btn-qa-primary" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                                    <i class="bi bi-rocket-takeoff"></i> Get Free Consultation
+                                </button>
+                                <a href="#services" class="btn btn-qa-secondary">
+                                    <i class="bi bi-arrow-right"></i> View Services
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        <h2 class="section-title">Cutting-Edge Web Development</h2>
-                        <p class="lead">We create beautiful, responsive, and performant web applications that engage users and drive business results.</p>
-                        <p>Our frontend development team combines technical expertise with creative design thinking to build web experiences that work flawlessly across all devices and browsers. From simple landing pages to complex single-page applications, we deliver code that's clean, maintainable, and built to last.</p>
-                        <a href="../contact.html" class="btn btn-primary">Start Your Project</a>
+                    <div class="col-lg-6 text-center qa-hero-illustration">
+                        <i class="bi bi-code-slash"></i>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Service Details -->
-        <section class="service-details section-padding bg-light">
+        <!-- SERVICES SECTION -->
+        <section class="qa-services" id="services">
             <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title">Our Development Services</h2>
-                    <p class="section-subtitle">Full-stack frontend solutions</p>
+                <div class="qa-services-header">
+                    <h2>Frontend Development Services</h2>
+                    <p>From concept to deployment, we deliver world-class frontend solutions</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="feature-box">
-                            <div class="feature-icon">
-                                <i class="bi bi-file-code"></i>
-                            </div>
-                            <h3 class="feature-title">HTML/CSS/JavaScript Development</h3>
-                            <p class="feature-description">Expert development using core web technologies to create responsive, accessible, and performant websites with clean, semantic code.</p>
-                            <ul class="feature-list">
-                                <li>Semantic HTML5 markup</li>
-                                <li>Modern CSS3 with Flexbox & Grid</li>
-                                <li>Vanilla JavaScript and ES6+</li>
-                                <li>Cross-browser compatibility</li>
-                            </ul>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="qa-service-card">
+                            <i class="bi bi-code-square qa-service-icon"></i>
+                            <h3>HTML/CSS/JavaScript</h3>
+                            <p>Semantic markup and responsive layouts with vanilla JavaScript expertise.</p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="feature-box">
-                            <div class="feature-icon">
-                                <i class="bi bi-layers"></i>
-                            </div>
-                            <h3 class="feature-title">Modern Framework Development</h3>
-                            <p class="feature-description">Build powerful single-page applications using React, Angular, or Vue.js with state management and optimized performance.</p>
-                            <ul class="feature-list">
-                                <li>React with hooks and context</li>
-                                <li>Angular enterprise solutions</li>
-                                <li>Vue.js progressive frameworks</li>
-                                <li>Component-based architecture</li>
-                            </ul>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="qa-service-card">
+                            <i class="bi bi-layers qa-service-icon"></i>
+                            <h3>React Development</h3>
+                            <p>Component-based architecture with hooks, state management, and performance optimization.</p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="feature-box">
-                            <div class="feature-icon">
-                                <i class="bi bi-phone"></i>
-                            </div>
-                            <h3 class="feature-title">Progressive Web Apps (PWAs)</h3>
-                            <p class="feature-description">Create app-like experiences that work offline, load fast, and can be installed on users' devices for enhanced engagement.</p>
-                            <ul class="feature-list">
-                                <li>Offline functionality with service workers</li>
-                                <li>Fast loading and caching strategies</li>
-                                <li>Installable app experience</li>
-                                <li>Push notifications</li>
-                            </ul>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="qa-service-card">
+                            <i class="bi bi-grid-3x3-gap qa-service-icon"></i>
+                            <h3>Progressive Web Apps</h3>
+                            <p>Offline-first PWAs with service workers, caching, and app-like experiences.</p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="feature-box">
-                            <div class="feature-icon">
-                                <i class="bi bi-laptop"></i>
-                            </div>
-                            <h3 class="feature-title">Responsive Design</h3>
-                            <p class="feature-description">Mobile-first development approach ensuring your website looks perfect and functions flawlessly on all screen sizes.</p>
-                            <ul class="feature-list">
-                                <li>Mobile-first methodology</li>
-                                <li>Fluid layouts and flexible grids</li>
-                                <li>Touch-optimized interfaces</li>
-                                <li>Device testing and optimization</li>
-                            </ul>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="qa-service-card">
+                            <i class="bi bi-phone qa-service-icon"></i>
+                            <h3>Responsive Design</h3>
+                            <p>Mobile-first approach ensuring perfect display across all devices and screen sizes.</p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="feature-box">
-                            <div class="feature-icon">
-                                <i class="bi bi-speedometer"></i>
-                            </div>
-                            <h3 class="feature-title">Performance Optimization</h3>
-                            <p class="feature-description">Optimize every aspect of your frontend for lightning-fast load times and smooth user interactions.</p>
-                            <ul class="feature-list">
-                                <li>Code splitting and lazy loading</li>
-                                <li>Image and asset optimization</li>
-                                <li>Bundle size reduction</li>
-                                <li>Performance monitoring</li>
-                            </ul>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="qa-service-card">
+                            <i class="bi bi-speedometer2 qa-service-icon"></i>
+                            <h3>Performance Optimization</h3>
+                            <p>Code splitting, lazy loading, and optimization for lightning-fast load times.</p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="feature-box">
-                            <div class="feature-icon">
-                                <i class="bi bi-universal-access"></i>
-                            </div>
-                            <h3 class="feature-title">Web Accessibility</h3>
-                            <p class="feature-description">Ensure your website is usable by everyone, meeting WCAG standards and providing inclusive experiences.</p>
-                            <ul class="feature-list">
-                                <li>WCAG 2.1 compliance</li>
-                                <li>Screen reader optimization</li>
-                                <li>Keyboard navigation support</li>
-                                <li>Accessibility audits</li>
-                            </ul>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="qa-service-card">
+                            <i class="bi bi-pencil-square qa-service-icon"></i>
+                            <h3>UI/UX Implementation</h3>
+                            <p>Converting designs into pixel-perfect, interactive interfaces with smooth animations.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Technologies -->
-        <section class="technologies section-padding">
+        <!-- TOOLS & TECHNOLOGIES -->
+        <section class="qa-tools">
             <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title">Technologies We Use</h2>
-                    <p class="section-subtitle">Modern tools and frameworks</p>
+                <div class="qa-tools-header">
+                    <h2>Technologies & Frameworks</h2>
+                    <p>We master the latest frontend tools and technologies</p>
                 </div>
-                <div class="row text-center">
-                    <div class="col-lg-3 col-md-4 col-6 mb-4">
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="bi bi-filetype-html"></i>
-                            </div>
-                            <p class="tech-name">HTML5</p>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="qa-tool-item">
+                            <i class="bi bi-braces qa-tool-icon"></i>
+                            <p class="qa-tool-name">React</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-6 mb-4">
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="bi bi-filetype-css"></i>
-                            </div>
-                            <p class="tech-name">CSS3</p>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="qa-tool-item">
+                            <i class="bi bi-boxes qa-tool-icon"></i>
+                            <p class="qa-tool-name">Vue.js</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-6 mb-4">
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="bi bi-filetype-js"></i>
-                            </div>
-                            <p class="tech-name">JavaScript</p>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="qa-tool-item">
+                            <i class="bi bi-gear qa-tool-icon"></i>
+                            <p class="qa-tool-name">Angular</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-6 mb-4">
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="bi bi-code-square"></i>
-                            </div>
-                            <p class="tech-name">React</p>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="qa-tool-item">
+                            <i class="bi bi-tsunami qa-tool-icon"></i>
+                            <p class="qa-tool-name">Tailwind CSS</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-6 mb-4">
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="bi bi-code-square"></i>
-                            </div>
-                            <p class="tech-name">Vue.js</p>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="qa-tool-item">
+                            <i class="bi bi-diagram-2 qa-tool-icon"></i>
+                            <p class="qa-tool-name">Next.js</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-6 mb-4">
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="bi bi-code-square"></i>
-                            </div>
-                            <p class="tech-name">Angular</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mb-4">
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="bi bi-bootstrap"></i>
-                            </div>
-                            <p class="tech-name">Bootstrap</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mb-4">
-                        <div class="tech-item">
-                            <div class="tech-icon">
-                                <i class="bi bi-code-square"></i>
-                            </div>
-                            <p class="tech-name">Tailwind CSS</p>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="qa-tool-item">
+                            <i class="bi bi-lightning-charge qa-tool-icon"></i>
+                            <p class="qa-tool-name">TypeScript</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section section-padding">
+        <!-- TESTIMONIALS -->
+        <section class="qa-testimonials">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        <h2 class="cta-title">Ready to Build Your Web Application?</h2>
-                        <p class="cta-text">Let's create a modern, responsive website that delivers exceptional user experiences.</p>
+                <div class="qa-testimonials-header">
+                    <h2>What Clients Say</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="qa-testimonial-card">
+                            <div class="qa-testimonial-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="qa-testimonial-text">"The frontend team delivered a stunning, responsive application that exceeded our expectations. Their attention to performance was exceptional."</p>
+                            <div class="qa-testimonial-author">
+                                <div class="qa-testimonial-name">Alex Kumar</div>
+                                <div class="qa-testimonial-role">Product Director, Digital Inc.</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 text-lg-end">
-                        <a href="../contact.html" class="btn btn-light btn-lg">Start Your Project</a>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="qa-testimonial-card">
+                            <div class="qa-testimonial-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="qa-testimonial-text">"Professional, fast, and incredibly talented. They converted our Figma designs into production-ready code flawlessly."</p>
+                            <div class="qa-testimonial-author">
+                                <div class="qa-testimonial-name">Jessica Chen</div>
+                                <div class="qa-testimonial-role">Founder, StartupHub</div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="qa-testimonial-card">
+                            <div class="qa-testimonial-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="qa-testimonial-text">"Great communication, clean code, and delivered on time. Their React expertise solved our complex state management challenges."</p>
+                            <div class="qa-testimonial-author">
+                                <div class="qa-testimonial-name">David Roberts</div>
+                                <div class="qa-testimonial-role">CTO, TechVenture</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="qa-final-cta">
+            <div class="container">
+                <div class="qa-final-cta-content">
+                    <h2>Ready to Build Your Next Web App?</h2>
+                    <p>Let's create a fast, scalable, and beautiful frontend solution for your users.</p>
+                    <button class="btn btn-qa-primary btn-lg" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                        <i class="bi bi-rocket-takeoff"></i> Start Your Project Today
+                    </button>
                 </div>
             </div>
         </section>
@@ -263,9 +677,51 @@
 
     <!-- Footer will be loaded by component loader -->
 
+    <!-- Consultation Modal -->
+    <div class="modal fade" id="consultationModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border: 1px solid #e5e7eb;">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-dark">Get Free Consultation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="consultationForm">
+                        <div class="mb-3">
+                            <label class="form-label text-dark">Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-dark">Email</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-dark">Project Type</label>
+                            <select class="form-select" required>
+                                <option>Web Application</option>
+                                <option>E-commerce Site</option>
+                                <option>Progressive Web App</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-dark">Message</label>
+                            <textarea class="form-control" rows="3" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0">
+                    <button class="btn btn-qa-primary" onclick="document.getElementById('consultationForm').submit();">
+                        Send Request
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- Component Loader -->
     <script src="../assets/js/components.js"></script>
     <!-- Custom JS -->

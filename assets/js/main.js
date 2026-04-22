@@ -417,6 +417,110 @@ if (typeof emailjs !== 'undefined') {
         revealObserver.observe(el);
     });
     // ===========================
+    // DYNAMIC HERO SECTION
+    // ===========================
+    const initDynamicHero = () => {
+        const services = [
+            {
+                title: "Software Testing",
+                description: "Comprehensive quality assurance and testing solutions to ensure flawless software delivery.",
+                image: "assets/img/Testing.jpg",
+                link: "services/testing.html",
+                icon: "bi-bug"
+            },
+            {
+                title: "Frontend Development",
+                description: "Modern, responsive web applications built with cutting-edge technologies and best practices.",
+                image: "assets/img/Front_End.jpg",
+                link: "services/frontend.html",
+                icon: "bi-code-slash"
+            },
+            {
+                title: "UI/UX Design",
+                description: "User-centered design that creates engaging and intuitive digital experiences.",
+                image: "assets/img/UI_UX.jpg",
+                link: "services/uiux.html",
+                icon: "bi-palette"
+            },
+            {
+                title: "Staff Augmentation",
+                description: "Skilled professionals to scale your team and accelerate project delivery.",
+                image: "assets/img/Agumentation.jpg",
+                link: "services/staff-augmentation.html",
+                icon: "bi-people"
+            }
+        ];
+
+        const heroTitle = document.getElementById("heroTitle");
+        const heroSubtitle = document.getElementById("heroSubtitle");
+        const heroLearnMore = document.getElementById("heroLearnMore");
+        const heroContent = document.getElementById("heroContent");
+        const heroImage = document.getElementById("heroImage");
+        const indicators = document.querySelectorAll(".indicator");
+
+        if (!heroTitle || !heroSubtitle || !heroLearnMore || !heroContent || !heroImage || indicators.length === 0) {
+            return; // Hero elements not found
+        }
+
+        let currentIndex = 0;
+
+        const updateHeroContent = (index) => {
+            const service = services[index];
+
+            // Add fade-out class to content and image
+            heroContent.classList.add("fade-out");
+            heroImage.classList.add("fade-out");
+
+            // Update content after fade
+            setTimeout(() => {
+                heroTitle.textContent = service.title;
+                heroSubtitle.textContent = service.description;
+                heroLearnMore.href = service.link;
+                heroLearnMore.innerHTML = `<i class="bi ${service.icon}"></i> Learn More`;
+                heroImage.src = service.image;
+                heroImage.alt = service.title;
+
+                // Remove fade-out, trigger fade-in
+                heroContent.classList.remove("fade-out");
+                heroImage.classList.remove("fade-out");
+            }, 300);
+
+            // Update indicators
+            indicators.forEach((btn, idx) => {
+                btn.classList.toggle("active", idx === index);
+            });
+        };
+
+        // Auto-rotate every 5 seconds
+        let heroInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % services.length;
+            updateHeroContent(currentIndex);
+        }, 5000);
+
+        // Allow manual indicator clicks
+        indicators.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                currentIndex = parseInt(btn.dataset.index);
+                updateHeroContent(currentIndex);
+
+                // Reset interval on manual click
+                clearInterval(heroInterval);
+                heroInterval = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % services.length;
+                    updateHeroContent(currentIndex);
+                }, 5000);
+            });
+        });
+    };
+
+    // Initialize dynamic hero when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initDynamicHero);
+    } else {
+        initDynamicHero();
+    }
+
+    // ===========================
     console.log('%cFrontend.Club', 'font-size: 24px; font-weight: bold; color: #0066CC;');
     console.log('%cBuilt with ❤️ using Bootstrap 5 & Vanilla JS', 'font-size: 12px; color: #6B7280;');
 

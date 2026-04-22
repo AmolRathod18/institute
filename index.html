@@ -41,30 +41,27 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h1 class="hero-title">Transform Your Digital Vision Into Reality</h1>
-                        <p class="hero-subtitle">Expert software testing, web development, and design services to accelerate your business growth. We deliver excellence, one project at a time.</p>
-                        <div class="hero-cta">
-                            <a href="contact.html" class="btn btn-primary btn-lg"><i class="bi bi-rocket-takeoff"></i> Work With Us</a>
-                            <a href="services.html" class="btn btn-outline-primary btn-lg"><i class="bi bi-compass"></i> Explore Services</a>
+                        <!-- Dynamic Hero Content -->
+                        <div class="hero-content" id="heroContent">
+                            <h1 class="hero-title" id="heroTitle">Transform Your Digital Vision Into Reality</h1>
+                            <p class="hero-subtitle" id="heroSubtitle">Expert software testing, web development, and design services to accelerate your business growth.</p>
+                            <div class="hero-cta">
+                                <a href="contact.html" class="btn btn-primary btn-lg" id="heroLearnMore"><i class="bi bi-rocket-takeoff"></i> Learn More</a>
+                                <a href="services.html" class="btn btn-outline-primary btn-lg"><i class="bi bi-compass"></i> Explore Services</a>
+                            </div>
                         </div>
-                        <!-- <div class="hero-stats">
-                            <div class="stat-item">
-                                <div class="stat-number">500+</div>
-                                <div class="stat-label">Projects Delivered</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">98%</div>
-                                <div class="stat-label">Client Satisfaction</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">24/7</div>
-                                <div class="stat-label">Support Available</div>
-                            </div>
-                        </div> -->
+
+                        <!-- Service Indicators -->
+                        <div class="hero-indicators">
+                            <button class="indicator active" data-index="0" title="Software Testing"></button>
+                            <button class="indicator" data-index="1" title="Frontend Development"></button>
+                            <button class="indicator" data-index="2" title="UI/UX Design"></button>
+                            <button class="indicator" data-index="3" title="Staff Augmentation"></button>
+                        </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="hero-image">
-                            <img src="assets/img/landing.png" alt="Professional team collaborating on web development projects" class="img-fluid">
+                            <img id="heroImage" src="assets/img/landing.png" alt="Professional team collaborating on web development projects" class="img-fluid">
                         </div>
                     </div>
                 </div>

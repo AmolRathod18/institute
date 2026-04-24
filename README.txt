@@ -50,6 +50,7 @@ METHOD 1: Python HTTP Server (Recommended)
    Windows:  py -m http.server 5500
 5. Open browser and go to:http://localhost:5500 
 
+
 METHOD 2: Live Server (VS Code Extension)
 1. Extract the zip file
 2. Open the institute-site folder in VS Code

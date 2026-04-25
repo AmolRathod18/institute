@@ -138,41 +138,48 @@ class ComponentLoader {
 
     /**
      * Reinitialize navbar JavaScript functionality
+     * Handles: scroll shadow, animated hamburger sync, mobile auto-close, theme toggle
      */
     static reinitializeNavbar() {
-        // Get navbar elements
         const navbar = document.getElementById('mainNav');
         if (!navbar) return;
 
-        const navLinks = navbar.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)');
         const navbarCollapse = navbar.querySelector('.navbar-collapse');
+        const toggler = navbar.querySelector('#navbarToggler');
+        const navLinks = navbar.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)');
         const dropdownItems = navbar.querySelectorAll('.dropdown-item');
 
-        // Mobile menu auto-close for regular nav links
+        // --- Sync custom hamburger aria-expanded with Bootstrap collapse events ---
+        if (navbarCollapse && toggler) {
+            navbarCollapse.addEventListener('show.bs.collapse', () => {
+                toggler.setAttribute('aria-expanded', 'true');
+            });
+            navbarCollapse.addEventListener('hide.bs.collapse', () => {
+                toggler.setAttribute('aria-expanded', 'false');
+            });
+        }
+
+        // --- Mobile menu auto-close for regular nav links ---
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth < 992) {
-                    const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                        toggle: false
-                    });
+                if (window.innerWidth < 992 && navbarCollapse) {
+                    const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
                     bsCollapse.hide();
                 }
             });
         });
 
-        // Auto-close menu when dropdown item is clicked
+        // --- Auto-close menu when dropdown item is clicked ---
         dropdownItems.forEach(item => {
             item.addEventListener('click', () => {
-                if (window.innerWidth < 992) {
-                    const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                        toggle: false
-                    });
+                if (window.innerWidth < 992 && navbarCollapse) {
+                    const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
                     bsCollapse.hide();
                 }
             });
         });
 
-        // Navbar scroll effect
+        // --- Navbar scroll shadow effect ---
         const handleNavbarScroll = () => {
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
@@ -182,8 +189,10 @@ class ComponentLoader {
         };
 
         window.addEventListener('scroll', handleNavbarScroll);
-        
-        // Initialize theme toggle
+        // Run once on load in case page is already scrolled
+        handleNavbarScroll();
+
+        // --- Initialize theme toggle ---
         this.initializeThemeToggle();
     }
 

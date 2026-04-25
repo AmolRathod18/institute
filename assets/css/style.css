@@ -871,8 +871,8 @@ h2 {
 }
 
 .service-icon {
-    width: 64px;
-    height: 64px;
+    width: 100%;
+    aspect-ratio: 16 / 12;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: white;
     display: flex;
@@ -880,6 +880,8 @@ h2 {
     justify-content: center;
     font-size: 2rem;
     margin-bottom: var(--spacing-md);
+    overflow: hidden;
+    position: relative;
 }
 
 .service-title {
@@ -1234,8 +1236,10 @@ i[class^="bi"] {
 
 .service-detail-image {
     width: 100%;
-    height: 250px;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
+    height: auto;
+    max-height: 400px;
 }
 
 .service-detail-image img {
@@ -2761,6 +2765,35 @@ input[type="submit"] {
     animation: slideInLeft 0.8s ease-out 0.3s both;
 }
 
+/* === TABLET OPTIMIZATIONS (992px and below) === */
+@media (max-width: 992px) {
+    /* Process number circles */
+    .process-number {
+        width: 70px;
+        height: 70px;
+        font-size: 1.75rem;
+    }
+
+    /* Technology icons */
+    .tech-icon-box {
+        width: 70px;
+        height: 70px;
+    }
+
+    /* Service cards */
+    .service-card {
+        padding: 1.5rem;
+    }
+    .service-icon {
+        height: 200px;
+    }
+
+    /* Spacing adjustments */
+    .section-padding {
+        padding: 3rem 0;
+    }
+}
+
 /* === RESPONSIVE ICON ADJUSTMENTS === */
 @media (max-width: 768px) {
     .nav-link {
@@ -2924,41 +2957,274 @@ input[type="submit"] {
         border-radius: 8px 8px 0 0;
         margin-top: 0.5rem !important;
     }
+
+    /* Fixed Dimensions Made Responsive at 768px */
+    .service-icon {
+        height: 200px;
+    }
+
+    .process-number {
+        width: 70px;
+        height: 70px;
+        font-size: 1.75rem;
+    }
+
+    .tech-icon-box {
+        width: 70px;
+        height: 70px;
+    }
+
+    .contact-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+
+    .team-image {
+        max-height: 300px;
+    }
+
+    .about-image {
+        max-height: 300px;
+    }
+
+    .service-detail-image {
+        max-height: 300px;
+    }
+
+    /* Service Cards at 768px */
+    .service-card {
+        padding: 1.5rem;
+    }
 }
 
 /* Extra Small Devices (Phones) */
 @media (max-width: 576px) {
+    /* Typography Cascade */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.125rem; }
+    h5 { font-size: 1rem; }
+    h6 { font-size: 0.875rem; }
+
+    /* Section Padding */
+    .section-padding { padding: 2rem 0; }
+
+    /* Hero Section */
+    .hero-slider { height: 100vh; }
+    .hero-content-wrapper {
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+    .hero-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    .hero-cta {
+        gap: 0.5rem;
+        flex-direction: column;
+    }
+    .hero-cta .btn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        min-height: 44px;
+    }
+    .hero-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+    .hero-nav-prev { left: 10px; }
+    .hero-nav-next { right: 10px; }
+    .indicator {
+        width: 12px;
+        height: 12px;
+    }
+    .hero-indicators {
+        bottom: 20px;
+        gap: 8px;
+    }
+
+    /* Button Sizing (Accessibility) */
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        min-height: 44px;
+    }
+    .btn-lg {
+        padding: 14px 24px;
+        font-size: 0.95rem;
+        min-height: 44px;
+        width: 100%;
+    }
+    .btn-sm {
+        padding: 8px 12px;
+        font-size: 0.875rem;
+    }
+
+    /* Navbar */
     .navbar {
         padding: 0.5rem 0;
     }
-    
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+    .nav-link {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.95rem;
+    }
     .navbar-collapse > .d-flex.align-items-center.gap-2 {
         gap: 0.5rem !important;
+        flex-direction: column;
     }
-    
     .navbar-collapse > .d-flex.align-items-center.gap-2 .btn {
         width: 100%;
-        padding: 10px 16px !important;
-        font-size: 0.9rem;
+        padding: 12px 20px !important;
+        font-size: 0.95rem;
+        min-height: 44px;
     }
-    
     .theme-toggle {
         width: 100%;
-        padding: 10px 16px !important;
-        font-size: 1rem;
+        padding: 12px 20px !important;
+        font-size: 0.95rem;
+        min-height: 44px;
     }
-    
     .dropdown-menu {
         font-size: 0.85rem;
+        position: static !important;
+        max-height: 300px;
+        overflow-y: auto;
     }
-    
     .dropdown-item {
-        padding: 8px 12px;
+        padding: 10px 12px;
     }
-    
-    h1 { font-size: 1.75rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.25rem; }
+
+    /* Service Cards */
+    .service-card {
+        padding: 1rem;
+    }
+    .service-icon {
+        height: 160px;
+    }
+
+    /* Fixed Dimensions Made Responsive */
+    .process-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    .tech-icon-box {
+        width: 60px;
+        height: 60px;
+    }
+    .contact-icon {
+        width: 44px;
+        height: 44px;
+    }
+    .map-container {
+        height: 250px;
+    }
+
+    /* Images */
+    .team-image {
+        max-height: 250px;
+    }
+    .about-image {
+        max-height: 250px;
+    }
+    .service-detail-image {
+        max-height: 250px;
+    }
+
+    /* Form Spacing */
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    .form-control,
+    .form-select {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+        min-height: 40px;
+    }
+
+    /* Spacing Adjustments */
+    .container { padding-left: 0.75rem; padding-right: 0.75rem; }
+    .row { --bs-gutter-x: 0.75rem; }
+}
+
+/* === RESPONSIVE UTILITY CLASSES === */
+@media (max-width: 576px) {
+    .d-sm-none { display: none; }
+    .d-sm-block { display: block; }
+    .d-sm-inline { display: inline; }
+    .d-sm-inline-block { display: inline-block; }
+    .d-sm-flex { display: flex; }
+    .d-sm-grid { display: grid; }
+
+    .text-sm-center { text-align: center; }
+    .text-sm-start { text-align: start; }
+    .text-sm-end { text-align: end; }
+
+    .ms-sm-auto { margin-left: auto; }
+    .me-sm-auto { margin-right: auto; }
+    .mx-sm-auto { margin-left: auto; margin-right: auto; }
+
+    .w-sm-100 { width: 100%; }
+    .h-sm-100 { height: 100%; }
+}
+
+@media (max-width: 768px) {
+    .d-md-none { display: none; }
+    .d-md-block { display: block; }
+    .d-md-inline { display: inline; }
+    .d-md-inline-block { display: inline-block; }
+    .d-md-flex { display: flex; }
+
+    .text-md-center { text-align: center; }
+    .text-md-start { text-align: start; }
+    .text-md-end { text-align: end; }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .d-sm-up-none { display: none; }
+    .d-sm-up-block { display: block; }
+}
+
+/* === ENHANCED RESPONSIVE TEXT === */
+.responsive-text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.responsive-heading {
+    word-break: break-word;
+    line-height: 1.2;
+}
+
+/* === TOUCH-FRIENDLY SPACING === */
+.touch-target {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* === RESPONSIVE CONTAINER === */
+.responsive-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Icon hover animation for various contexts */

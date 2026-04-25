@@ -227,9 +227,13 @@ if (typeof emailjs !== 'undefined') {
     // PARALLAX SCROLL EFFECT
     // ===========================
     window.addEventListener('scroll', () => {
-        const parallaxElements = document.querySelectorAll('.hero-image img');
+        const parallaxElements = document.querySelectorAll('.why-us-image img, .service-image img, .hero-slide');
         parallaxElements.forEach(element => {
             const scrollPosition = window.scrollY;
+            if (element.classList && element.classList.contains('hero-slide')) {
+                // Don't parallax hero slider
+                return;
+            }
             element.style.transform = `translateY(${scrollPosition * 0.5}px)`;
         });
     });
@@ -417,108 +421,141 @@ if (typeof emailjs !== 'undefined') {
         revealObserver.observe(el);
     });
     // ===========================
-    // DYNAMIC HERO SECTION
+    // HERO IMAGE SLIDER
     // ===========================
-    const initDynamicHero = () => {
-        const services = [
+    const initHeroSlider = () => {
+        // Slide data with background images, titles, and subtitles
+        const slides = [
             {
-                title: "Software Testing",
-                description: "Comprehensive quality assurance and testing solutions to ensure flawless software delivery.",
-                image: "assets/img/Testing.jpg",
+                title: "Transform Your Digital Vision Into Reality",
+                subtitle: "Expert software testing, web development, and design services to accelerate your business growth.",
+                link: "contact.html",
+                image: "assets/img/landing.png"
+            },
+            {
+                title: "Comprehensive Software Testing Solutions",
+                subtitle: "Ensure flawless software delivery with our rigorous quality assurance and testing expertise.",
                 link: "services/testing.html",
-                icon: "bi-bug"
+                image: "assets/img/IMG1.jpg"
             },
             {
-                title: "Frontend Development",
-                description: "Modern, responsive web applications built with cutting-edge technologies and best practices.",
-                image: "assets/img/Front_End.jpg",
+                title: "Modern Frontend Development",
+                subtitle: "Build responsive, fast, and beautiful web applications with cutting-edge technologies.",
                 link: "services/frontend.html",
-                icon: "bi-code-slash"
+                image: "assets/img/Front_End.jpg"
             },
             {
-                title: "UI/UX Design",
-                description: "User-centered design that creates engaging and intuitive digital experiences.",
-                image: "assets/img/UI_UX.jpg",
+                title: "Expert UI/UX Design Services",
+                subtitle: "Create engaging, intuitive digital experiences that users love and businesses thrive with.",
                 link: "services/uiux.html",
-                icon: "bi-palette"
-            },
-            {
-                title: "Staff Augmentation",
-                description: "Skilled professionals to scale your team and accelerate project delivery.",
-                image: "assets/img/Agumentation.jpg",
-                link: "services/staff-augmentation.html",
-                icon: "bi-people"
+                image: "assets/img/UI_UX.jpg"
             }
         ];
 
-        const heroTitle = document.getElementById("heroTitle");
-        const heroSubtitle = document.getElementById("heroSubtitle");
-        const heroLearnMore = document.getElementById("heroLearnMore");
-        const heroContent = document.getElementById("heroContent");
-        const heroImage = document.getElementById("heroImage");
-        const indicators = document.querySelectorAll(".indicator");
+        // Get DOM elements
+        const sliderContainer = document.querySelector('.hero-slides-wrapper');
+        const heroTitle = document.getElementById('heroTitle');
+        const heroSubtitle = document.getElementById('heroSubtitle');
+        const heroLearnMore = document.getElementById('heroLearnMore');
+        const heroContent = document.getElementById('heroContent');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.getElementById('heroPrev');
+        const nextBtn = document.getElementById('heroNext');
 
-        if (!heroTitle || !heroSubtitle || !heroLearnMore || !heroContent || !heroImage || indicators.length === 0) {
-            return; // Hero elements not found
+        // Return if elements not found
+        if (!sliderContainer || !heroTitle || !heroSubtitle || !heroLearnMore || !heroContent || indicators.length === 0) {
+            return;
         }
 
         let currentIndex = 0;
+        let autoPlayInterval;
 
-        const updateHeroContent = (index) => {
-            const service = services[index];
+        // Update slide content and styling
+        const updateSlide = (index) => {
+            const slide = slides[index];
 
-            // Add fade-out class to content and image
-            heroContent.classList.add("fade-out");
-            heroImage.classList.add("fade-out");
+            // Fade out current content
+            heroContent.classList.add('fade-out');
+
+            // Update slide backgrounds
+            const slideElements = document.querySelectorAll('.hero-slide');
+            slideElements.forEach((slideEl, idx) => {
+                slideEl.classList.toggle('active', idx === index);
+                // Update background image
+                slideEl.style.backgroundImage = `url('${slide.image}')`;
+            });
 
             // Update content after fade
             setTimeout(() => {
-                heroTitle.textContent = service.title;
-                heroSubtitle.textContent = service.description;
-                heroLearnMore.href = service.link;
-                heroLearnMore.innerHTML = `<i class="bi ${service.icon}"></i> Learn More`;
-                heroImage.src = service.image;
-                heroImage.alt = service.title;
-
-                // Remove fade-out, trigger fade-in
-                heroContent.classList.remove("fade-out");
-                heroImage.classList.remove("fade-out");
+                heroTitle.textContent = slide.title;
+                heroSubtitle.textContent = slide.subtitle;
+                heroLearnMore.href = slide.link;
+                heroContent.classList.remove('fade-out');
             }, 300);
 
             // Update indicators
             indicators.forEach((btn, idx) => {
-                btn.classList.toggle("active", idx === index);
+                btn.classList.toggle('active', idx === index);
             });
         };
 
-        // Auto-rotate every 5 seconds
-        let heroInterval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % services.length;
-            updateHeroContent(currentIndex);
-        }, 5000);
+        // Next slide
+        const nextSlide = () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlide(currentIndex);
+            resetAutoPlay();
+        };
 
-        // Allow manual indicator clicks
-        indicators.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                currentIndex = parseInt(btn.dataset.index);
-                updateHeroContent(currentIndex);
+        // Previous slide
+        const prevSlide = () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlide(currentIndex);
+            resetAutoPlay();
+        };
 
-                // Reset interval on manual click
-                clearInterval(heroInterval);
-                heroInterval = setInterval(() => {
-                    currentIndex = (currentIndex + 1) % services.length;
-                    updateHeroContent(currentIndex);
-                }, 5000);
+        // Auto-play slides every 3 seconds
+        const startAutoPlay = () => {
+            autoPlayInterval = setInterval(() => {
+                nextSlide();
+            }, 3000);
+        };
+
+        // Reset auto-play timer
+        const resetAutoPlay = () => {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        };
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Indicator clicks
+        indicators.forEach((indicator) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = parseInt(indicator.dataset.index);
+                updateSlide(currentIndex);
+                resetAutoPlay();
             });
         });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Start auto-play
+        startAutoPlay();
     };
 
-    // Initialize dynamic hero when DOM is ready
+    // Initialize hero slider when DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initDynamicHero);
+        document.addEventListener('DOMContentLoaded', initHeroSlider);
     } else {
-        initDynamicHero();
+        initHeroSlider();
     }
+
 
     // ===========================
     console.log('%cFrontend.Club', 'font-size: 24px; font-weight: bold; color: #0066CC;');

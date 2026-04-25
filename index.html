@@ -36,36 +36,51 @@
     <!-- Navigation will be loaded by component loader -->
 
     <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <!-- Dynamic Hero Content -->
-                        <div class="hero-content" id="heroContent">
-                            <h1 class="hero-title" id="heroTitle">Transform Your Digital Vision Into Reality</h1>
-                            <p class="hero-subtitle" id="heroSubtitle">Expert software testing, web development, and design services to accelerate your business growth.</p>
-                            <div class="hero-cta">
-                                <a href="contact.html" class="btn btn-primary btn-lg" id="heroLearnMore"><i class="bi bi-rocket-takeoff"></i> Learn More</a>
-                                <a href="services.html" class="btn btn-outline-primary btn-lg"><i class="bi bi-compass"></i> Explore Services</a>
-                            </div>
-                        </div>
+        <!-- Hero Section - Full Screen Image Slider -->
+        <section class="hero-slider">
+            <!-- Slides Container -->
+            <div class="hero-slides-wrapper">
+                <div class="hero-slide active" style="background-image: url('assets/img/landing.png');">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-slide" style="background-image: url('assets/img/TESTING.jpg');">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-slide" style="background-image: url('assets/img/Front_End.jpg');">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-slide" style="background-image: url('assets/img/UI_UX.jpg');">
+                    <div class="hero-overlay"></div>
+                </div>
+            </div>
 
-                        <!-- Service Indicators -->
-                        <div class="hero-indicators">
-                            <button class="indicator active" data-index="0" title="Software Testing"></button>
-                            <button class="indicator" data-index="1" title="Frontend Development"></button>
-                            <button class="indicator" data-index="2" title="UI/UX Design"></button>
-                            <button class="indicator" data-index="3" title="Staff Augmentation"></button>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="hero-image">
-                            <img id="heroImage" src="assets/img/landing.png" alt="Professional team collaborating on web development projects" class="img-fluid">
-                        </div>
+            <!-- Centered Content -->
+            <div class="hero-content-wrapper">
+                <div class="hero-content" id="heroContent">
+                    <h1 class="hero-title" id="heroTitle">Transform Your Digital Vision Into Reality</h1>
+                    <p class="hero-subtitle" id="heroSubtitle">Expert software testing, web development, and design services to accelerate your business growth.</p>
+                    <div class="hero-cta">
+                        <a href="contact.html" class="btn btn-primary btn-lg" id="heroLearnMore"><i class="bi bi-rocket-takeoff"></i> Learn More</a>
+                        <a href="services.html" class="btn btn-outline-primary btn-lg"><i class="bi bi-compass"></i> Explore Services</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Slide Indicators -->
+            <div class="hero-indicators">
+                <button class="indicator active" data-index="0" title="Slide 1"></button>
+                <button class="indicator" data-index="1" title="Slide 2"></button>
+                <button class="indicator" data-index="2" title="Slide 3"></button>
+                <button class="indicator" data-index="3" title="Slide 4"></button>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="hero-nav-btn hero-nav-prev" id="heroPrev" aria-label="Previous slide">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="hero-nav-btn hero-nav-next" id="heroNext" aria-label="Next slide">
+                <i class="bi bi-chevron-right"></i>
+            </button>
         </section>
 
         <!-- Services Overview -->

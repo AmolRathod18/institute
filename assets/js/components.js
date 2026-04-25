@@ -180,8 +180,11 @@ class ComponentLoader {
         });
 
         // --- Navbar scroll shadow effect ---
+        const heroSection = document.querySelector('.hero-slider, .svc-hero');
+        const scrollThreshold = heroSection ? Math.min(heroSection.offsetHeight * 0.1, 80) : 50;
+
         const handleNavbarScroll = () => {
-            if (window.scrollY > 50) {
+            if (window.scrollY > scrollThreshold) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');

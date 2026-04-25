@@ -12,163 +12,505 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* === STAFF AUG PAGE SPECIFIC === */
+        .staff-hero {
+            background: linear-gradient(135deg, #0a1628 0%, #0d2240 40%, #1a1028 100%);
+        }
+        .staff-hero .svc-hero-blob:nth-child(1) {
+            width: 520px; height: 520px;
+            background: radial-gradient(circle, rgba(255,107,53,0.45) 0%, transparent 70%);
+            top: -120px; right: -80px;
+            animation: staffBlob 10s ease-in-out infinite;
+        }
+        .staff-hero .svc-hero-blob:nth-child(2) {
+            width: 360px; height: 360px;
+            background: radial-gradient(circle, rgba(0,102,204,0.4) 0%, transparent 70%);
+            bottom: -70px; left: -70px;
+            animation: staffBlob 8s ease-in-out infinite reverse;
+        }
+        .staff-hero .svc-hero-blob:nth-child(3) {
+            width: 240px; height: 240px;
+            background: radial-gradient(circle, rgba(245,158,11,0.3) 0%, transparent 70%);
+            top: 45%; left: 22%;
+            animation: staffBlob 13s ease-in-out infinite 1.5s;
+        }
+        @keyframes staffBlob {
+            0%,100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(25px) scale(1.04); }
+        }
+        .staff-badge { background: linear-gradient(135deg,#FF6B35,#F59E0B); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+        /* Team cards visual */
+        .team-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .team-member-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px !important;
+            padding: 1.25rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .team-member-card:hover {
+            background: rgba(255,255,255,0.14);
+            transform: translateY(-4px);
+        }
+        .team-avatar {
+            width: 52px; height: 52px;
+            border-radius: 50% !important;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; font-weight: 800; color: white;
+            margin-bottom: 0.75rem;
+        }
+        .team-role-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px !important;
+            margin-bottom: 0.4rem;
+        }
+        .team-member-card h6 { font-size:0.92rem; font-weight:700; color:#fff; margin:0; }
+        .team-member-card small { color:rgba(255,255,255,0.55); font-size:0.78rem; }
+
+        /* Engagement model cards */
+        .eng-card {
+            background: #fff;
+            border-radius: 20px !important;
+            padding: 2rem;
+            border: 1.5px solid #e8ecf4;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+        .eng-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--eng-color, linear-gradient(90deg,#FF6B35,#F59E0B));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .eng-card:hover { transform: translateY(-12px); box-shadow: 0 28px 65px rgba(0,0,0,0.11); }
+        .eng-card:hover::after { transform: scaleX(1); }
+        .eng-icon {
+            width: 64px; height: 64px;
+            border-radius: 16px !important;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; color: white;
+            margin-bottom: 1.25rem;
+        }
+        .eng-card h3 { font-size:1.2rem; font-weight:700; color:#0f172a; margin-bottom:0.75rem; }
+        .eng-card p { color:#6b7280; font-size:0.92rem; line-height:1.7; margin-bottom:1rem; }
+        .eng-list { list-style: none; padding: 0; margin: 0; }
+        .eng-list li {
+            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.88rem; color: #374151;
+            padding: 0.35rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .eng-list li:last-child { border-bottom: none; }
+        .eng-list li i { color: #10B981; font-size: 0.9rem; flex-shrink: 0; }
+
+        .eng-1 { --eng-color: linear-gradient(90deg,#FF6B35,#F59E0B); }
+        .eng-1 .eng-icon { background: linear-gradient(135deg,#FF6B35,#F59E0B); }
+        .eng-2 { --eng-color: linear-gradient(90deg,#0066CC,#3B82F6); }
+        .eng-2 .eng-icon { background: linear-gradient(135deg,#0066CC,#3B82F6); }
+        .eng-3 { --eng-color: linear-gradient(90deg,#8B5CF6,#6366F1); }
+        .eng-3 .eng-icon { background: linear-gradient(135deg,#8B5CF6,#6366F1); }
+        .eng-4 { --eng-color: linear-gradient(90deg,#10B981,#059669); }
+        .eng-4 .eng-icon { background: linear-gradient(135deg,#10B981,#059669); }
+
+        /* Benefit pills */
+        .benefit-pill {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: #fff;
+            border-radius: 16px !important;
+            border: 1.5px solid #e8ecf4;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .benefit-pill:hover {
+            border-color: var(--primary-color);
+            transform: translateX(6px);
+            box-shadow: 0 10px 30px rgba(0,102,204,0.1);
+        }
+        .benefit-pill-icon {
+            width: 52px; height: 52px;
+            border-radius: 14px !important;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: white; flex-shrink: 0;
+        }
+        .benefit-pill h4 { font-size:1rem; font-weight:700; color:#0f172a; margin-bottom:0.35rem; }
+        .benefit-pill p { font-size:0.88rem; color:#6b7280; margin:0; line-height:1.6; }
+
+        .bp-1 .benefit-pill-icon { background: linear-gradient(135deg,#FF6B35,#F59E0B); }
+        .bp-2 .benefit-pill-icon { background: linear-gradient(135deg,#0066CC,#3B82F6); }
+        .bp-3 .benefit-pill-icon { background: linear-gradient(135deg,#10B981,#059669); }
+        .bp-4 .benefit-pill-icon { background: linear-gradient(135deg,#8B5CF6,#6366F1); }
+        .bp-5 .benefit-pill-icon { background: linear-gradient(135deg,#F59E0B,#EF4444); }
+        .bp-6 .benefit-pill-icon { background: linear-gradient(135deg,#EC4899,#8B5CF6); }
+
+        .av-sa-1 { background: linear-gradient(135deg,#FF6B35,#F59E0B); }
+        .av-sa-2 { background: linear-gradient(135deg,#0066CC,#3B82F6); }
+        .av-sa-3 { background: linear-gradient(135deg,#8B5CF6,#6366F1); }
+
+        .staff-cta { background: linear-gradient(135deg, #0a1628 0%, #0d2240 60%, #1a1028 100%); }
+        .staff-cta::before {
+            content:''; position:absolute; inset:0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(255,107,53,0.2) 0%, transparent 65%);
+            pointer-events:none;
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Navigation will be loaded by component loader -->
+
     <main id="main-content">
-        <section class="page-header">
-            <div class="container">
-                <nav class="breadcrumb-nav">
-                    <ol>
-                        <li><a href="../index.html"><i class="bi bi-house"></i> Home</a></li>
-                        <li><a href="../services.html"><i class="bi bi-briefcase"></i> Services</a></li>
-                        <li class="current"><i class="bi bi-people"></i> Staff Augmentation</li>
-                    </ol>
-                </nav>
-                <h1 class="page-title">Staff Augmentation Services</h1>
-                <p class="page-subtitle">Scale your team with top-tier talent that integrates seamlessly with your culture</p>
-            </div>
-        </section>
-        <section class="service-overview section-padding">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6"><img src="../assets/img/staff.webp" alt="Staff augmentation and team scaling" class="img-fluid service-main-image"></div>
+        <!-- ====== HERO ====== -->
+        <section class="svc-hero staff-hero">
+            <div class="svc-hero-blob"></div>
+            <div class="svc-hero-blob"></div>
+            <div class="svc-hero-blob"></div>
+            <div class="container position-relative" style="z-index:2">
+                <div class="row align-items-center g-5">
                     <div class="col-lg-6">
-                        <h2 class="section-title">Flexible Team Scaling</h2>
-                        <p class="lead">Access skilled professionals who integrate with your team, adopt your processes, and deliver results from day one.</p>
-                        <p>Whether you need to fill skill gaps, scale quickly for a project, or build a dedicated team, our staff augmentation services provide the flexibility and expertise you need without the overhead of traditional hiring.</p>
-                        <a href="../contact.html" class="btn btn-primary">Find Talent Now</a>
+                        <span class="svc-hero-badge">
+                            <i class="bi bi-people-fill"></i> Staff Augmentation
+                        </span>
+                        <h1>Scale Your Team<br>with <span class="staff-badge">Top-Tier</span><br>Talent Fast</h1>
+                        <p class="lead">Access pre-vetted, skilled professionals who integrate seamlessly with your team and deliver results from day one — no long-term commitments.</p>
+                        <div class="svc-hero-buttons">
+                            <a href="../contact.html" class="btn btn-primary btn-lg">
+                                <i class="bi bi-person-plus-fill"></i> Find Talent Now
+                            </a>
+                            <a href="#solutions" style="padding:14px 28px; border-radius:10px !important; display:inline-flex; align-items:center; gap:0.5rem; font-weight:700; border:2px solid rgba(255,255,255,0.5); color:white; background:rgba(255,255,255,0.1); text-decoration:none;">
+                                <i class="bi bi-grid-3x3-gap-fill"></i> Our Solutions
+                            </a>
+                        </div>
+                        <div class="svc-hero-stats">
+                            <div class="svc-stat-item">
+                                <span class="svc-stat-num">1-2</span>
+                                <span class="svc-stat-label">Weeks Onboarding</span>
+                            </div>
+                            <div class="svc-stat-item" style="border-left:1px solid rgba(255,255,255,0.2); padding-left:2rem;">
+                                <span class="svc-stat-num">500+</span>
+                                <span class="svc-stat-label">Vetted Experts</span>
+                            </div>
+                            <div class="svc-stat-item" style="border-left:1px solid rgba(255,255,255,0.2); padding-left:2rem;">
+                                <span class="svc-stat-num">40%</span>
+                                <span class="svc-stat-label">Cost Savings</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Team visual grid -->
+                        <div class="team-visual">
+                            <div class="team-member-card">
+                                <div class="team-avatar" style="background:linear-gradient(135deg,#FF6B35,#F59E0B);">RS</div>
+                                <div class="team-role-tag" style="background:rgba(255,107,53,0.2); color:#FF6B35;">Frontend Dev</div>
+                                <h6>Rahul Sharma</h6>
+                                <small>React · TypeScript</small>
+                            </div>
+                            <div class="team-member-card">
+                                <div class="team-avatar" style="background:linear-gradient(135deg,#0066CC,#3B82F6);">PK</div>
+                                <div class="team-role-tag" style="background:rgba(0,102,204,0.2); color:#3B82F6;">QA Engineer</div>
+                                <h6>Priya Kapoor</h6>
+                                <small>Selenium · Cypress</small>
+                            </div>
+                            <div class="team-member-card">
+                                <div class="team-avatar" style="background:linear-gradient(135deg,#8B5CF6,#6366F1);">AM</div>
+                                <div class="team-role-tag" style="background:rgba(139,92,246,0.2); color:#8B5CF6;">UI/UX Designer</div>
+                                <h6>Anjali Mehta</h6>
+                                <small>Figma · Prototyping</small>
+                            </div>
+                            <div class="team-member-card">
+                                <div class="team-avatar" style="background:linear-gradient(135deg,#10B981,#059669);">VR</div>
+                                <div class="team-role-tag" style="background:rgba(16,185,129,0.2); color:#10B981;">Full-Stack Dev</div>
+                                <h6>Vikram Rao</h6>
+                                <small>Node.js · Vue</small>
+                            </div>
+                        </div>
+                        <div class="svc-hero-img-badge" style="bottom:-12px; right:20px; left:auto;">
+                            <div class="badge-icon" style="background:linear-gradient(135deg,#FF6B35,#F59E0B);">
+                                <i class="bi bi-patch-check-fill"></i>
+                            </div>
+                            <div class="badge-text">
+                                <strong>100% Pre-Vetted</strong>
+                                <span>Expert Professionals</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="service-details section-padding bg-light">
+
+        <!-- ====== WHY US STRIP ====== -->
+        <section class="svc-why-strip">
             <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title">Our Staffing Solutions</h2>
-                    <p class="section-subtitle">Flexible engagement models for every need</p>
+                <div class="row g-0">
+                    <div class="col-6 col-md-3">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">1-2w</span>
+                            <p class="svc-why-title">Fast Onboarding</p>
+                            <p class="svc-why-desc">Talent ready within 2 weeks</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" style="border-left:1px solid rgba(255,255,255,0.08)">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">500+</span>
+                            <p class="svc-why-title">Expert Pool</p>
+                            <p class="svc-why-desc">Across all tech domains</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" style="border-left:1px solid rgba(255,255,255,0.08)">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">40%</span>
+                            <p class="svc-why-title">Cost Reduction</p>
+                            <p class="svc-why-desc">vs traditional hiring</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" style="border-left:1px solid rgba(255,255,255,0.08)">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">97%</span>
+                            <p class="svc-why-title">Retention Rate</p>
+                            <p class="svc-why-desc">Long-term partnerships</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== ENGAGEMENT MODELS ====== -->
+        <section class="svc-section svc-section-light" id="solutions">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <p class="svc-section-label" style="color:#FF6B35;"><i class="bi bi-diagram-3-fill"></i> Engagement Models</p>
+                    <h2 class="svc-section-heading">Flexible Staffing Solutions</h2>
+                    <p class="svc-section-sub mx-auto">Choose the engagement model that fits your project needs and timeline</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="feature-box">
-                            <div class="feature-icon"><i class="bi bi-clock-history"></i></div>
-                            <h3 class="feature-title">Short-term Contracts</h3>
-                            <p class="feature-description">Quick access to specialized talent for urgent projects, temporary coverage, or specific initiatives with flexible engagement periods.</p>
-                            <ul class="feature-list">
-                                <li>Rapid onboarding within 1-2 weeks</li>
-                                <li>Flexible contract durations</li>
-                                <li>No long-term commitments</li>
-                                <li>Specialized skill sets</li>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="eng-card eng-1">
+                            <div class="eng-icon"><i class="bi bi-clock-history"></i></div>
+                            <h3>Short-Term Contracts</h3>
+                            <p>Quick access to specialized talent for urgent projects, temporary coverage, or specific initiatives with maximum flexibility.</p>
+                            <ul class="eng-list">
+                                <li><i class="bi bi-check-circle-fill"></i> Rapid onboarding within 1-2 weeks</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Flexible contract durations</li>
+                                <li><i class="bi bi-check-circle-fill"></i> No long-term commitments</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Specialized niche skill sets</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="feature-box">
-                            <div class="feature-icon"><i class="bi bi-calendar-check"></i></div>
-                            <h3 class="feature-title">Long-term Projects</h3>
-                            <p class="feature-description">Build extended relationships with professionals who become integral parts of your team throughout multi-month or multi-year initiatives.</p>
-                            <ul class="feature-list">
-                                <li>Deep integration with your team</li>
-                                <li>Consistent resource availability</li>
-                                <li>Cost-effective scaling</li>
-                                <li>Institutional knowledge retention</li>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="eng-card eng-2">
+                            <div class="eng-icon"><i class="bi bi-calendar-check-fill"></i></div>
+                            <h3>Long-Term Projects</h3>
+                            <p>Build extended relationships with professionals who become integral members of your team for multi-month initiatives.</p>
+                            <ul class="eng-list">
+                                <li><i class="bi bi-check-circle-fill"></i> Deep integration with your team</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Consistent resource availability</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Institutional knowledge retention</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Cost-effective at scale</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="feature-box">
-                            <div class="feature-icon"><i class="bi bi-people-fill"></i></div>
-                            <h3 class="feature-title">Dedicated Teams</h3>
-                            <p class="feature-description">Assemble a complete, focused team aligned with your goals, working exclusively on your projects with full commitment.</p>
-                            <ul class="feature-list">
-                                <li>Custom team composition</li>
-                                <li>Full-time dedication to your project</li>
-                                <li>Team lead and project management</li>
-                                <li>Scalable team size</li>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="eng-card eng-3">
+                            <div class="eng-icon"><i class="bi bi-people-fill"></i></div>
+                            <h3>Dedicated Teams</h3>
+                            <p>Assemble a complete, focused team aligned with your goals and working exclusively on your project with full commitment.</p>
+                            <ul class="eng-list">
+                                <li><i class="bi bi-check-circle-fill"></i> Custom team composition</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Full-time dedication to your project</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Team lead &amp; project management</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Scalable team size</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="feature-box">
-                            <div class="feature-icon"><i class="bi bi-person-plus"></i></div>
-                            <h3 class="feature-title">Talent Acquisition Support</h3>
-                            <p class="feature-description">Leverage our recruitment expertise to identify, vet, and onboard the perfect candidates for your permanent positions.</p>
-                            <ul class="feature-list">
-                                <li>Comprehensive candidate screening</li>
-                                <li>Technical skills assessment</li>
-                                <li>Cultural fit evaluation</li>
-                                <li>Onboarding assistance</li>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="eng-card eng-4">
+                            <div class="eng-icon"><i class="bi bi-person-plus-fill"></i></div>
+                            <h3>Talent Acquisition Support</h3>
+                            <p>Leverage our recruitment expertise to identify, vet, and onboard the perfect candidates for your permanent positions.</p>
+                            <ul class="eng-list">
+                                <li><i class="bi bi-check-circle-fill"></i> Comprehensive candidate screening</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Technical skills assessment</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Cultural fit evaluation</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Full onboarding assistance</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="benefits-section section-padding">
+
+        <!-- ====== WHY CHOOSE US ====== -->
+        <section class="svc-section svc-section-white">
             <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title">Why Choose Our Staff Augmentation</h2>
+                <div class="text-center mb-5">
+                    <p class="svc-section-label" style="color:#0066CC;"><i class="bi bi-award-fill"></i> Our Advantages</p>
+                    <h2 class="svc-section-heading">Why Choose Our Staff Augmentation</h2>
+                    <p class="svc-section-sub mx-auto">Everything you need to scale confidently — without the traditional hiring headaches</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 bp-1">
+                        <div class="benefit-pill">
+                            <div class="benefit-pill-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+                            <div>
+                                <h4>Fast Deployment</h4>
+                                <p>Get qualified professionals on your team in as little as 1-2 weeks, minimizing project delays.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 bp-2">
+                        <div class="benefit-pill">
+                            <div class="benefit-pill-icon"><i class="bi bi-cash-coin"></i></div>
+                            <div>
+                                <h4>Cost-Effective</h4>
+                                <p>Reduce hiring costs, overhead, and admin burden while accessing world-class talent.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 bp-3">
+                        <div class="benefit-pill">
+                            <div class="benefit-pill-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                            <div>
+                                <h4>Scalable Resources</h4>
+                                <p>Scale your team up or down based on project needs without long-term commitments.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 bp-4">
+                        <div class="benefit-pill">
+                            <div class="benefit-pill-icon"><i class="bi bi-award-fill"></i></div>
+                            <div>
+                                <h4>Pre-Vetted Talent</h4>
+                                <p>All professionals are thoroughly screened for technical skills, communication, and reliability.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 bp-5">
+                        <div class="benefit-pill">
+                            <div class="benefit-pill-icon"><i class="bi bi-shield-check-fill"></i></div>
+                            <div>
+                                <h4>Risk Mitigation</h4>
+                                <p>Trial periods and flexible terms reduce hiring risks and ensure the right cultural fit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 bp-6">
+                        <div class="benefit-pill">
+                            <div class="benefit-pill-icon"><i class="bi bi-headset"></i></div>
+                            <div>
+                                <h4>Ongoing Support</h4>
+                                <p>Dedicated account management ensures smooth collaboration and rapid issue resolution.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== TECH ROLES ====== -->
+        <section class="svc-section svc-section-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <p class="svc-section-label" style="color:#FF6B35;"><i class="bi bi-person-badge-fill"></i> Available Roles</p>
+                    <h2 class="svc-section-heading">Tech Experts Ready to Join</h2>
+                    <p class="svc-section-sub mx-auto">Our talent pool covers every critical technology role your project needs</p>
+                </div>
+                <div class="svc-tech-grid">
+                    <div class="svc-tech-pill"><i class="bi bi-braces-asterisk"></i> Frontend Developers</div>
+                    <div class="svc-tech-pill"><i class="bi bi-server"></i> Backend Developers</div>
+                    <div class="svc-tech-pill"><i class="bi bi-phone-fill"></i> Mobile Developers</div>
+                    <div class="svc-tech-pill"><i class="bi bi-palette-fill"></i> UI/UX Designers</div>
+                    <div class="svc-tech-pill"><i class="bi bi-shield-check-fill"></i> QA Engineers</div>
+                    <div class="svc-tech-pill"><i class="bi bi-cloud-fill"></i> DevOps Engineers</div>
+                    <div class="svc-tech-pill"><i class="bi bi-diagram-3-fill"></i> Project Managers</div>
+                    <div class="svc-tech-pill"><i class="bi bi-robot"></i> ML/AI Engineers</div>
+                    <div class="svc-tech-pill"><i class="bi bi-database-fill"></i> Data Engineers</div>
+                    <div class="svc-tech-pill"><i class="bi bi-shield-lock-fill"></i> Security Engineers</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== TESTIMONIALS ====== -->
+        <section class="svc-section svc-section-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <p class="svc-section-label" style="color:#F59E0B;"><i class="bi bi-stars"></i> Client Stories</p>
+                    <h2 class="svc-section-heading">What Our Clients Say</h2>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6">
-                        <div class="benefit-card">
-                            <i class="bi bi-lightning-charge"></i>
-                            <h4>Fast Deployment</h4>
-                            <p>Get qualified professionals on your team in as little as 1-2 weeks, minimizing project delays.</p>
+                        <div class="svc-testimonial">
+                            <div class="svc-testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <blockquote>"We scaled from a team of 5 to 15 in just 3 weeks. Every professional was self-sufficient and delivered high-quality work from day one."</blockquote>
+                            <div class="svc-testimonial-author">
+                                <div class="svc-author-avatar av-sa-1">NK</div>
+                                <div><span class="svc-author-name">Nikhil Kapoor</span><span class="svc-author-role">VP Engineering, FinTechPro</span></div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="benefit-card">
-                            <i class="bi bi-cash-coin"></i>
-                            <h4>Cost-Effective</h4>
-                            <p>Reduce hiring costs, overhead, and administrative burden while accessing top-tier talent.</p>
+                        <div class="svc-testimonial">
+                            <div class="svc-testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <blockquote>"The cost savings alone were significant, but the real win was the quality and speed of onboarding. Couldn't be happier with the experience."</blockquote>
+                            <div class="svc-testimonial-author">
+                                <div class="svc-author-avatar av-sa-2">SP</div>
+                                <div><span class="svc-author-name">Sarah Patel</span><span class="svc-author-role">CTO, CloudNative Inc.</span></div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="benefit-card">
-                            <i class="bi bi-graph-up-arrow"></i>
-                            <h4>Scalable Resources</h4>
-                            <p>Scale your team up or down based on project needs without long-term commitments.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="benefit-card">
-                            <i class="bi bi-award"></i>
-                            <h4>Pre-Vetted Talent</h4>
-                            <p>All professionals are thoroughly screened for technical skills, communication, and reliability.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="benefit-card">
-                            <i class="bi bi-shield-check"></i>
-                            <h4>Risk Mitigation</h4>
-                            <p>Trial periods and flexible terms reduce hiring risks and ensure the right fit.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="benefit-card">
-                            <i class="bi bi-headset"></i>
-                            <h4>Ongoing Support</h4>
-                            <p>Dedicated account management ensures smooth collaboration and rapid issue resolution.</p>
+                        <div class="svc-testimonial">
+                            <div class="svc-testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <blockquote>"Their dedicated team model worked perfectly for our 8-month product build. The account management was proactive and incredibly responsive."</blockquote>
+                            <div class="svc-testimonial-author">
+                                <div class="svc-author-avatar av-sa-3">AJ</div>
+                                <div><span class="svc-author-name">Arjun Joshi</span><span class="svc-author-role">Founder, StartupX</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="cta-section section-padding">
+
+        <!-- ====== CTA ====== -->
+        <section class="svc-section">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        <h2 class="cta-title">Need to Scale Your Team Quickly?</h2>
-                        <p class="cta-text">Tell us your requirements and we'll match you with the perfect talent.</p>
+                <div class="svc-cta-banner staff-cta position-relative">
+                    <h2>Need to Scale Your Team Quickly?</h2>
+                    <p>Tell us your requirements and we'll match you with the perfect talent within 48 hours — guaranteed.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="../contact.html" class="btn-white">
+                            <i class="bi bi-person-plus-fill"></i> Find Talent Now
+                        </a>
+                        <a href="../contact.html" class="btn-outline-white">
+                            <i class="bi bi-telephone-fill"></i> Talk to Our Team
+                        </a>
                     </div>
-                    <div class="col-lg-4 text-lg-end"><a href="../contact.html" class="btn btn-light btn-lg">Contact Us Today</a></div>
                 </div>
             </div>
         </section>
     </main>
-    <!-- Footer will be loaded by component loader -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/components.js"></script>
     <script src="../assets/js/main.js"></script>

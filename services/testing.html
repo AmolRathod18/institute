@@ -4,933 +4,349 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Software Testing Services - Frontend.Club</title>
-    <meta name="description" content="Enterprise-grade QA testing & automation services. Bug-free, high-performance software delivery.">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Software Testing Services - Frontend.Club">
-    <meta property="og:description" content="Enterprise-grade QA testing & automation services.">
-    <meta property="og:type" content="website">
-
-    <!-- Favicon -->
+    <meta name="description" content="Enterprise-grade QA & automation testing services. Bug-free, high-performance software delivery guaranteed.">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        /* ===== MODERN QA SERVICES PAGE - LIGHT THEME ===== */
-
-        /* Hero Section */
-        .qa-hero {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 50%, #f0f4ff 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 120px 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .qa-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(100, 200, 255, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .qa-hero::after {
-            content: '';
-            position: absolute;
-            bottom: -10%;
-            left: -5%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(200, 100, 255, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(30px); }
-        }
-
-        .qa-hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .qa-hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: #0f0f2e;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            animation: slideInUp 0.8s ease-out;
-        }
-
-        .qa-hero .lead {
-            font-size: 1.4rem;
-            color: #4b5563;
-            margin-bottom: 2rem;
-            font-weight: 400;
-            animation: slideInUp 0.8s ease-out 0.1s both;
-        }
-
-        .qa-cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            animation: slideInUp 0.8s ease-out 0.2s both;
-        }
-
-        .qa-cta-buttons .btn {
-            padding: 14px 32px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            border: none;
-            transition: all 0.3s ease;
-        }
-
-        .btn-qa-primary {
-            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
-            color: white;
-        }
-
-        .btn-qa-primary:hover {
-            background: linear-gradient(135deg, #0052A3 0%, #003d7a 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.2);
-            color: white;
-        }
-
-        .btn-qa-secondary {
-            background: white;
-            color: #0066CC;
-            border: 2px solid #0066CC;
-        }
-
-        .btn-qa-secondary:hover {
-            background: #f0f7ff;
-            border-color: #0052A3;
-            color: #0052A3;
-            transform: translateY(-3px);
-        }
-
-        .qa-hero-illustration {
-            position: relative;
-            z-index: 2;
-            animation: slideInRight 0.8s ease-out 0.3s both;
-        }
-
-        .qa-hero-illustration i {
-            font-size: 200px;
-            opacity: 0.1;
-            color: #0066CC;
-        }
-
-        /* Services Grid */
-        .qa-services {
-            background: #ffffff;
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .qa-services-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .qa-services-header h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-        }
-
-        .qa-services-header p {
-            font-size: 1.2rem;
-            color: #6b7280;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .qa-service-card {
-            background: #ffffff;
-            border: 2px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 40px;
-            height: 100%;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-            position: relative;
-            overflow: hidden;
-            animation: slideInUp 0.6s ease-out;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .qa-service-card:nth-child(1) { animation-delay: 0.1s; }
-        .qa-service-card:nth-child(2) { animation-delay: 0.2s; }
-        .qa-service-card:nth-child(3) { animation-delay: 0.3s; }
-        .qa-service-card:nth-child(4) { animation-delay: 0.4s; }
-        .qa-service-card:nth-child(5) { animation-delay: 0.5s; }
-        .qa-service-card:nth-child(6) { animation-delay: 0.6s; }
-
-        .qa-service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #0066CC, #FF6B35);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .qa-service-card:hover {
-            border-color: #0066CC;
-            transform: translateY(-15px);
-            box-shadow: 0 25px 60px rgba(0, 102, 204, 0.12);
-        }
-
-        .qa-service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .qa-service-icon {
-            font-size: 3.5rem;
-            color: #0066CC;
-            margin-bottom: 1.5rem;
-            transition: transform 0.4s ease;
-        }
-
-        .qa-service-card:hover .qa-service-icon {
-            transform: scale(1.2) rotate(10deg);
-        }
-
-        .qa-service-card h3 {
-            font-size: 1.5rem;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .qa-service-card p {
-            color: #6b7280;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Tools Section */
-        .qa-tools {
-            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
-            padding: 100px 0;
-        }
-
-        .qa-tools-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .qa-tools-header h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-        }
-
-        .qa-tools-header p {
-            font-size: 1.2rem;
-            color: #6b7280;
-        }
-
-        .qa-tool-item {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-            animation: slideInUp 0.6s ease-out;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .qa-tool-item:nth-child(1) { animation-delay: 0.1s; }
-        .qa-tool-item:nth-child(2) { animation-delay: 0.15s; }
-        .qa-tool-item:nth-child(3) { animation-delay: 0.2s; }
-        .qa-tool-item:nth-child(4) { animation-delay: 0.25s; }
-        .qa-tool-item:nth-child(5) { animation-delay: 0.3s; }
-        .qa-tool-item:nth-child(6) { animation-delay: 0.35s; }
-
-        .qa-tool-item:hover {
-            border-color: #0066CC;
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 102, 204, 0.12);
-        }
-
-        .qa-tool-icon {
-            font-size: 3rem;
-            color: #0066CC;
-            margin-bottom: 1rem;
-            transition: transform 0.4s ease;
-        }
-
-        .qa-tool-item:hover .qa-tool-icon {
-            transform: scale(1.15) rotate(-5deg);
-        }
-
-        .qa-tool-name {
-            font-weight: 700;
-            color: #0f0f2e;
-            font-size: 1.1rem;
-        }
-
-        /* Why Choose Us */
-        .qa-why-us {
-            background: white;
-            padding: 100px 0;
-        }
-
-        .qa-why-us-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .qa-why-us-header h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-        }
-
-        .qa-why-us-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .qa-why-item {
-            text-align: center;
-            animation: slideInUp 0.6s ease-out;
-        }
-
-        .qa-why-item:nth-child(1) { animation-delay: 0.1s; }
-        .qa-why-item:nth-child(2) { animation-delay: 0.2s; }
-        .qa-why-item:nth-child(3) { animation-delay: 0.3s; }
-        .qa-why-item:nth-child(4) { animation-delay: 0.4s; }
-
-        .qa-why-icon {
-            font-size: 3rem;
-            color: #0066CC;
-            margin-bottom: 1.5rem;
-        }
-
-        .qa-why-item h3 {
-            font-size: 1.4rem;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .qa-why-item p {
-            color: #6b7280;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Process Section */
-        .qa-process {
-            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
-            padding: 100px 0;
-        }
-
-        .qa-process-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .qa-process-header h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-        }
-
-        .qa-process-timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .qa-process-timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, #0066CC 0%, #FF6B35 100%);
-            transform: translateX(-50%);
-        }
-
-        .qa-process-step {
-            margin-bottom: 50px;
-            animation: slideInUp 0.6s ease-out;
-        }
-
-        .qa-process-step:nth-child(1) { animation-delay: 0.1s; }
-        .qa-process-step:nth-child(2) { animation-delay: 0.2s; }
-        .qa-process-step:nth-child(3) { animation-delay: 0.3s; }
-        .qa-process-step:nth-child(4) { animation-delay: 0.4s; }
-        .qa-process-step:nth-child(5) { animation-delay: 0.5s; }
-
-        .qa-process-step:nth-child(odd) {
-            margin-left: 0;
-            text-align: right;
-            padding-right: calc(50% + 40px);
-        }
-
-        .qa-process-step:nth-child(even) {
-            margin-left: calc(50% + 40px);
-            text-align: left;
-        }
-
-        .qa-process-dot {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background: white;
-            border: 3px solid #0066CC;
-            border-radius: 50%;
-            transform: translateX(-50%);
-            transition: all 0.3s ease;
-            box-shadow: 0 0 0 4px #f0f4ff;
-        }
-
-        .qa-process-step:hover .qa-process-dot {
-            width: 30px;
-            height: 30px;
-            top: -5px;
-            box-shadow: 0 0 20px #0066CC, 0 0 0 4px #f0f4ff;
-        }
-
-        .qa-process-content {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .qa-process-step:hover .qa-process-content {
-            border-color: #0066CC;
-            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.12);
-        }
-
-        .qa-process-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #0066CC;
-            margin-bottom: 0.5rem;
-        }
-
-        .qa-process-content h3 {
-            font-size: 1.4rem;
-            color: #0f0f2e;
-            margin-bottom: 0.8rem;
-            font-weight: 700;
-        }
-
-        .qa-process-content p {
-            color: #6b7280;
-            margin-bottom: 0;
-        }
-
-        /* Testimonials */
-        .qa-testimonials {
-            background: white;
-            padding: 100px 0;
-        }
-
-        .qa-testimonials-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .qa-testimonials-header h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-        }
-
-        .qa-testimonial-card {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 40px;
-            height: 100%;
-            transition: all 0.4s ease;
-            animation: slideInUp 0.6s ease-out;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .qa-testimonial-card:nth-child(1) { animation-delay: 0.1s; }
-        .qa-testimonial-card:nth-child(2) { animation-delay: 0.2s; }
-        .qa-testimonial-card:nth-child(3) { animation-delay: 0.3s; }
-
-        .qa-testimonial-card:hover {
-            border-color: #0066CC;
-            transform: translateY(-15px);
-            box-shadow: 0 25px 60px rgba(0, 102, 204, 0.12);
-        }
-
-        .qa-testimonial-rating {
-            font-size: 1.2rem;
-            color: #ffd700;
-            margin-bottom: 1.5rem;
-        }
-
-        .qa-testimonial-text {
-            font-size: 1.1rem;
-            color: #374151;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            font-style: italic;
-        }
-
-        .qa-testimonial-author {
-            border-top: 2px solid #e5e7eb;
-            padding-top: 1.5rem;
-        }
-
-        .qa-testimonial-name {
-            font-weight: 700;
-            color: #0f0f2e;
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .qa-testimonial-role {
-            color: #6b7280;
-            font-size: 0.95rem;
-        }
-
-        /* CTA Final Section */
-        .qa-final-cta {
-            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .qa-final-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .qa-final-cta-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .qa-final-cta h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
-        .qa-final-cta p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Animations */
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .qa-hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .qa-hero .lead {
-                font-size: 1.1rem;
-            }
-
-            .qa-cta-buttons {
-                flex-direction: column;
-            }
-
-            .qa-cta-buttons .btn {
-                width: 100%;
-            }
-
-            .qa-hero-illustration {
-                display: none;
-            }
-
-            .qa-hero-illustration i {
-                font-size: 120px;
-                margin-top: 30px;
-            }
-
-            .qa-services-header h2,
-            .qa-tools-header h2,
-            .qa-why-us-header h2,
-            .qa-process-header h2,
-            .qa-testimonials-header h2,
-            .qa-final-cta h2 {
-                font-size: 2rem;
-            }
-
-            .qa-process-timeline::before {
-                left: auto;
-                width: 100%;
-                height: 2px;
-            }
-
-            .qa-process-step:nth-child(odd),
-            .qa-process-step:nth-child(even) {
-                margin-left: 0;
-                padding-right: 0;
-                text-align: left;
-            }
-
-            .qa-process-dot {
-                position: static;
-                transform: none;
-                margin-bottom: 1rem;
-            }
-
-            .qa-process-step:hover .qa-process-dot {
-                top: auto;
-                transform: none;
-            }
+        /* === TESTING PAGE SPECIFIC === */
+        .testing-hero {
+            background: linear-gradient(135deg, #0a0f1e 0%, #0d1b3e 40%, #1a0a2e 100%);
+        }
+        .testing-hero .svc-hero-blob:nth-child(1) {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(0,102,204,0.5) 0%, transparent 70%);
+            top: -100px; right: -100px;
+            animation: blobFloat 8s ease-in-out infinite;
+        }
+        .testing-hero .svc-hero-blob:nth-child(2) {
+            width: 350px; height: 350px;
+            background: radial-gradient(circle, rgba(255,107,53,0.4) 0%, transparent 70%);
+            bottom: -80px; left: -80px;
+            animation: blobFloat 10s ease-in-out infinite reverse;
+        }
+        .testing-hero .svc-hero-blob:nth-child(3) {
+            width: 250px; height: 250px;
+            background: radial-gradient(circle, rgba(139,92,246,0.35) 0%, transparent 70%);
+            top: 30%; left: 30%;
+            animation: blobFloat 6s ease-in-out infinite 2s;
+        }
+        @keyframes blobFloat {
+            0%,100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(30px) scale(1.05); }
+        }
+        .testing-badge { background: linear-gradient(135deg,#0066CC,#8B5CF6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .test-card-1 { --svc-gradient: linear-gradient(90deg,#0066CC,#3B82F6); }
+        .test-card-1 .svc-card-icon { background: linear-gradient(135deg,#0066CC,#3B82F6); color:white; }
+        .test-card-2 { --svc-gradient: linear-gradient(90deg,#8B5CF6,#6366F1); }
+        .test-card-2 .svc-card-icon { background: linear-gradient(135deg,#8B5CF6,#6366F1); color:white; }
+        .test-card-3 { --svc-gradient: linear-gradient(90deg,#10B981,#059669); }
+        .test-card-3 .svc-card-icon { background: linear-gradient(135deg,#10B981,#059669); color:white; }
+        .test-card-4 { --svc-gradient: linear-gradient(90deg,#F59E0B,#EF4444); }
+        .test-card-4 .svc-card-icon { background: linear-gradient(135deg,#F59E0B,#EF4444); color:white; }
+        .test-card-5 { --svc-gradient: linear-gradient(90deg,#EC4899,#8B5CF6); }
+        .test-card-5 .svc-card-icon { background: linear-gradient(135deg,#EC4899,#8B5CF6); color:white; }
+        .test-card-6 { --svc-gradient: linear-gradient(90deg,#14B8A6,#0891B2); }
+        .test-card-6 .svc-card-icon { background: linear-gradient(135deg,#14B8A6,#0891B2); color:white; }
+        .step-1 { background: linear-gradient(135deg,#0066CC,#3B82F6); }
+        .step-2 { background: linear-gradient(135deg,#8B5CF6,#6366F1); }
+        .step-3 { background: linear-gradient(135deg,#10B981,#059669); }
+        .step-4 { background: linear-gradient(135deg,#F59E0B,#EF4444); }
+        .step-5 { background: linear-gradient(135deg,#EC4899,#8B5CF6); }
+        .av-1 { background: linear-gradient(135deg,#0066CC,#3B82F6); }
+        .av-2 { background: linear-gradient(135deg,#8B5CF6,#6366F1); }
+        .av-3 { background: linear-gradient(135deg,#10B981,#059669); }
+        .testing-cta { background: linear-gradient(135deg, #0a0f1e 0%, #0d1b3e 60%, #1a0a2e 100%); }
+        .testing-cta::before {
+            content:''; position:absolute; inset:0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(0,102,204,0.25) 0%, transparent 65%);
+            pointer-events:none;
         }
     </style>
 </head>
 <body>
-    <!-- Skip to content -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Navigation will be loaded by component loader -->
-
     <main id="main-content">
-        <!-- HERO SECTION -->
-        <section class="qa-hero">
-            <div class="container">
-                <div class="row align-items-center">
+        <!-- ====== HERO ====== -->
+        <section class="svc-hero testing-hero">
+            <div class="svc-hero-blob"></div>
+            <div class="svc-hero-blob"></div>
+            <div class="svc-hero-blob"></div>
+            <div class="container position-relative" style="z-index:2">
+                <div class="row align-items-center g-5">
                     <div class="col-lg-6">
-                        <div class="qa-hero-content">
-                            <h1>Deliver Bug-Free, High-Performance Software</h1>
-                            <p class="lead">End-to-end QA testing services to ensure reliability, speed, and security at every stage of development.</p>
-                            <div class="qa-cta-buttons">
-                                <button class="btn btn-qa-primary" data-bs-toggle="modal" data-bs-target="#consultationModal">
-                                    <i class="bi bi-rocket-takeoff"></i> Get Free Consultation
-                                </button>
-                                <a href="#services" class="btn btn-qa-secondary">
-                                    <i class="bi bi-arrow-right"></i> View Services
-                                </a>
+                        <span class="svc-hero-badge">
+                            <i class="bi bi-shield-check-fill"></i> QA &amp; Testing Experts
+                        </span>
+                        <h1>Build Bug-Free,<br><span class="testing-badge">High-Performance</span><br>Software</h1>
+                        <p class="lead">End-to-end QA testing services ensuring reliability, speed, and security at every stage of your development lifecycle.</p>
+                        <div class="svc-hero-buttons">
+                            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                                <i class="bi bi-rocket-takeoff-fill"></i> Get Free Consultation
+                            </button>
+                            <a href="#services" class="svc-cta-banner btn-outline-white" style="padding:14px 28px; border-radius:10px !important; display:inline-flex; align-items:center; gap:0.5rem; font-weight:700; border:2px solid rgba(255,255,255,0.5); color:white; background:rgba(255,255,255,0.1);">
+                                <i class="bi bi-grid-3x3-gap-fill"></i> View Services
+                            </a>
+                        </div>
+                        <div class="svc-hero-stats">
+                            <div class="svc-stat-item">
+                                <span class="svc-stat-num">500+</span>
+                                <span class="svc-stat-label">Projects Tested</span>
+                            </div>
+                            <div class="svc-stat-item" style="border-left:1px solid rgba(255,255,255,0.2); padding-left:2rem;">
+                                <span class="svc-stat-num">99%</span>
+                                <span class="svc-stat-label">Bug Detection</span>
+                            </div>
+                            <div class="svc-stat-item" style="border-left:1px solid rgba(255,255,255,0.2); padding-left:2rem;">
+                                <span class="svc-stat-num">70%</span>
+                                <span class="svc-stat-label">Faster Releases</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center qa-hero-illustration">
-                        <img src="../assets/img/TESTING.jpg" alt="Software Testing Services" class="img-fluid" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div class="col-lg-6">
+                        <div class="svc-hero-img-wrap">
+                            <img src="../assets/img/TESTING.jpg" alt="Software Testing Services" class="img-fluid">
+                            <div class="svc-hero-img-badge">
+                                <div class="badge-icon" style="background:linear-gradient(135deg,#0066CC,#3B82F6);">
+                                    <i class="bi bi-patch-check-fill"></i>
+                                </div>
+                                <div class="badge-text">
+                                    <strong>ISTQB Certified</strong>
+                                    <span>QA Engineers</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SERVICES SECTION -->
-        <section class="qa-services" id="services">
+        <!-- ====== WHY US STRIP ====== -->
+        <section class="svc-why-strip">
             <div class="container">
-                <div class="qa-services-header">
-                    <h2>Comprehensive Testing Services</h2>
-                    <p>From manual testing to advanced automation, we cover every aspect of quality assurance</p>
+                <div class="row g-0">
+                    <div class="col-6 col-md-3">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">10+</span>
+                            <p class="svc-why-title">Years Experience</p>
+                            <p class="svc-why-desc">Deep QA expertise across all industries</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" style="border-left:1px solid rgba(255,255,255,0.08)">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">99%</span>
+                            <p class="svc-why-title">Bug Detection Rate</p>
+                            <p class="svc-why-desc">Catch defects before production</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" style="border-left:1px solid rgba(255,255,255,0.08)">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">70%</span>
+                            <p class="svc-why-title">Faster Testing</p>
+                            <p class="svc-why-desc">Via test automation frameworks</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" style="border-left:1px solid rgba(255,255,255,0.08)">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">24/7</span>
+                            <p class="svc-why-title">QA Support</p>
+                            <p class="svc-why-desc">Round-the-clock quality assurance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== SERVICES GRID ====== -->
+        <section class="svc-section svc-section-light" id="services">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <p class="svc-section-label" style="color:#0066CC;"><i class="bi bi-grid-3x3-gap-fill"></i> What We Offer</p>
+                    <h2 class="svc-section-heading">Comprehensive Testing Services</h2>
+                    <p class="svc-section-sub mx-auto">From manual testing to advanced automation — we cover every aspect of quality assurance</p>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-service-card">
-                            <i class="bi bi-person-check qa-service-icon"></i>
+                        <div class="svc-card test-card-1">
+                            <div class="svc-card-icon"><i class="bi bi-person-check-fill"></i></div>
                             <h3>Manual Testing</h3>
-                            <p>Expert manual QA to identify edge cases, usability issues, and scenarios that automated tests might miss.</p>
+                            <p>Expert manual QA to identify edge cases, usability issues, and scenarios that automated tests miss. Human intelligence where it matters most.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-service-card">
-                            <i class="bi bi-robot qa-service-icon"></i>
+                        <div class="svc-card test-card-2">
+                            <div class="svc-card-icon"><i class="bi bi-robot"></i></div>
                             <h3>Automation Testing</h3>
-                            <p>Scalable test automation frameworks for continuous integration and faster feedback cycles.</p>
+                            <p>Scalable test automation frameworks for continuous integration and faster feedback cycles. Selenium, Cypress, Playwright — we master them all.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-service-card">
-                            <i class="bi bi-diagram-3 qa-service-icon"></i>
+                        <div class="svc-card test-card-3">
+                            <div class="svc-card-icon"><i class="bi bi-diagram-3-fill"></i></div>
                             <h3>API Testing</h3>
-                            <p>Rigorous API validation ensuring data integrity, security, and performance across all endpoints.</p>
+                            <p>Rigorous API validation ensuring data integrity, security, and performance across all endpoints. Comprehensive REST &amp; GraphQL coverage.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-service-card">
-                            <i class="bi bi-speedometer2 qa-service-icon"></i>
+                        <div class="svc-card test-card-4">
+                            <div class="svc-card-icon"><i class="bi bi-speedometer2"></i></div>
                             <h3>Performance Testing</h3>
-                            <p>Load, stress, and endurance testing to ensure your application scales smoothly under pressure.</p>
+                            <p>Load, stress, and endurance testing to ensure your application scales smoothly under pressure. Know your limits before your users do.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-service-card">
-                            <i class="bi bi-shield-check qa-service-icon"></i>
+                        <div class="svc-card test-card-5">
+                            <div class="svc-card-icon"><i class="bi bi-shield-lock-fill"></i></div>
                             <h3>Security Testing</h3>
-                            <p>Comprehensive vulnerability assessments and penetration testing to protect your application.</p>
+                            <p>Comprehensive vulnerability assessments and penetration testing to protect your application from OWASP Top 10 and beyond.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-service-card">
-                            <i class="bi bi-phone qa-service-icon"></i>
+                        <div class="svc-card test-card-6">
+                            <div class="svc-card-icon"><i class="bi bi-phone-fill"></i></div>
                             <h3>Mobile App Testing</h3>
-                            <p>Cross-device and cross-platform testing for iOS, Android, and responsive web applications.</p>
+                            <p>Cross-device and cross-platform testing for iOS, Android, and responsive web applications across real devices and emulators.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TOOLS & TECHNOLOGIES -->
-        <section class="qa-tools">
+        <!-- ====== TOOLS SECTION ====== -->
+        <section class="svc-section svc-section-white">
             <div class="container">
-                <div class="qa-tools-header">
-                    <h2>Tools & Technologies We Master</h2>
-                    <p>Industry-leading platforms for comprehensive quality assurance</p>
+                <div class="text-center mb-5">
+                    <p class="svc-section-label" style="color:#8B5CF6;"><i class="bi bi-tools"></i> Our Toolkit</p>
+                    <h2 class="svc-section-heading">Tools &amp; Technologies We Master</h2>
+                    <p class="svc-section-sub mx-auto">Industry-leading platforms for comprehensive, reliable quality assurance</p>
                 </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="qa-tool-item">
-                            <i class="bi bi-browser-chrome qa-tool-icon"></i>
-                            <p class="qa-tool-name">Selenium</p>
+                <div class="svc-tech-grid">
+                    <div class="svc-tech-pill"><i class="bi bi-browser-chrome"></i> Selenium</div>
+                    <div class="svc-tech-pill"><i class="bi bi-check-circle-fill"></i> Cypress</div>
+                    <div class="svc-tech-pill"><i class="bi bi-lightning-fill"></i> JMeter</div>
+                    <div class="svc-tech-pill"><i class="bi bi-server"></i> Postman</div>
+                    <div class="svc-tech-pill"><i class="bi bi-phone-landscape"></i> Appium</div>
+                    <div class="svc-tech-pill"><i class="bi bi-terminal-fill"></i> TestNG</div>
+                    <div class="svc-tech-pill"><i class="bi bi-play-btn-fill"></i> Playwright</div>
+                    <div class="svc-tech-pill"><i class="bi bi-bug-fill"></i> JIRA</div>
+                    <div class="svc-tech-pill"><i class="bi bi-gear-wide-connected"></i> Jenkins</div>
+                    <div class="svc-tech-pill"><i class="bi bi-shield-fill-exclamation"></i> OWASP ZAP</div>
+                    <div class="svc-tech-pill"><i class="bi bi-layers-fill"></i> RestAssured</div>
+                    <div class="svc-tech-pill"><i class="bi bi-clipboard2-check-fill"></i> TestRail</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== PROCESS STEPS ====== -->
+        <section class="svc-section svc-section-light">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5">
+                        <p class="svc-section-label" style="color:#10B981;"><i class="bi bi-arrow-right-circle-fill"></i> How We Work</p>
+                        <h2 class="svc-section-heading">Our Battle-Tested<br>Testing Process</h2>
+                        <p class="svc-section-sub">A structured, transparent approach that delivers predictable results every single time.</p>
+                        <div class="mt-4">
+                            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                                <i class="bi bi-rocket-takeoff-fill"></i> Start Today
+                            </button>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="qa-tool-item">
-                            <i class="bi bi-check-circle-fill qa-tool-icon"></i>
-                            <p class="qa-tool-name">Cypress</p>
+                    <div class="col-lg-7">
+                        <div class="svc-process-step">
+                            <div class="svc-step-num step-1">01</div>
+                            <div>
+                                <h4>Requirement Analysis</h4>
+                                <p>Deep dive into your requirements to craft a comprehensive testing strategy and detailed test plan aligned with business goals.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="qa-tool-item">
-                            <i class="bi bi-lightning qa-tool-icon"></i>
-                            <p class="qa-tool-name">JMeter</p>
+                        <div class="svc-process-step">
+                            <div class="svc-step-num step-2">02</div>
+                            <div>
+                                <h4>Test Planning &amp; Design</h4>
+                                <p>Design test cases, define testing methodologies, and set up automation frameworks tuned to your tech stack.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="qa-tool-item">
-                            <i class="bi bi-server qa-tool-icon"></i>
-                            <p class="qa-tool-name">Postman</p>
+                        <div class="svc-process-step">
+                            <div class="svc-step-num step-3">03</div>
+                            <div>
+                                <h4>Test Execution</h4>
+                                <p>Execute manual and automated tests across all browsers, devices, and environments with detailed logging.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="qa-tool-item">
-                            <i class="bi bi-phone-landscape qa-tool-icon"></i>
-                            <p class="qa-tool-name">Appium</p>
+                        <div class="svc-process-step">
+                            <div class="svc-step-num step-4">04</div>
+                            <div>
+                                <h4>Bug Reporting &amp; Tracking</h4>
+                                <p>Detailed defect reports with screenshots, steps to reproduce, video captures, and severity classifications.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="qa-tool-item">
-                            <i class="bi bi-terminal qa-tool-icon"></i>
-                            <p class="qa-tool-name">TestNG</p>
+                        <div class="svc-process-step">
+                            <div class="svc-step-num step-5">05</div>
+                            <div>
+                                <h4>Sign-off &amp; Delivery</h4>
+                                <p>UAT coordination, regression testing, and full documentation for confident production release.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- WHY CHOOSE US -->
-        <section class="qa-why-us">
+        <!-- ====== TESTIMONIALS ====== -->
+        <section class="svc-section svc-section-white">
             <div class="container">
-                <div class="qa-why-us-header">
-                    <h2>Why Choose Frontend.Club</h2>
-                </div>
-                <div class="qa-why-us-grid">
-                    <div class="qa-why-item">
-                        <i class="bi bi-bullseye qa-why-icon"></i>
-                        <h3>99% Bug Detection Accuracy</h3>
-                        <p>Our advanced testing strategies catch defects before they reach production.</p>
-                    </div>
-                    <div class="qa-why-item">
-                        <i class="bi bi-lightning-fill qa-why-icon"></i>
-                        <h3>Faster Release Cycles</h3>
-                        <p>Automated testing reduces time-to-market while maintaining quality standards.</p>
-                    </div>
-                    <div class="qa-why-item">
-                        <i class="bi bi-piggy-bank qa-why-icon"></i>
-                        <h3>Cost-Effective Solutions</h3>
-                        <p>Prevent expensive production failures with comprehensive early-stage testing.</p>
-                    </div>
-                    <div class="qa-why-item">
-                        <i class="bi bi-people-fill qa-why-icon"></i>
-                        <h3>Experienced QA Engineers</h3>
-                        <p>ISTQB-certified professionals with 10+ years of industry experience.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROCESS SECTION -->
-        <section class="qa-process">
-            <div class="container">
-                <div class="qa-process-header">
-                    <h2>Our Testing Process</h2>
-                </div>
-                <div class="qa-process-timeline">
-                    <div class="qa-process-step">
-                        <div class="qa-process-dot"></div>
-                        <div class="qa-process-content">
-                            <div class="qa-process-number">01</div>
-                            <h3>Requirement Analysis</h3>
-                            <p>Deep dive into your requirements to develop a comprehensive testing strategy and test plan.</p>
-                        </div>
-                    </div>
-                    <div class="qa-process-step">
-                        <div class="qa-process-dot"></div>
-                        <div class="qa-process-content">
-                            <div class="qa-process-number">02</div>
-                            <h3>Test Planning</h3>
-                            <p>Design test cases, define testing methodologies, and set up automation frameworks.</p>
-                        </div>
-                    </div>
-                    <div class="qa-process-step">
-                        <div class="qa-process-dot"></div>
-                        <div class="qa-process-content">
-                            <div class="qa-process-number">03</div>
-                            <h3>Test Execution</h3>
-                            <p>Execute manual and automated tests across all browsers, devices, and environments.</p>
-                        </div>
-                    </div>
-                    <div class="qa-process-step">
-                        <div class="qa-process-dot"></div>
-                        <div class="qa-process-content">
-                            <div class="qa-process-number">04</div>
-                            <h3>Bug Reporting</h3>
-                            <p>Detailed bug reports with screenshots, steps to reproduce, and severity levels.</p>
-                        </div>
-                    </div>
-                    <div class="qa-process-step">
-                        <div class="qa-process-dot"></div>
-                        <div class="qa-process-content">
-                            <div class="qa-process-number">05</div>
-                            <h3>Final Delivery</h3>
-                            <p>UAT coordination, regression testing, and handover documentation for production release.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TESTIMONIALS -->
-        <section class="qa-testimonials">
-            <div class="container">
-                <div class="qa-testimonials-header">
-                    <h2>What Clients Say</h2>
+                <div class="text-center mb-5">
+                    <p class="svc-section-label" style="color:#F59E0B;"><i class="bi bi-stars"></i> Client Stories</p>
+                    <h2 class="svc-section-heading">What Our Clients Say</h2>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-testimonial-card">
-                            <div class="qa-testimonial-rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
+                        <div class="svc-testimonial">
+                            <div class="svc-testimonial-stars">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                             </div>
-                            <p class="qa-testimonial-text">"Frontend.Club's testing team caught critical bugs that slipped through our internal QA. Their attention to detail is exceptional."</p>
-                            <div class="qa-testimonial-author">
-                                <div class="qa-testimonial-name">Sarah Johnson</div>
-                                <div class="qa-testimonial-role">CTO, TechStart Inc.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="qa-testimonial-card">
-                            <div class="qa-testimonial-rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <p class="qa-testimonial-text">"Their test automation reduced our testing time by 70%. We now deploy with confidence every week."</p>
-                            <div class="qa-testimonial-author">
-                                <div class="qa-testimonial-name">Michael Chen</div>
-                                <div class="qa-testimonial-role">Engineering Manager, DataFlow</div>
+                            <blockquote>"Frontend.Club's testing team caught critical bugs that slipped through our internal QA. Their attention to detail is absolutely exceptional."</blockquote>
+                            <div class="svc-testimonial-author">
+                                <div class="svc-author-avatar av-1">SJ</div>
+                                <div>
+                                    <span class="svc-author-name">Sarah Johnson</span>
+                                    <span class="svc-author-role">CTO, TechStart Inc.</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-testimonial-card">
-                            <div class="qa-testimonial-rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
+                        <div class="svc-testimonial">
+                            <div class="svc-testimonial-stars">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                             </div>
-                            <p class="qa-testimonial-text">"Professional, thorough, and highly responsive. Their security testing report gave us complete peace of mind."</p>
-                            <div class="qa-testimonial-author">
-                                <div class="qa-testimonial-name">Emily Rodriguez</div>
-                                <div class="qa-testimonial-role">Product Lead, SecureApp</div>
+                            <blockquote>"Their test automation reduced our testing time by 70%. We now deploy with full confidence every single week."</blockquote>
+                            <div class="svc-testimonial-author">
+                                <div class="svc-author-avatar av-2">MC</div>
+                                <div>
+                                    <span class="svc-author-name">Michael Chen</span>
+                                    <span class="svc-author-role">Engineering Manager, DataFlow</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="svc-testimonial">
+                            <div class="svc-testimonial-stars">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <blockquote>"Professional, thorough, and highly responsive. Their security testing report gave us complete peace of mind before our launch."</blockquote>
+                            <div class="svc-testimonial-author">
+                                <div class="svc-author-avatar av-3">ER</div>
+                                <div>
+                                    <span class="svc-author-name">Emily Rodriguez</span>
+                                    <span class="svc-author-role">Product Lead, SecureApp</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -938,70 +354,54 @@
             </div>
         </section>
 
-        <!-- FINAL CTA -->
-        <section class="qa-final-cta">
+        <!-- ====== CTA BANNER ====== -->
+        <section class="svc-section">
             <div class="container">
-                <div class="qa-final-cta-content">
-                    <h2>Ready to Build Bug-Free Software?</h2>
-                    <p>Let's discuss how our QA expertise can transform your testing strategy and accelerate your release cycles.</p>
-                    <button class="btn btn-qa-primary btn-lg" data-bs-toggle="modal" data-bs-target="#consultationModal">
-                        <i class="bi bi-rocket-takeoff"></i> Start Your Project Today
-                    </button>
+                <div class="svc-cta-banner testing-cta position-relative">
+                    <h2>Ready to Ship Bug-Free Software?</h2>
+                    <p>Join 500+ companies that trust Frontend.Club for their QA testing needs. Let's build quality together.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <button class="btn-white" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                            <i class="bi bi-rocket-takeoff-fill"></i> Get Free Consultation
+                        </button>
+                        <a href="../contact.html" class="btn-outline-white">
+                            <i class="bi bi-telephone-fill"></i> Talk to an Expert
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer will be loaded by component loader -->
-
     <!-- Consultation Modal -->
     <div class="modal fade" id="consultationModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="border: 1px solid #e5e7eb;">
+            <div class="modal-content">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title text-dark">Get Free Consultation</h5>
+                    <h5 class="modal-title text-dark fw-700">Get Free Consultation</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <form id="consultationForm">
-                        <div class="mb-3">
-                            <label class="form-label text-dark">Name</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label text-dark">Email</label>
-                            <input type="email" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label text-dark">Project Type</label>
+                        <div class="mb-3"><label class="form-label text-dark">Name</label><input type="text" class="form-control" required></div>
+                        <div class="mb-3"><label class="form-label text-dark">Email</label><input type="email" class="form-control" required></div>
+                        <div class="mb-3"><label class="form-label text-dark">Project Type</label>
                             <select class="form-select" required>
-                                <option>Web Application</option>
-                                <option>Mobile App</option>
-                                <option>API/Backend</option>
-                                <option>Other</option>
+                                <option>Web Application</option><option>Mobile App</option><option>API/Backend</option><option>Other</option>
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label text-dark">Message</label>
-                            <textarea class="form-control" rows="3" required></textarea>
-                        </div>
+                        <div class="mb-3"><label class="form-label text-dark">Message</label><textarea class="form-control" rows="3" required></textarea></div>
                     </form>
                 </div>
                 <div class="modal-footer border-0">
-                    <button class="btn btn-qa-primary" onclick="document.getElementById('consultationForm').submit();">
-                        Send Request
-                    </button>
+                    <button class="btn btn-primary" onclick="document.getElementById('consultationForm').submit();">Send Request</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Component Loader -->
     <script src="../assets/js/components.js"></script>
-    <!-- Custom JS -->
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

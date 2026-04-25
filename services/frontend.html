@@ -4,656 +4,369 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend Development Services - Frontend.Club</title>
-    <meta name="description" content="Professional frontend web development services using HTML, CSS, JavaScript, React, Angular, and Vue. Build modern, responsive web applications.">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Frontend Development Services - Frontend.Club">
-    <meta property="og:description" content="Modern, responsive web applications built with cutting-edge technologies.">
-    <meta property="og:type" content="website">
-
-    <!-- Favicon -->
+    <meta name="description" content="Professional frontend development services using React, Angular, Vue, and more. Build modern, responsive web applications.">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        /* ===== MODERN QA SERVICES PAGE - LIGHT THEME ===== */
+        /* === FRONTEND PAGE SPECIFIC === */
+        .frontend-hero {
+            background: linear-gradient(135deg, #0c1a0a 0%, #0f2d0a 40%, #1a2d05 100%);
+        }
+        .frontend-hero .svc-hero-blob:nth-child(1) {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(16,185,129,0.45) 0%, transparent 70%);
+            top: -120px; right: -80px;
+            animation: blobFloat 9s ease-in-out infinite;
+        }
+        .frontend-hero .svc-hero-blob:nth-child(2) {
+            width: 350px; height: 350px;
+            background: radial-gradient(circle, rgba(5,150,105,0.4) 0%, transparent 70%);
+            bottom: -60px; left: -80px;
+            animation: blobFloat 7s ease-in-out infinite reverse;
+        }
+        .frontend-hero .svc-hero-blob:nth-child(3) {
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(59,130,246,0.3) 0%, transparent 70%);
+            top: 40%; left: 20%;
+            animation: blobFloat 12s ease-in-out infinite 1s;
+        }
+        @keyframes blobFloat {
+            0%,100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(28px) scale(1.04); }
+        }
+        .fe-badge { background: linear-gradient(135deg,#10B981,#3B82F6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
-        /* Hero Section */
-        .qa-hero {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 50%, #f0f4ff 100%);
-            position: relative;
+        /* Code window floating graphic */
+        .code-window {
+            background: #1e293b;
+            border-radius: 14px !important;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
             overflow: hidden;
-            padding: 120px 0;
-            min-height: 100vh;
+        }
+        .code-window-bar {
+            background: #0f172a;
+            padding: 0.8rem 1rem;
             display: flex;
             align-items: center;
+            gap: 0.5rem;
         }
+        .code-dot { width:12px; height:12px; border-radius:50%; }
+        .code-dot-r { background:#ef4444; }
+        .code-dot-y { background:#f59e0b; }
+        .code-dot-g { background:#10b981; }
+        .code-body { padding: 1.5rem; font-family: monospace; font-size: 0.85rem; line-height: 1.7; }
+        .code-kw { color: #c792ea; }
+        .code-fn { color: #82aaff; }
+        .code-str { color: #c3e88d; }
+        .code-tag { color: #f07178; }
+        .code-attr { color: #ffcb6b; }
+        .code-com { color: #546e7a; }
+        .code-num { color: #f78c6c; }
 
-        .qa-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(100, 200, 255, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
+        .fe-card-1 { --svc-gradient: linear-gradient(90deg,#10B981,#059669); }
+        .fe-card-1 .svc-card-icon { background: linear-gradient(135deg,#10B981,#059669); color:white; }
+        .fe-card-2 { --svc-gradient: linear-gradient(90deg,#3B82F6,#6366F1); }
+        .fe-card-2 .svc-card-icon { background: linear-gradient(135deg,#3B82F6,#6366F1); color:white; }
+        .fe-card-3 { --svc-gradient: linear-gradient(90deg,#F59E0B,#EF4444); }
+        .fe-card-3 .svc-card-icon { background: linear-gradient(135deg,#F59E0B,#EF4444); color:white; }
+        .fe-card-4 { --svc-gradient: linear-gradient(90deg,#8B5CF6,#EC4899); }
+        .fe-card-4 .svc-card-icon { background: linear-gradient(135deg,#8B5CF6,#EC4899); color:white; }
+        .fe-card-5 { --svc-gradient: linear-gradient(90deg,#14B8A6,#0891B2); }
+        .fe-card-5 .svc-card-icon { background: linear-gradient(135deg,#14B8A6,#0891B2); color:white; }
+        .fe-card-6 { --svc-gradient: linear-gradient(90deg,#0066CC,#3B82F6); }
+        .fe-card-6 .svc-card-icon { background: linear-gradient(135deg,#0066CC,#3B82F6); color:white; }
 
-        .qa-hero::after {
-            content: '';
-            position: absolute;
-            bottom: -10%;
-            left: -5%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(200, 100, 255, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite reverse;
-        }
+        .fe-step-1 { background: linear-gradient(135deg,#10B981,#059669); }
+        .fe-step-2 { background: linear-gradient(135deg,#3B82F6,#6366F1); }
+        .fe-step-3 { background: linear-gradient(135deg,#F59E0B,#EF4444); }
+        .fe-step-4 { background: linear-gradient(135deg,#8B5CF6,#EC4899); }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(30px); }
-        }
+        .fe-av-1 { background: linear-gradient(135deg,#10B981,#059669); }
+        .fe-av-2 { background: linear-gradient(135deg,#3B82F6,#6366F1); }
+        .fe-av-3 { background: linear-gradient(135deg,#F59E0B,#EF4444); }
 
-        .qa-hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .qa-hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: #0f0f2e;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            animation: slideInUp 0.8s ease-out;
-        }
-
-        .qa-hero .lead {
-            font-size: 1.4rem;
-            color: #4b5563;
-            margin-bottom: 2rem;
-            font-weight: 400;
-            animation: slideInUp 0.8s ease-out 0.1s both;
-        }
-
-        .qa-cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            animation: slideInUp 0.8s ease-out 0.2s both;
-        }
-
-        .qa-cta-buttons .btn {
-            padding: 14px 32px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            border: none;
-            transition: all 0.3s ease;
-        }
-
-        .btn-qa-primary {
-            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
-            color: white;
-        }
-
-        .btn-qa-primary:hover {
-            background: linear-gradient(135deg, #0052A3 0%, #003d7a 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.2);
-            color: white;
-        }
-
-        .btn-qa-secondary {
-            background: white;
-            color: #0066CC;
-            border: 2px solid #0066CC;
-        }
-
-        .btn-qa-secondary:hover {
-            background: #f0f7ff;
-            border-color: #0052A3;
-            color: #0052A3;
-            transform: translateY(-3px);
-        }
-
-        .qa-hero-illustration {
-            position: relative;
-            z-index: 2;
-            animation: slideInRight 0.8s ease-out 0.3s both;
-        }
-
-        .qa-hero-illustration i {
-            font-size: 200px;
-            opacity: 0.1;
-            color: #0066CC;
-        }
-
-        /* Services Grid */
-        .qa-services {
-            background: #ffffff;
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .qa-services-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .qa-services-header h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-        }
-
-        .qa-services-header p {
-            font-size: 1.2rem;
-            color: #6b7280;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .qa-service-card {
-            background: #ffffff;
-            border: 2px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 40px;
-            height: 100%;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-            position: relative;
-            overflow: hidden;
-            animation: slideInUp 0.6s ease-out;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .qa-service-card:nth-child(1) { animation-delay: 0.1s; }
-        .qa-service-card:nth-child(2) { animation-delay: 0.2s; }
-        .qa-service-card:nth-child(3) { animation-delay: 0.3s; }
-        .qa-service-card:nth-child(4) { animation-delay: 0.4s; }
-        .qa-service-card:nth-child(5) { animation-delay: 0.5s; }
-        .qa-service-card:nth-child(6) { animation-delay: 0.6s; }
-
-        .qa-service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #0066CC, #FF6B35);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .qa-service-card:hover {
-            border-color: #0066CC;
-            transform: translateY(-15px);
-            box-shadow: 0 25px 60px rgba(0, 102, 204, 0.12);
-        }
-
-        .qa-service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .qa-service-icon {
-            font-size: 3.5rem;
-            color: #0066CC;
-            margin-bottom: 1.5rem;
-            transition: transform 0.4s ease;
-        }
-
-        .qa-service-card:hover .qa-service-icon {
-            transform: scale(1.2) rotate(10deg);
-        }
-
-        .qa-service-card h3 {
-            font-size: 1.5rem;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .qa-service-card p {
-            color: #6b7280;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Tools Section */
-        .qa-tools {
-            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
-            padding: 100px 0;
-        }
-
-        .qa-tools-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .qa-tools-header h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-        }
-
-        .qa-tools-header p {
-            font-size: 1.2rem;
-            color: #6b7280;
-        }
-
-        .qa-tool-item {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-            animation: slideInUp 0.6s ease-out;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .qa-tool-item:nth-child(1) { animation-delay: 0.1s; }
-        .qa-tool-item:nth-child(2) { animation-delay: 0.15s; }
-        .qa-tool-item:nth-child(3) { animation-delay: 0.2s; }
-        .qa-tool-item:nth-child(4) { animation-delay: 0.25s; }
-        .qa-tool-item:nth-child(5) { animation-delay: 0.3s; }
-        .qa-tool-item:nth-child(6) { animation-delay: 0.35s; }
-
-        .qa-tool-item:hover {
-            border-color: #0066CC;
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 102, 204, 0.12);
-        }
-
-        .qa-tool-icon {
-            font-size: 3rem;
-            color: #0066CC;
-            margin-bottom: 1rem;
-            transition: transform 0.4s ease;
-        }
-
-        .qa-tool-item:hover .qa-tool-icon {
-            transform: scale(1.15) rotate(-5deg);
-        }
-
-        .qa-tool-name {
-            font-weight: 700;
-            color: #0f0f2e;
-            font-size: 1.1rem;
-        }
-
-        /* Testimonials */
-        .qa-testimonials {
-            background: white;
-            padding: 100px 0;
-        }
-
-        .qa-testimonials-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .qa-testimonials-header h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-        }
-
-        .qa-testimonial-card {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 40px;
-            height: 100%;
-            transition: all 0.4s ease;
-            animation: slideInUp 0.6s ease-out;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .qa-testimonial-card:nth-child(1) { animation-delay: 0.1s; }
-        .qa-testimonial-card:nth-child(2) { animation-delay: 0.2s; }
-        .qa-testimonial-card:nth-child(3) { animation-delay: 0.3s; }
-
-        .qa-testimonial-card:hover {
-            border-color: #0066CC;
-            transform: translateY(-15px);
-            box-shadow: 0 25px 60px rgba(0, 102, 204, 0.12);
-        }
-
-        .qa-testimonial-rating {
-            font-size: 1.2rem;
-            color: #ffd700;
-            margin-bottom: 1.5rem;
-        }
-
-        .qa-testimonial-text {
-            font-size: 1.1rem;
-            color: #374151;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            font-style: italic;
-        }
-
-        .qa-testimonial-author {
-            border-top: 2px solid #e5e7eb;
-            padding-top: 1.5rem;
-        }
-
-        .qa-testimonial-name {
-            font-weight: 700;
-            color: #0f0f2e;
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .qa-testimonial-role {
-            color: #6b7280;
-            font-size: 0.95rem;
-        }
-
-        /* CTA Final Section */
-        .qa-final-cta {
-            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .qa-final-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .qa-final-cta-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .qa-final-cta h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
-        .qa-final-cta p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Animations */
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .qa-hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .qa-hero .lead {
-                font-size: 1.1rem;
-            }
-
-            .qa-cta-buttons {
-                flex-direction: column;
-            }
-
-            .qa-cta-buttons .btn {
-                width: 100%;
-            }
-
-            .qa-hero-illustration {
-                display: none;
-            }
-
-            .qa-services-header h2,
-            .qa-tools-header h2,
-            .qa-testimonials-header h2,
-            .qa-final-cta h2 {
-                font-size: 2rem;
-            }
+        .fe-cta { background: linear-gradient(135deg, #0c1a0a 0%, #0f2d0a 60%, #1a2d05 100%); }
+        .fe-cta::before {
+            content:''; position:absolute; inset:0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(16,185,129,0.2) 0%, transparent 65%);
+            pointer-events:none;
         }
     </style>
 </head>
 <body>
-    <!-- Skip to content -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Navigation will be loaded by component loader -->
-
     <main id="main-content">
-        <!-- HERO SECTION -->
-        <section class="qa-hero">
-            <div class="container">
-                <div class="row align-items-center">
+        <!-- ====== HERO ====== -->
+        <section class="svc-hero frontend-hero">
+            <div class="svc-hero-blob"></div>
+            <div class="svc-hero-blob"></div>
+            <div class="svc-hero-blob"></div>
+            <div class="container position-relative" style="z-index:2">
+                <div class="row align-items-center g-5">
                     <div class="col-lg-6">
-                        <div class="qa-hero-content">
-                            <h1>Build Modern, Responsive Web Applications</h1>
-                            <p class="lead">Expert frontend development services using cutting-edge technologies, frameworks, and best practices for dynamic user experiences.</p>
-                            <div class="qa-cta-buttons">
-                                <button class="btn btn-qa-primary" data-bs-toggle="modal" data-bs-target="#consultationModal">
-                                    <i class="bi bi-rocket-takeoff"></i> Get Free Consultation
-                                </button>
-                                <a href="#services" class="btn btn-qa-secondary">
-                                    <i class="bi bi-arrow-right"></i> View Services
-                                </a>
+                        <span class="svc-hero-badge">
+                            <i class="bi bi-code-slash"></i> Frontend Development
+                        </span>
+                        <h1>Build Modern,<br><span class="fe-badge">Responsive</span><br>Web Apps</h1>
+                        <p class="lead">Expert frontend development using cutting-edge technologies, frameworks, and best practices to create stunning digital experiences.</p>
+                        <div class="svc-hero-buttons">
+                            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                                <i class="bi bi-rocket-takeoff-fill"></i> Start Your Project
+                            </button>
+                            <a href="#services" style="padding:14px 28px; border-radius:10px !important; display:inline-flex; align-items:center; gap:0.5rem; font-weight:700; border:2px solid rgba(255,255,255,0.5); color:white; background:rgba(255,255,255,0.1); text-decoration:none;">
+                                <i class="bi bi-grid-3x3-gap-fill"></i> Our Services
+                            </a>
+                        </div>
+                        <div class="svc-hero-stats">
+                            <div class="svc-stat-item">
+                                <span class="svc-stat-num">300+</span>
+                                <span class="svc-stat-label">Apps Built</span>
+                            </div>
+                            <div class="svc-stat-item" style="border-left:1px solid rgba(255,255,255,0.2); padding-left:2rem;">
+                                <span class="svc-stat-num">98%</span>
+                                <span class="svc-stat-label">Client Satisfaction</span>
+                            </div>
+                            <div class="svc-stat-item" style="border-left:1px solid rgba(255,255,255,0.2); padding-left:2rem;">
+                                <span class="svc-stat-num">5+</span>
+                                <span class="svc-stat-label">Frameworks</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center qa-hero-illustration">
-                        <i class="bi bi-code-slash"></i>
+                    <div class="col-lg-6">
+                        <!-- Floating code window -->
+                        <div class="code-window">
+                            <div class="code-window-bar">
+                                <div class="code-dot code-dot-r"></div>
+                                <div class="code-dot code-dot-y"></div>
+                                <div class="code-dot code-dot-g"></div>
+                                <span style="color:#64748b; font-size:0.8rem; margin-left:0.5rem;">App.jsx</span>
+                            </div>
+                            <div class="code-body">
+                                <span class="code-com">// Modern React Component</span><br>
+                                <span class="code-kw">import</span> React <span class="code-kw">from</span> <span class="code-str">'react'</span>;<br>
+                                <span class="code-kw">import</span> { motion } <span class="code-kw">from</span> <span class="code-str">'framer-motion'</span>;<br><br>
+                                <span class="code-kw">const</span> <span class="code-fn">HeroSection</span> = () =&gt; {<br>
+                                &nbsp;&nbsp;<span class="code-kw">return</span> (<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;motion.div</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-attr">initial</span>=<span class="code-str">&#123;&#123; opacity: 0 &#125;&#125;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-attr">animate</span>=<span class="code-str">&#123;&#123; opacity: 1 &#125;&#125;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-attr">className</span>=<span class="code-str">"hero-section"</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;h1&gt;</span>Hello, World<span class="code-tag">&lt;/h1&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;/motion.div&gt;</span><br>
+                                &nbsp;&nbsp;);<br>
+                                };<br><br>
+                                <span class="code-kw">export default</span> <span class="code-fn">HeroSection</span>;
+                            </div>
+                        </div>
+                        <div class="svc-hero-img-badge" style="bottom:-12px; right:20px; left:auto;">
+                            <div class="badge-icon" style="background:linear-gradient(135deg,#10B981,#059669);">
+                                <i class="bi bi-lightning-charge-fill"></i>
+                            </div>
+                            <div class="badge-text">
+                                <strong>100/100</strong>
+                                <span>Lighthouse Score</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SERVICES SECTION -->
-        <section class="qa-services" id="services">
+        <!-- ====== WHY US STRIP ====== -->
+        <section class="svc-why-strip">
             <div class="container">
-                <div class="qa-services-header">
-                    <h2>Frontend Development Services</h2>
-                    <p>From concept to deployment, we deliver world-class frontend solutions</p>
+                <div class="row g-0">
+                    <div class="col-6 col-md-3">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">300+</span>
+                            <p class="svc-why-title">Apps Delivered</p>
+                            <p class="svc-why-desc">Across diverse industries</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" style="border-left:1px solid rgba(255,255,255,0.08)">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">&lt;1s</span>
+                            <p class="svc-why-title">Load Time</p>
+                            <p class="svc-why-desc">Optimized for peak performance</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" style="border-left:1px solid rgba(255,255,255,0.08)">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">5+</span>
+                            <p class="svc-why-title">Frameworks</p>
+                            <p class="svc-why-desc">React, Vue, Angular &amp; more</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" style="border-left:1px solid rgba(255,255,255,0.08)">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">98%</span>
+                            <p class="svc-why-title">Client Retention</p>
+                            <p class="svc-why-desc">They keep coming back</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== SERVICES GRID ====== -->
+        <section class="svc-section svc-section-light" id="services">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <p class="svc-section-label" style="color:#10B981;"><i class="bi bi-grid-3x3-gap-fill"></i> What We Build</p>
+                    <h2 class="svc-section-heading">Frontend Development Services</h2>
+                    <p class="svc-section-sub mx-auto">From concept to deployment — world-class frontend solutions for every need</p>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-service-card">
-                            <i class="bi bi-code-square qa-service-icon"></i>
-                            <h3>HTML/CSS/JavaScript</h3>
-                            <p>Semantic markup and responsive layouts with vanilla JavaScript expertise.</p>
+                        <div class="svc-card fe-card-1">
+                            <div class="svc-card-icon"><i class="bi bi-code-square"></i></div>
+                            <h3>HTML / CSS / JavaScript</h3>
+                            <p>Semantic markup, responsive layouts, and vanilla JS expertise. The clean foundation every great app is built on.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-service-card">
-                            <i class="bi bi-layers qa-service-icon"></i>
+                        <div class="svc-card fe-card-2">
+                            <div class="svc-card-icon"><i class="bi bi-layers-fill"></i></div>
                             <h3>React Development</h3>
-                            <p>Component-based architecture with hooks, state management, and performance optimization.</p>
+                            <p>Component-based architecture with hooks, state management (Redux/Zustand), and performance optimization patterns.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-service-card">
-                            <i class="bi bi-grid-3x3-gap qa-service-icon"></i>
+                        <div class="svc-card fe-card-3">
+                            <div class="svc-card-icon"><i class="bi bi-grid-3x3-gap-fill"></i></div>
                             <h3>Progressive Web Apps</h3>
-                            <p>Offline-first PWAs with service workers, caching, and app-like experiences.</p>
+                            <p>Offline-first PWAs with service workers, smart caching strategies, and native-app-like experiences across devices.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-service-card">
-                            <i class="bi bi-phone qa-service-icon"></i>
+                        <div class="svc-card fe-card-4">
+                            <div class="svc-card-icon"><i class="bi bi-phone-fill"></i></div>
                             <h3>Responsive Design</h3>
-                            <p>Mobile-first approach ensuring perfect display across all devices and screen sizes.</p>
+                            <p>Mobile-first approach ensuring pixel-perfect display on all screen sizes, from smartwatches to 4K monitors.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-service-card">
-                            <i class="bi bi-speedometer2 qa-service-icon"></i>
+                        <div class="svc-card fe-card-5">
+                            <div class="svc-card-icon"><i class="bi bi-speedometer2"></i></div>
                             <h3>Performance Optimization</h3>
-                            <p>Code splitting, lazy loading, and optimization for lightning-fast load times.</p>
+                            <p>Code splitting, lazy loading, bundle optimization, and Core Web Vitals improvements for lightning-fast load times.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-service-card">
-                            <i class="bi bi-pencil-square qa-service-icon"></i>
+                        <div class="svc-card fe-card-6">
+                            <div class="svc-card-icon"><i class="bi bi-pencil-square"></i></div>
                             <h3>UI/UX Implementation</h3>
-                            <p>Converting designs into pixel-perfect, interactive interfaces with smooth animations.</p>
+                            <p>Converting Figma/Adobe XD designs into pixel-perfect, interactive interfaces with smooth micro-animations.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TOOLS & TECHNOLOGIES -->
-        <section class="qa-tools">
+        <!-- ====== TECH STACK ====== -->
+        <section class="svc-section svc-section-white">
             <div class="container">
-                <div class="qa-tools-header">
-                    <h2>Technologies & Frameworks</h2>
-                    <p>We master the latest frontend tools and technologies</p>
+                <div class="text-center mb-5">
+                    <p class="svc-section-label" style="color:#3B82F6;"><i class="bi bi-stack"></i> Tech Stack</p>
+                    <h2 class="svc-section-heading">Technologies &amp; Frameworks</h2>
+                    <p class="svc-section-sub mx-auto">We master the latest frontend tools that drive modern web development</p>
+                </div>
+                <div class="svc-tech-grid">
+                    <div class="svc-tech-pill"><i class="bi bi-braces"></i> React</div>
+                    <div class="svc-tech-pill"><i class="bi bi-boxes"></i> Vue.js</div>
+                    <div class="svc-tech-pill"><i class="bi bi-gear-wide"></i> Angular</div>
+                    <div class="svc-tech-pill"><i class="bi bi-wind"></i> Tailwind CSS</div>
+                    <div class="svc-tech-pill"><i class="bi bi-diagram-2-fill"></i> Next.js</div>
+                    <div class="svc-tech-pill"><i class="bi bi-lightning-charge-fill"></i> TypeScript</div>
+                    <div class="svc-tech-pill"><i class="bi bi-plugin"></i> Webpack</div>
+                    <div class="svc-tech-pill"><i class="bi bi-rocket-fill"></i> Vite</div>
+                    <div class="svc-tech-pill"><i class="bi bi-palette-fill"></i> Framer Motion</div>
+                    <div class="svc-tech-pill"><i class="bi bi-graph-up-arrow"></i> Redux</div>
+                    <div class="svc-tech-pill"><i class="bi bi-images"></i> GSAP</div>
+                    <div class="svc-tech-pill"><i class="bi bi-grid-fill"></i> Bootstrap 5</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== PROCESS ====== -->
+        <section class="svc-section svc-section-light">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-7">
+                        <div class="svc-process-step">
+                            <div class="svc-step-num fe-step-1">01</div>
+                            <div><h4>Discovery &amp; Planning</h4><p>Deep dive into your requirements, target audience, and tech constraints to craft the perfect development roadmap.</p></div>
+                        </div>
+                        <div class="svc-process-step">
+                            <div class="svc-step-num fe-step-2">02</div>
+                            <div><h4>Design &amp; Prototype</h4><p>Interactive prototypes and design systems that align with your brand before a single line of production code is written.</p></div>
+                        </div>
+                        <div class="svc-process-step">
+                            <div class="svc-step-num fe-step-3">03</div>
+                            <div><h4>Development &amp; Review</h4><p>Agile sprints with weekly demos, clean code practices, and thorough code reviews for quality output.</p></div>
+                        </div>
+                        <div class="svc-process-step">
+                            <div class="svc-step-num fe-step-4">04</div>
+                            <div><h4>Launch &amp; Optimize</h4><p>Deployment, performance tuning, Core Web Vitals optimization, and post-launch monitoring and support.</p></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <p class="svc-section-label" style="color:#10B981;"><i class="bi bi-map-fill"></i> Our Process</p>
+                        <h2 class="svc-section-heading">How We Build<br>Your Vision</h2>
+                        <p class="svc-section-sub">A proven 4-step process that takes you from idea to live product without surprises.</p>
+                        <div class="mt-4">
+                            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                                <i class="bi bi-rocket-takeoff-fill"></i> Start Building
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== TESTIMONIALS ====== -->
+        <section class="svc-section svc-section-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <p class="svc-section-label" style="color:#F59E0B;"><i class="bi bi-stars"></i> Client Love</p>
+                    <h2 class="svc-section-heading">What Our Clients Say</h2>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="qa-tool-item">
-                            <i class="bi bi-braces qa-tool-icon"></i>
-                            <p class="qa-tool-name">React</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="qa-tool-item">
-                            <i class="bi bi-boxes qa-tool-icon"></i>
-                            <p class="qa-tool-name">Vue.js</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="qa-tool-item">
-                            <i class="bi bi-gear qa-tool-icon"></i>
-                            <p class="qa-tool-name">Angular</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="qa-tool-item">
-                            <i class="bi bi-tsunami qa-tool-icon"></i>
-                            <p class="qa-tool-name">Tailwind CSS</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="qa-tool-item">
-                            <i class="bi bi-diagram-2 qa-tool-icon"></i>
-                            <p class="qa-tool-name">Next.js</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="qa-tool-item">
-                            <i class="bi bi-lightning-charge qa-tool-icon"></i>
-                            <p class="qa-tool-name">TypeScript</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TESTIMONIALS -->
-        <section class="qa-testimonials">
-            <div class="container">
-                <div class="qa-testimonials-header">
-                    <h2>What Clients Say</h2>
-                </div>
-                <div class="row g-4">
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-testimonial-card">
-                            <div class="qa-testimonial-rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <p class="qa-testimonial-text">"The frontend team delivered a stunning, responsive application that exceeded our expectations. Their attention to performance was exceptional."</p>
-                            <div class="qa-testimonial-author">
-                                <div class="qa-testimonial-name">Alex Kumar</div>
-                                <div class="qa-testimonial-role">Product Director, Digital Inc.</div>
+                        <div class="svc-testimonial">
+                            <div class="svc-testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <blockquote>"The frontend team delivered a stunning, responsive application that exceeded our expectations. Their attention to performance was exceptional."</blockquote>
+                            <div class="svc-testimonial-author">
+                                <div class="svc-author-avatar fe-av-1">AK</div>
+                                <div><span class="svc-author-name">Alex Kumar</span><span class="svc-author-role">Product Director, Digital Inc.</span></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-testimonial-card">
-                            <div class="qa-testimonial-rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <p class="qa-testimonial-text">"Professional, fast, and incredibly talented. They converted our Figma designs into production-ready code flawlessly."</p>
-                            <div class="qa-testimonial-author">
-                                <div class="qa-testimonial-name">Jessica Chen</div>
-                                <div class="qa-testimonial-role">Founder, StartupHub</div>
+                        <div class="svc-testimonial">
+                            <div class="svc-testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <blockquote>"Professional, fast, and incredibly talented. They converted our Figma designs to production-ready code flawlessly — zero pixel drift."</blockquote>
+                            <div class="svc-testimonial-author">
+                                <div class="svc-author-avatar fe-av-2">JC</div>
+                                <div><span class="svc-author-name">Jessica Chen</span><span class="svc-author-role">Founder, StartupHub</span></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="qa-testimonial-card">
-                            <div class="qa-testimonial-rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <p class="qa-testimonial-text">"Great communication, clean code, and delivered on time. Their React expertise solved our complex state management challenges."</p>
-                            <div class="qa-testimonial-author">
-                                <div class="qa-testimonial-name">David Roberts</div>
-                                <div class="qa-testimonial-role">CTO, TechVenture</div>
+                        <div class="svc-testimonial">
+                            <div class="svc-testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <blockquote>"Their React expertise solved our complex state management challenges. Clean code, great communication, delivered on time."</blockquote>
+                            <div class="svc-testimonial-author">
+                                <div class="svc-author-avatar fe-av-3">DR</div>
+                                <div><span class="svc-author-name">David Roberts</span><span class="svc-author-role">CTO, TechVenture</span></div>
                             </div>
                         </div>
                     </div>
@@ -661,70 +374,46 @@
             </div>
         </section>
 
-        <!-- FINAL CTA -->
-        <section class="qa-final-cta">
+        <!-- ====== CTA ====== -->
+        <section class="svc-section">
             <div class="container">
-                <div class="qa-final-cta-content">
+                <div class="svc-cta-banner fe-cta position-relative">
                     <h2>Ready to Build Your Next Web App?</h2>
-                    <p>Let's create a fast, scalable, and beautiful frontend solution for your users.</p>
-                    <button class="btn btn-qa-primary btn-lg" data-bs-toggle="modal" data-bs-target="#consultationModal">
-                        <i class="bi bi-rocket-takeoff"></i> Start Your Project Today
-                    </button>
+                    <p>Let's create a fast, scalable, and beautiful frontend solution that your users will love.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <button class="btn-white" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                            <i class="bi bi-rocket-takeoff-fill"></i> Start Your Project
+                        </button>
+                        <a href="../contact.html" class="btn-outline-white">
+                            <i class="bi bi-chat-dots-fill"></i> Let's Talk
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer will be loaded by component loader -->
-
-    <!-- Consultation Modal -->
     <div class="modal fade" id="consultationModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="border: 1px solid #e5e7eb;">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title text-dark">Get Free Consultation</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
+            <div class="modal-content">
+                <div class="modal-header border-0"><h5 class="modal-title text-dark">Get Free Consultation</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
                 <div class="modal-body">
                     <form id="consultationForm">
-                        <div class="mb-3">
-                            <label class="form-label text-dark">Name</label>
-                            <input type="text" class="form-control" required>
+                        <div class="mb-3"><label class="form-label text-dark">Name</label><input type="text" class="form-control" required></div>
+                        <div class="mb-3"><label class="form-label text-dark">Email</label><input type="email" class="form-control" required></div>
+                        <div class="mb-3"><label class="form-label text-dark">Project Type</label>
+                            <select class="form-select" required><option>Web Application</option><option>E-commerce Site</option><option>Progressive Web App</option><option>Other</option></select>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label text-dark">Email</label>
-                            <input type="email" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label text-dark">Project Type</label>
-                            <select class="form-select" required>
-                                <option>Web Application</option>
-                                <option>E-commerce Site</option>
-                                <option>Progressive Web App</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label text-dark">Message</label>
-                            <textarea class="form-control" rows="3" required></textarea>
-                        </div>
+                        <div class="mb-3"><label class="form-label text-dark">Message</label><textarea class="form-control" rows="3" required></textarea></div>
                     </form>
                 </div>
-                <div class="modal-footer border-0">
-                    <button class="btn btn-qa-primary" onclick="document.getElementById('consultationForm').submit();">
-                        Send Request
-                    </button>
-                </div>
+                <div class="modal-footer border-0"><button class="btn btn-primary" onclick="document.getElementById('consultationForm').submit();">Send Request</button></div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Component Loader -->
     <script src="../assets/js/components.js"></script>
-    <!-- Custom JS -->
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

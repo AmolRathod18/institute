@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI/UX Design Services - Frontend.Club</title>
-    <meta name="description" content="Professional UI/UX design services including user research, wireframing, prototyping, and usability testing for exceptional digital experiences.">
+    <meta name="description" content="Professional UI/UX design services, user research, wireframing, prototyping, and usability testing for exceptional digital experiences.">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,92 +13,398 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        .qa-hero{background:linear-gradient(135deg, #ffffff 0%, #f8f9ff 50%, #f0f4ff 100%);position:relative;overflow:hidden;padding:120px 0;min-height:100vh;display:flex;align-items:center}.qa-hero::before{content:'';position:absolute;top:-50%;right:-10%;width:500px;height:500px;background:radial-gradient(circle, rgba(100, 200, 255, 0.08) 0%, transparent 70%);border-radius:50%;animation:float 6s ease-in-out infinite}.qa-hero::after{content:'';position:absolute;bottom:-10%;left:-5%;width:400px;height:400px;background:radial-gradient(circle, rgba(200, 100, 255, 0.08) 0%, transparent 70%);border-radius:50%;animation:float 8s ease-in-out infinite reverse}@keyframes float{0%,100%{transform:translateY(0px)}50%{transform:translateY(30px)}}.qa-hero-content{position:relative;z-index:2}.qa-hero h1{font-size:3.5rem;font-weight:800;color:#0f0f2e;margin-bottom:1.5rem;line-height:1.2;animation:slideInUp 0.8s ease-out}.qa-hero .lead{font-size:1.4rem;color:#4b5563;margin-bottom:2rem;font-weight:400;animation:slideInUp 0.8s ease-out 0.1s both}.qa-cta-buttons{display:flex;gap:1rem;flex-wrap:wrap;animation:slideInUp 0.8s ease-out 0.2s both}.qa-cta-buttons .btn{padding:14px 32px;font-size:1.1rem;font-weight:600;border-radius:8px;border:none;transition:all 0.3s ease}.btn-qa-primary{background:linear-gradient(135deg, #0066CC 0%, #0052A3 100%);color:white}.btn-qa-primary:hover{background:linear-gradient(135deg, #0052A3 0%, #003d7a 100%);transform:translateY(-3px);box-shadow:0 15px 40px rgba(0, 102, 204, 0.2);color:white}.btn-qa-secondary{background:white;color:#0066CC;border:2px solid #0066CC}.btn-qa-secondary:hover{background:#f0f7ff;border-color:#0052A3;color:#0052A3;transform:translateY(-3px)}.qa-hero-illustration{position:relative;z-index:2;animation:slideInRight 0.8s ease-out 0.3s both}.qa-hero-illustration i{font-size:200px;opacity:0.1;color:#0066CC}.qa-services{background:#ffffff;padding:100px 0;position:relative}.qa-services-header{text-align:center;margin-bottom:60px}.qa-services-header h2{font-size:2.8rem;font-weight:800;color:#0f0f2e;margin-bottom:1rem}.qa-services-header p{font-size:1.2rem;color:#6b7280;max-width:500px;margin:0 auto}.qa-service-card{background:#ffffff;border:2px solid #e5e7eb;border-radius:16px;padding:40px;height:100%;transition:all 0.4s cubic-bezier(0.23, 1, 0.320, 1);position:relative;overflow:hidden;animation:slideInUp 0.6s ease-out;box-shadow:0 2px 8px rgba(0, 0, 0, 0.05)}.qa-service-card:nth-child(1){animation-delay:0.1s}.qa-service-card:nth-child(2){animation-delay:0.2s}.qa-service-card:nth-child(3){animation-delay:0.3s}.qa-service-card:nth-child(4){animation-delay:0.4s}.qa-service-card:nth-child(5){animation-delay:0.5s}.qa-service-card:nth-child(6){animation-delay:0.6s}.qa-service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg, #0066CC, #FF6B35);transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease}.qa-service-card:hover{border-color:#0066CC;transform:translateY(-15px);box-shadow:0 25px 60px rgba(0, 102, 204, 0.12)}.qa-service-card:hover::before{transform:scaleX(1)}.qa-service-icon{font-size:3.5rem;color:#0066CC;margin-bottom:1.5rem;transition:transform 0.4s ease}.qa-service-card:hover .qa-service-icon{transform:scale(1.2) rotate(10deg)}.qa-service-card h3{font-size:1.5rem;color:#0f0f2e;margin-bottom:1rem;font-weight:700}.qa-service-card p{color:#6b7280;font-size:1rem;line-height:1.6}.qa-tools{background:linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);padding:100px 0}.qa-tools-header{text-align:center;margin-bottom:60px}.qa-tools-header h2{font-size:2.8rem;font-weight:800;color:#0f0f2e;margin-bottom:1rem}.qa-tools-header p{font-size:1.2rem;color:#6b7280}.qa-tool-item{background:white;border:2px solid #e5e7eb;border-radius:12px;padding:30px;text-align:center;transition:all 0.4s ease;animation:slideInUp 0.6s ease-out;box-shadow:0 2px 8px rgba(0, 0, 0, 0.05)}.qa-tool-item:hover{border-color:#0066CC;transform:translateY(-10px);box-shadow:0 20px 50px rgba(0, 102, 204, 0.12)}.qa-tool-icon{font-size:3rem;color:#0066CC;margin-bottom:1rem;transition:transform 0.4s ease}.qa-tool-item:hover .qa-tool-icon{transform:scale(1.15) rotate(-5deg)}.qa-tool-name{font-weight:700;color:#0f0f2e;font-size:1.1rem}.qa-testimonials{background:white;padding:100px 0}.qa-testimonials-header{text-align:center;margin-bottom:60px}.qa-testimonials-header h2{font-size:2.8rem;font-weight:800;color:#0f0f2e;margin-bottom:1rem}.qa-testimonial-card{background:white;border:2px solid #e5e7eb;border-radius:16px;padding:40px;height:100%;transition:all 0.4s ease;animation:slideInUp 0.6s ease-out;box-shadow:0 2px 8px rgba(0, 0, 0, 0.05)}.qa-testimonial-card:hover{border-color:#0066CC;transform:translateY(-15px);box-shadow:0 25px 60px rgba(0, 102, 204, 0.12)}.qa-testimonial-rating{font-size:1.2rem;color:#ffd700;margin-bottom:1.5rem}.qa-testimonial-text{font-size:1.1rem;color:#374151;margin-bottom:1.5rem;line-height:1.8;font-style:italic}.qa-testimonial-author{border-top:2px solid #e5e7eb;padding-top:1.5rem}.qa-testimonial-name{font-weight:700;color:#0f0f2e;font-size:1.1rem;margin-bottom:0.25rem}.qa-testimonial-role{color:#6b7280;font-size:0.95rem}.qa-final-cta{background:linear-gradient(135deg, #0066CC 0%, #0052A3 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}.qa-final-cta::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);pointer-events:none}.qa-final-cta-content{position:relative;z-index:2}.qa-final-cta h2{font-size:2.8rem;font-weight:800;color:white;margin-bottom:1.5rem;line-height:1.3}.qa-final-cta p{font-size:1.2rem;color:rgba(255, 255, 255, 0.9);margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto}@keyframes slideInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@keyframes slideInRight{from{opacity:0;transform:translateX(50px)}to{opacity:1;transform:translateX(0)}}@media (max-width:768px){.qa-hero h1{font-size:2.2rem}.qa-hero .lead{font-size:1.1rem}.qa-cta-buttons{flex-direction:column}.qa-cta-buttons .btn{width:100%}.qa-hero-illustration{display:none}.qa-services-header h2,.qa-tools-header h2,.qa-testimonials-header h2,.qa-final-cta h2{font-size:2rem}}
+        /* === UIUX PAGE SPECIFIC === */
+        .uiux-hero {
+            background: linear-gradient(135deg, #1a0a2e 0%, #2d0a4e 40%, #0a1a3e 100%);
+        }
+        .uiux-hero .svc-hero-blob:nth-child(1) {
+            width: 550px; height: 550px;
+            background: radial-gradient(circle, rgba(139,92,246,0.5) 0%, transparent 70%);
+            top: -150px; right: -100px;
+            animation: uiBlob1 9s ease-in-out infinite;
+        }
+        .uiux-hero .svc-hero-blob:nth-child(2) {
+            width: 380px; height: 380px;
+            background: radial-gradient(circle, rgba(236,72,153,0.4) 0%, transparent 70%);
+            bottom: -80px; left: -60px;
+            animation: uiBlob1 12s ease-in-out infinite reverse;
+        }
+        .uiux-hero .svc-hero-blob:nth-child(3) {
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(99,102,241,0.35) 0%, transparent 70%);
+            top: 35%; left: 25%;
+            animation: uiBlob1 7s ease-in-out infinite 2s;
+        }
+        @keyframes uiBlob1 {
+            0%,100% { transform: translateY(0) scale(1) rotate(0deg); }
+            50% { transform: translateY(25px) scale(1.05) rotate(3deg); }
+        }
+
+        .ui-badge { background: linear-gradient(135deg,#8B5CF6,#EC4899); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+        /* UI Mock Screenshot */
+        .ui-mock {
+            background: #fff;
+            border-radius: 16px !important;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .ui-mock-topbar {
+            background: linear-gradient(135deg,#8B5CF6,#6366F1);
+            padding: 1rem 1.25rem;
+            display: flex; align-items: center; gap: 0.75rem;
+        }
+        .ui-mock-dot { width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.4); }
+        .ui-mock-body { padding: 1.25rem; }
+        .ui-color-swatch { width: 100%; height: 10px; border-radius: 5px; margin-bottom: 0.75rem; }
+        .ui-element { background: #f8faff; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; }
+        .ui-element i { font-size:1.2rem; }
+        .ui-element span { font-size: 0.82rem; font-weight: 600; color: #374151; }
+        .ui-progress { height: 6px; border-radius: 3px; background: #e5e7eb; margin-bottom: 0.5rem; overflow: hidden; }
+        .ui-progress-bar { height: 100%; border-radius: 3px; }
+
+        .ui-card-1 { --svc-gradient: linear-gradient(90deg,#8B5CF6,#6366F1); }
+        .ui-card-1 .svc-card-icon { background: linear-gradient(135deg,#8B5CF6,#6366F1); color:white; }
+        .ui-card-2 { --svc-gradient: linear-gradient(90deg,#EC4899,#F43F5E); }
+        .ui-card-2 .svc-card-icon { background: linear-gradient(135deg,#EC4899,#F43F5E); color:white; }
+        .ui-card-3 { --svc-gradient: linear-gradient(90deg,#6366F1,#3B82F6); }
+        .ui-card-3 .svc-card-icon { background: linear-gradient(135deg,#6366F1,#3B82F6); color:white; }
+        .ui-card-4 { --svc-gradient: linear-gradient(90deg,#F59E0B,#EF4444); }
+        .ui-card-4 .svc-card-icon { background: linear-gradient(135deg,#F59E0B,#EF4444); color:white; }
+        .ui-card-5 { --svc-gradient: linear-gradient(90deg,#10B981,#14B8A6); }
+        .ui-card-5 .svc-card-icon { background: linear-gradient(135deg,#10B981,#14B8A6); color:white; }
+        .ui-card-6 { --svc-gradient: linear-gradient(90deg,#F97316,#EAB308); }
+        .ui-card-6 .svc-card-icon { background: linear-gradient(135deg,#F97316,#EAB308); color:white; }
+
+        .ui-step-1 { background: linear-gradient(135deg,#8B5CF6,#6366F1); }
+        .ui-step-2 { background: linear-gradient(135deg,#EC4899,#F43F5E); }
+        .ui-step-3 { background: linear-gradient(135deg,#6366F1,#3B82F6); }
+        .ui-step-4 { background: linear-gradient(135deg,#F59E0B,#EF4444); }
+
+        .ui-av-1 { background: linear-gradient(135deg,#8B5CF6,#6366F1); }
+        .ui-av-2 { background: linear-gradient(135deg,#EC4899,#F43F5E); }
+        .ui-av-3 { background: linear-gradient(135deg,#6366F1,#3B82F6); }
+
+        .uiux-cta { background: linear-gradient(135deg, #1a0a2e 0%, #2d0a4e 60%, #0a1a3e 100%); }
+        .uiux-cta::before {
+            content:''; position:absolute; inset:0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(139,92,246,0.22) 0%, transparent 65%);
+            pointer-events:none;
+        }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <main id="main-content">
-        <section class="qa-hero">
-            <div class="container">
-                <div class="row align-items-center">
+        <!-- ====== HERO ====== -->
+        <section class="svc-hero uiux-hero">
+            <div class="svc-hero-blob"></div>
+            <div class="svc-hero-blob"></div>
+            <div class="svc-hero-blob"></div>
+            <div class="container position-relative" style="z-index:2">
+                <div class="row align-items-center g-5">
                     <div class="col-lg-6">
-                        <div class="qa-hero-content">
-                            <h1>Create Engaging User Experiences That Convert</h1>
-                            <p class="lead">Research-driven UI/UX design services that combine aesthetics with functionality for maximum user engagement.</p>
-                            <div class="qa-cta-buttons">
-                                <button class="btn btn-qa-primary" data-bs-toggle="modal" data-bs-target="#consultationModal"><i class="bi bi-rocket-takeoff"></i> Get Free Consultation</button>
-                                <a href="#services" class="btn btn-qa-secondary"><i class="bi bi-arrow-right"></i> View Services</a>
+                        <span class="svc-hero-badge">
+                            <i class="bi bi-palette-fill"></i> UI/UX Design Studio
+                        </span>
+                        <h1>Create Experiences<br>Users <span class="ui-badge">Love</span><br>&amp; Convert</h1>
+                        <p class="lead">Research-driven UI/UX design services combining aesthetics with functionality for maximum user engagement and business growth.</p>
+                        <div class="svc-hero-buttons">
+                            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                                <i class="bi bi-palette2"></i> Start Designing
+                            </button>
+                            <a href="#services" style="padding:14px 28px; border-radius:10px !important; display:inline-flex; align-items:center; gap:0.5rem; font-weight:700; border:2px solid rgba(255,255,255,0.5); color:white; background:rgba(255,255,255,0.1); text-decoration:none;">
+                                <i class="bi bi-eye-fill"></i> View Services
+                            </a>
+                        </div>
+                        <div class="svc-hero-stats">
+                            <div class="svc-stat-item">
+                                <span class="svc-stat-num">45%</span>
+                                <span class="svc-stat-label">Avg. Engagement ↑</span>
+                            </div>
+                            <div class="svc-stat-item" style="border-left:1px solid rgba(255,255,255,0.2); padding-left:2rem;">
+                                <span class="svc-stat-num">200+</span>
+                                <span class="svc-stat-label">Designs Shipped</span>
+                            </div>
+                            <div class="svc-stat-item" style="border-left:1px solid rgba(255,255,255,0.2); padding-left:2rem;">
+                                <span class="svc-stat-num">30%</span>
+                                <span class="svc-stat-label">Conversion Boost</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center qa-hero-illustration">
-                        <i class="bi bi-palette"></i>
+                    <div class="col-lg-6">
+                        <!-- UI Mock -->
+                        <div class="ui-mock">
+                            <div class="ui-mock-topbar">
+                                <div class="ui-mock-dot"></div>
+                                <div class="ui-mock-dot"></div>
+                                <div class="ui-mock-dot"></div>
+                                <span style="color:rgba(255,255,255,0.8); font-size:0.82rem; margin-left:0.5rem; font-family:monospace;">Design System v2.0</span>
+                            </div>
+                            <div class="ui-mock-body">
+                                <div class="ui-color-swatch" style="background:linear-gradient(90deg,#8B5CF6,#EC4899,#6366F1);"></div>
+                                <div class="row g-2 mb-2">
+                                    <div class="col-4"><div style="background:#8B5CF6; height:36px; border-radius:6px;"></div></div>
+                                    <div class="col-4"><div style="background:#EC4899; height:36px; border-radius:6px;"></div></div>
+                                    <div class="col-4"><div style="background:#6366F1; height:36px; border-radius:6px;"></div></div>
+                                </div>
+                                <div class="ui-element"><i class="bi bi-type" style="color:#8B5CF6;"></i><span>Poppins Bold — Heading</span></div>
+                                <div class="ui-element"><i class="bi bi-fonts" style="color:#6366F1;"></i><span>Inter Regular — Body Text</span></div>
+                                <p style="font-size:0.75rem; color:#9ca3af; font-weight:600; text-transform:uppercase; letter-spacing:.06em; margin:0.75rem 0 0.4rem;">Components</p>
+                                <div class="ui-progress"><div class="ui-progress-bar" style="width:78%; background:linear-gradient(90deg,#8B5CF6,#6366F1);"></div></div>
+                                <div class="ui-progress"><div class="ui-progress-bar" style="width:55%; background:linear-gradient(90deg,#EC4899,#F43F5E);"></div></div>
+                                <div class="row g-2 mt-1">
+                                    <div class="col-6"><button style="width:100%; background:linear-gradient(135deg,#8B5CF6,#6366F1); color:white; border:none; border-radius:8px; padding:8px; font-size:0.8rem; font-weight:700;">Primary</button></div>
+                                    <div class="col-6"><button style="width:100%; background:transparent; color:#8B5CF6; border:2px solid #8B5CF6; border-radius:8px; padding:8px; font-size:0.8rem; font-weight:700;">Outline</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="svc-hero-img-badge" style="bottom:-12px; right:20px; left:auto;">
+                            <div class="badge-icon" style="background:linear-gradient(135deg,#8B5CF6,#6366F1);">
+                                <i class="bi bi-award-fill"></i>
+                            </div>
+                            <div class="badge-text">
+                                <strong>Figma Experts</strong>
+                                <span>Design Systems</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="qa-services" id="services">
+
+        <!-- ====== WHY US ====== -->
+        <section class="svc-why-strip">
             <div class="container">
-                <div class="qa-services-header">
-                    <h2>UI/UX Design Services</h2>
-                    <p>From discovery to handoff, we design experiences people love</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6"><div class="qa-service-card"><i class="bi bi-search qa-service-icon"></i><h3>User Research</h3><p>In-depth user interviews, surveys, and competitive analysis to inform design decisions.</p></div></div>
-                    <div class="col-lg-4 col-md-6"><div class="qa-service-card"><i class="bi bi-pencil-square qa-service-icon"></i><h3>Wireframing & Prototyping</h3><p>Low and high-fidelity prototypes to validate concepts and user flows before development.</p></div></div>
-                    <div class="col-lg-4 col-md-6"><div class="qa-service-card"><i class="bi bi-layout-text-sidebar-reverse qa-service-icon"></i><h3>Interface Design</h3><p>Beautiful, intuitive UI designs that align with your brand and user expectations.</p></div></div>
-                    <div class="col-lg-4 col-md-6"><div class="qa-service-card"><i class="bi bi-graph-up qa-service-icon"></i><h3>Usability Testing</h3><p>Validate designs with real users through moderated and unmoderated testing sessions.</p></div></div>
-                    <div class="col-lg-4 col-md-6"><div class="qa-service-card"><i class="bi bi-collection qa-service-icon"></i><h3>Design Systems</h3><p>Comprehensive component libraries and design tokens for consistency across products.</p></div></div>
-                    <div class="col-lg-4 col-md-6"><div class="qa-service-card"><i class="bi bi-stars qa-service-icon"></i><h3>Design Animations</h3><p>Micro-interactions and smooth animations that delight and guide users through your app.</p></div></div>
+                <div class="row g-0">
+                    <div class="col-6 col-md-3">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">200+</span>
+                            <p class="svc-why-title">Designs Shipped</p>
+                            <p class="svc-why-desc">Across web, mobile, and SaaS</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" style="border-left:1px solid rgba(255,255,255,0.08)">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">45%</span>
+                            <p class="svc-why-title">Engagement Boost</p>
+                            <p class="svc-why-desc">Average across our clients</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" style="border-left:1px solid rgba(255,255,255,0.08)">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">30%</span>
+                            <p class="svc-why-title">Conversion ↑</p>
+                            <p class="svc-why-desc">With UX-optimized flows</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3" style="border-left:1px solid rgba(255,255,255,0.08)">
+                        <div class="svc-why-item">
+                            <span class="svc-why-num">5★</span>
+                            <p class="svc-why-title">Average Rating</p>
+                            <p class="svc-why-desc">From client reviews</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="qa-tools">
+
+        <!-- ====== SERVICES GRID ====== -->
+        <section class="svc-section svc-section-light" id="services">
             <div class="container">
-                <div class="qa-tools-header">
-                    <h2>Design Tools We Use</h2>
-                    <p>Industry-standard design and prototyping platforms</p>
+                <div class="text-center mb-5">
+                    <p class="svc-section-label" style="color:#8B5CF6;"><i class="bi bi-grid-3x3-gap-fill"></i> Our Expertise</p>
+                    <h2 class="svc-section-heading">UI/UX Design Services</h2>
+                    <p class="svc-section-sub mx-auto">From discovery to handoff — we design experiences people love and businesses thrive with</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 col-sm-6"><div class="qa-tool-item"><i class="bi bi-pencil-square qa-tool-icon"></i><p class="qa-tool-name">Figma</p></div></div>
-                    <div class="col-lg-4 col-md-6 col-sm-6"><div class="qa-tool-item"><i class="bi bi-brush qa-tool-icon"></i><p class="qa-tool-name">Adobe XD</p></div></div>
-                    <div class="col-lg-4 col-md-6 col-sm-6"><div class="qa-tool-item"><i class="bi bi-play-circle qa-tool-icon"></i><p class="qa-tool-name">Protopie</p></div></div>
-                    <div class="col-lg-4 col-md-6 col-sm-6"><div class="qa-tool-item"><i class="bi bi-layers qa-tool-icon"></i><p class="qa-tool-name">Sketch</p></div></div>
-                    <div class="col-lg-4 col-md-6 col-sm-6"><div class="qa-tool-item"><i class="bi bi-graph-up qa-tool-icon"></i><p class="qa-tool-name">Hotjar</p></div></div>
-                    <div class="col-lg-4 col-md-6 col-sm-6"><div class="qa-tool-item"><i class="bi bi-chat-left-dots qa-tool-icon"></i><p class="qa-tool-name">Miro</p></div></div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="svc-card ui-card-1">
+                            <div class="svc-card-icon"><i class="bi bi-search-heart-fill"></i></div>
+                            <h3>User Research</h3>
+                            <p>In-depth user interviews, surveys, persona creation, and competitive analysis to inform every design decision with real data.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="svc-card ui-card-2">
+                            <div class="svc-card-icon"><i class="bi bi-pencil-square"></i></div>
+                            <h3>Wireframing &amp; Prototyping</h3>
+                            <p>Low and high-fidelity prototypes to validate concepts and user flows — before a penny is spent on development.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="svc-card ui-card-3">
+                            <div class="svc-card-icon"><i class="bi bi-window-fullscreen"></i></div>
+                            <h3>Interface Design</h3>
+                            <p>Beautiful, intuitive UI designs that align with your brand and exceed user expectations with pixel-perfect precision.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="svc-card ui-card-4">
+                            <div class="svc-card-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                            <h3>Usability Testing</h3>
+                            <p>Validate designs with real users through moderated and unmoderated sessions, heatmaps, and A/B testing frameworks.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="svc-card ui-card-5">
+                            <div class="svc-card-icon"><i class="bi bi-collection-fill"></i></div>
+                            <h3>Design Systems</h3>
+                            <p>Comprehensive component libraries, design tokens, and style guides for consistent, scalable product design at speed.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="svc-card ui-card-6">
+                            <div class="svc-card-icon"><i class="bi bi-stars"></i></div>
+                            <h3>Motion Design</h3>
+                            <p>Micro-interactions, page transitions, and smooth animations that delight users and guide them through your product.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="qa-testimonials">
+
+        <!-- ====== TOOLS ====== -->
+        <section class="svc-section svc-section-white">
             <div class="container">
-                <div class="qa-testimonials-header"><h2>What Clients Say</h2></div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6"><div class="qa-testimonial-card"><div class="qa-testimonial-rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><p class="qa-testimonial-text">"Their design process was thorough and collaborative. The final product had a 45% increase in user engagement!"</p><div class="qa-testimonial-author"><div class="qa-testimonial-name">Maria Santos</div><div class="qa-testimonial-role">Product Manager, GrowthCo</div></div></div></div>
-                    <div class="col-lg-4 col-md-6"><div class="qa-testimonial-card"><div class="qa-testimonial-rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><p class="qa-testimonial-text">"Excellent UX designers who truly understand user needs. Pixel-perfect designs and comprehensive documentation."</p><div class="qa-testimonial-author"><div class="qa-testimonial-name">Thomas Mueller</div><div class="qa-testimonial-role">VP Design, InnovateLabs</div></div></div></div>
-                    <div class="col-lg-4 col-md-6"><div class="qa-testimonial-card"><div class="qa-testimonial-rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><p class="qa-testimonial-text">"Amazing attention to detail. They transformed our confusing interface into an intuitive experience."</p><div class="qa-testimonial-author"><div class="qa-testimonial-name">Linda Wong</div><div class="qa-testimonial-role">Founder, DesignHub</div></div></div></div>
+                <div class="text-center mb-5">
+                    <p class="svc-section-label" style="color:#EC4899;"><i class="bi bi-tools"></i> Design Toolkit</p>
+                    <h2 class="svc-section-heading">Tools We Use Daily</h2>
+                    <p class="svc-section-sub mx-auto">Industry-standard design, prototyping, and collaboration platforms</p>
+                </div>
+                <div class="svc-tech-grid">
+                    <div class="svc-tech-pill"><i class="bi bi-vector-pen"></i> Figma</div>
+                    <div class="svc-tech-pill"><i class="bi bi-brush-fill"></i> Adobe XD</div>
+                    <div class="svc-tech-pill"><i class="bi bi-play-circle-fill"></i> ProtoPie</div>
+                    <div class="svc-tech-pill"><i class="bi bi-layers-fill"></i> Sketch</div>
+                    <div class="svc-tech-pill"><i class="bi bi-graph-up"></i> Hotjar</div>
+                    <div class="svc-tech-pill"><i class="bi bi-chat-square-dots-fill"></i> Miro</div>
+                    <div class="svc-tech-pill"><i class="bi bi-camera-fill"></i> InVision</div>
+                    <div class="svc-tech-pill"><i class="bi bi-grid-1x2-fill"></i> Zeplin</div>
+                    <div class="svc-tech-pill"><i class="bi bi-eye-fill"></i> Maze</div>
+                    <div class="svc-tech-pill"><i class="bi bi-bar-chart-fill"></i> Mixpanel</div>
                 </div>
             </div>
         </section>
-        <section class="qa-final-cta">
+
+        <!-- ====== PROCESS ====== -->
+        <section class="svc-section svc-section-light">
             <div class="container">
-                <div class="qa-final-cta-content">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5">
+                        <p class="svc-section-label" style="color:#8B5CF6;"><i class="bi bi-map-fill"></i> Design Process</p>
+                        <h2 class="svc-section-heading">Our Human-Centered<br>Design Process</h2>
+                        <p class="svc-section-sub">Empathize → Define → Ideate → Prototype → Test. A proven UX methodology for products that actually work.</p>
+                        <div class="mt-4">
+                            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                                <i class="bi bi-palette2"></i> Start Designing
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="svc-process-step">
+                            <div class="svc-step-num ui-step-1">01</div>
+                            <div><h4>Discover &amp; Empathize</h4><p>Deep user research, stakeholder interviews, journey mapping, and competitive analysis to uncover real problems.</p></div>
+                        </div>
+                        <div class="svc-process-step">
+                            <div class="svc-step-num ui-step-2">02</div>
+                            <div><h4>Define &amp; Ideate</h4><p>Synthesize research insights into clear problem statements, user flows, and creative design concepts.</p></div>
+                        </div>
+                        <div class="svc-process-step">
+                            <div class="svc-step-num ui-step-3">03</div>
+                            <div><h4>Prototype &amp; Design</h4><p>High-fidelity Figma prototypes, component libraries, and interactive demos ready for dev handoff.</p></div>
+                        </div>
+                        <div class="svc-process-step">
+                            <div class="svc-step-num ui-step-4">04</div>
+                            <div><h4>Test &amp; Iterate</h4><p>Moderated usability tests, A/B testing, and heatmap analysis to continuously improve the experience.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== TESTIMONIALS ====== -->
+        <section class="svc-section svc-section-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <p class="svc-section-label" style="color:#F59E0B;"><i class="bi bi-stars"></i> Client Stories</p>
+                    <h2 class="svc-section-heading">What Our Clients Say</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="svc-testimonial">
+                            <div class="svc-testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <blockquote>"Their design process was thorough and collaborative. The final product had a 45% increase in user engagement — beyond our expectations!"</blockquote>
+                            <div class="svc-testimonial-author">
+                                <div class="svc-author-avatar ui-av-1">MS</div>
+                                <div><span class="svc-author-name">Maria Santos</span><span class="svc-author-role">Product Manager, GrowthCo</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="svc-testimonial">
+                            <div class="svc-testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <blockquote>"Excellent UX designers who truly understand user needs. Pixel-perfect designs and incredibly comprehensive documentation."</blockquote>
+                            <div class="svc-testimonial-author">
+                                <div class="svc-author-avatar ui-av-2">TM</div>
+                                <div><span class="svc-author-name">Thomas Mueller</span><span class="svc-author-role">VP Design, InnovateLabs</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="svc-testimonial">
+                            <div class="svc-testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <blockquote>"Amazing attention to detail. They transformed our confusing interface into an intuitive experience our users rave about."</blockquote>
+                            <div class="svc-testimonial-author">
+                                <div class="svc-author-avatar ui-av-3">LW</div>
+                                <div><span class="svc-author-name">Linda Wong</span><span class="svc-author-role">Founder, DesignHub</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CTA ====== -->
+        <section class="svc-section">
+            <div class="container">
+                <div class="svc-cta-banner uiux-cta position-relative">
                     <h2>Ready to Transform Your User Experience?</h2>
-                    <p>Let's create a design that users love and that drives business results.</p>
-                    <button class="btn btn-qa-primary btn-lg" data-bs-toggle="modal" data-bs-target="#consultationModal"><i class="bi bi-rocket-takeoff"></i> Start Your Project Today</button>
+                    <p>Let's create a design that users love and that drives real business results for your product.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <button class="btn-white" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                            <i class="bi bi-palette2"></i> Start Your Design
+                        </button>
+                        <a href="../contact.html" class="btn-outline-white">
+                            <i class="bi bi-chat-dots-fill"></i> Talk to a Designer
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
     <div class="modal fade" id="consultationModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="border:1px solid #e5e7eb">
+            <div class="modal-content">
                 <div class="modal-header border-0"><h5 class="modal-title text-dark">Get Free Consultation</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
-                <div class="modal-body"><form id="consultationForm"><div class="mb-3"><label class="form-label text-dark">Name</label><input type="text" class="form-control" required></div><div class="mb-3"><label class="form-label text-dark">Email</label><input type="email" class="form-control" required></div><div class="mb-3"><label class="form-label text-dark">Project Type</label><select class="form-select" required><option>Mobile App Design</option><option>Web Application Design</option><option>E-commerce Platform</option><option>Other</option></select></div><div class="mb-3"><label class="form-label text-dark">Message</label><textarea class="form-control" rows="3" required></textarea></div></form></div>
-                <div class="modal-footer border-0"><button class="btn btn-qa-primary" onclick="document.getElementById('consultationForm').submit();">Send Request</button></div>
+                <div class="modal-body">
+                    <form id="consultationForm">
+                        <div class="mb-3"><label class="form-label text-dark">Name</label><input type="text" class="form-control" required></div>
+                        <div class="mb-3"><label class="form-label text-dark">Email</label><input type="email" class="form-control" required></div>
+                        <div class="mb-3"><label class="form-label text-dark">Project Type</label>
+                            <select class="form-select" required><option>Mobile App Design</option><option>Web Application Design</option><option>E-commerce Platform</option><option>Design System</option><option>Other</option></select>
+                        </div>
+                        <div class="mb-3"><label class="form-label text-dark">Message</label><textarea class="form-control" rows="3" required></textarea></div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0"><button class="btn btn-primary" onclick="document.getElementById('consultationForm').submit();">Send Request</button></div>
             </div>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/components.js"></script>
     <script src="../assets/js/main.js"></script>

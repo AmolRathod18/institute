@@ -177,11 +177,12 @@ img {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1050;
-    position: fixed !important;
+    position: sticky !important;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
+    overflow: visible !important;
 }
 
 /* Transparent state — white text */
@@ -271,7 +272,9 @@ img {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.85rem 0;
+    padding: 0.5rem 0;
+    min-height: auto;
+    height: auto;
 }
 
 .navbar-brand:hover {
@@ -279,12 +282,13 @@ img {
 }
 
 .logo-img {
-    height: 70px;
-    width: 70px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     object-fit: cover;
     transition: all 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0, 102, 204, 0.10));
+    flex-shrink: 0;
 }
 
 .navbar-brand:hover .logo-img {
@@ -355,6 +359,10 @@ img {
    NAV LINKS
    ====================================== */
 .navbar-nav .nav-item {
+    position: relative;
+}
+
+.nav-item.dropdown {
     position: relative;
 }
 
@@ -457,8 +465,13 @@ img {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 102, 204, 0.08);
     padding: 0.5rem;
     min-width: 220px;
-    margin-top: 0 !important;
+    margin-top: 8px !important;
     animation: dropdownReveal 0.22s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    z-index: 1100 !important;
+    background: white !important;
 }
 
 @keyframes dropdownReveal {
@@ -583,7 +596,7 @@ img {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
     padding: 0.4rem;
     min-width: 160px;
-    z-index: 1060;
+    z-index: 1100;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-6px);
@@ -617,6 +630,11 @@ img {
     color: var(--primary-color);
 }
 
+/* Ensure navbar container doesn't clip dropdowns */
+#mainNav .container {
+    overflow: visible !important;
+}
+
 /* ======================================
    MOBILE NAVBAR MENU
    ====================================== */
@@ -631,12 +649,15 @@ img {
     }
 
     #navbarNav {
-        background: white;
-        border-top: 1px solid var(--gray-100);
-        padding: 0.75rem 0 1rem;
-        margin-top: 2px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    }
+    background: white;
+    border-top: 1px solid var(--gray-100);
+    padding: 0.75rem 0 1rem;
+    margin-top: 2px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+    overflow: visible !important;
+    max-height: none !important;
+}
 
     .navbar-nav {
         gap: 0;
@@ -5715,4 +5736,16 @@ h1, h2, h3, h4, h5, h6, p, a, li, span {
         padding: 0.45rem 0.9rem;
     }
 }
+/* FINAL NAVBAR SCROLL FIX */
+html, body {
+    overflow-x: hidden;
+}
 
+#mainNav,
+.navbar,
+.navbar-collapse,
+#navbarNav {
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+}

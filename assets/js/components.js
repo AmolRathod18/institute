@@ -29,7 +29,7 @@ class ComponentLoader {
             brandLink.href = isInSubdirectory ? '../index.html' : 'index.html';
             const logo = brandLink.querySelector('.logo-img');
             if (logo) {
-                logo.src = isInSubdirectory ? '../assets/img/logo.svg' : 'assets/img/logo.svg';
+                logo.src = isInSubdirectory ? '../assets/img/Logo_6.png' : 'assets/img/Logo_6.png';
             }
         }
 

@@ -1,0 +1,426 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPREHENSIVE SPACING & ALIGNMENT FIX FOR RESZOLUTE
+
+   This file contains standardized CSS for consistent text alignment,
+   spacing, and layout across all pages.
+
+   COPY ALL STYLES BELOW AND ADD TO YOUR style.css FILE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* === GLOBAL CONTAINER & SPACING SYSTEM === */
+
+/* Master spacing variables (add to :root if not present) */
+:root {
+    /* Container sizing */
+    --container-max-width: 1200px;
+    --container-padding-desktop: 2rem;
+    --container-padding-tablet: 1.5rem;
+    --container-padding-mobile: 1rem;
+
+    /* Section spacing */
+    --section-padding-vertical: 4rem;
+    --section-padding-vertical-tablet: 3rem;
+    --section-padding-vertical-mobile: 2rem;
+}
+
+/* === STANDARDIZED CONTAINER === */
+.container {
+    max-width: var(--container-max-width) !important;
+    width: 100% !important;
+    padding-left: var(--container-padding-desktop) !important;
+    padding-right: var(--container-padding-desktop) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+    .container {
+        padding-left: var(--container-padding-tablet) !important;
+        padding-right: var(--container-padding-tablet) !important;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    .container {
+        padding-left: var(--container-padding-mobile) !important;
+        padding-right: var(--container-padding-mobile) !important;
+    }
+}
+
+/* === STANDARDIZED SECTION PADDING === */
+.section-padding {
+    padding-top: var(--section-padding-vertical) !important;
+    padding-bottom: var(--section-padding-vertical) !important;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding-top: var(--section-padding-vertical-tablet) !important;
+        padding-bottom: var(--section-padding-vertical-tablet) !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .section-padding {
+        padding-top: var(--section-padding-vertical-mobile) !important;
+        padding-bottom: var(--section-padding-vertical-mobile) !important;
+    }
+}
+
+/* === STANDARDIZED TEXT ALIGNMENT & SPACING === */
+
+/* Section headers - centered with consistent spacing */
+.section-header {
+    margin-bottom: 3rem !important;
+    text-align: center;
+}
+
+.section-header.text-start {
+    text-align: left !important;
+}
+
+.section-header.text-end {
+    text-align: right !important;
+}
+
+/* Section titles with consistent sizing and spacing */
+.section-title {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    color: var(--gray-900) !important;
+    margin-bottom: 1rem !important;
+    margin-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .section-title {
+        font-size: 1.75rem !important;
+    }
+}
+
+/* Section subtitles with consistent styling */
+.section-subtitle {
+    font-size: 1.125rem !important;
+    line-height: 1.7 !important;
+    color: var(--gray-600) !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+}
+
+@media (max-width: 768px) {
+    .section-subtitle {
+        font-size: 1rem !important;
+    }
+}
+
+/* Section eyebrow tags */
+.section-eyebrow-tag {
+    display: inline-block !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    color: var(--primary-color) !important;
+    background: rgba(0, 102, 204, 0.08) !important;
+    border: 1px solid rgba(0, 102, 204, 0.2) !important;
+    padding: 0.35rem 0.85rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* === STANDARDIZED TEXT ALIGNMENT === */
+
+/* Paragraph alignment and spacing */
+p {
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.7 !important;
+}
+
+p:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Text alignment utilities */
+.text-justify {
+    text-align: justify !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right,
+.text-end {
+    text-align: right !important;
+}
+
+/* === ROW & COLUMN STANDARDIZATION === */
+
+/* Consistent row margins */
+.row {
+    margin-left: calc(-var(--bs-gutter-x) * 0.5) !important;
+    margin-right: calc(-var(--bs-gutter-x) * 0.5) !important;
+}
+
+/* Consistent column padding */
+[class*="col-"] {
+    padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+    padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+}
+
+/* Standard gap spacing for grid */
+.g-3 {
+    --bs-gutter-x: 1.5rem !important;
+    --bs-gutter-y: 1.5rem !important;
+}
+
+.g-4 {
+    --bs-gutter-x: 2rem !important;
+    --bs-gutter-y: 2rem !important;
+}
+
+.g-5 {
+    --bs-gutter-x: 2.5rem !important;
+    --bs-gutter-y: 2.5rem !important;
+}
+
+/* === STANDARDIZED HEADING SIZES === */
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.2 !important;
+    font-family: var(--font-heading) !important;
+}
+
+h1 { font-size: 3rem !important; }
+h2 { font-size: 2.5rem !important; }
+h3 { font-size: 2rem !important; }
+h4 { font-size: 1.5rem !important; }
+h5 { font-size: 1.25rem !important; }
+h6 { font-size: 1rem !important; }
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.25rem !important; }
+    h2 { font-size: 2rem !important; }
+    h3 { font-size: 1.75rem !important; }
+    h4 { font-size: 1.25rem !important; }
+    h5 { font-size: 1.1rem !important; }
+}
+
+/* === IMAGE & TEXT BALANCE === */
+
+/* Ensure images scale properly */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+/* Image wrapper alignment */
+.img-wrapper,
+.image-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Text and image alignment in rows */
+.row.align-items-center {
+    align-items: center !important;
+}
+
+/* === STANDARDIZED CARD PADDING === */
+
+/* Consistent card spacing */
+.card {
+    border-radius: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+/* Card body standardization */
+.card-body {
+    padding: 1.5rem !important;
+}
+
+/* Service cards */
+.service-card {
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.service-card-body {
+    padding: 1.5rem !important;
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.service-card-footer {
+    padding: 1rem 1.5rem !important;
+}
+
+/* === FIXED ALIGNMENT FOR COMMON SECTIONS === */
+
+/* Hero sections */
+.hero-content {
+    text-align: center !important;
+}
+
+/* Stats sections */
+.stat-box {
+    text-align: center !important;
+}
+
+/* Feature items */
+.feature-item {
+    display: flex !important;
+    gap: 1rem !important;
+    align-items: flex-start !important;
+}
+
+.feature-icon {
+    flex-shrink: 0 !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.feature-content {
+    flex: 1 !important;
+    text-align: left !important;
+}
+
+/* Benefit cards */
+.benefit-card {
+    padding: 1.5rem !important;
+    text-align: left !important;
+}
+
+/* === MODAL & FORM ALIGNMENT === */
+
+/* Form controls */
+.form-control,
+.form-select,
+.form-label {
+    width: 100% !important;
+}
+
+.form-label {
+    margin-bottom: 0.5rem !important;
+    font-weight: 600 !important;
+}
+
+/* === FOOTER ALIGNMENT === */
+
+footer {
+    padding: 2rem !important;
+}
+
+footer .container {
+    padding-left: var(--container-padding-desktop) !important;
+    padding-right: var(--container-padding-desktop) !important;
+}
+
+@media (max-width: 768px) {
+    footer .container {
+        padding-left: var(--container-padding-mobile) !important;
+        padding-right: var(--container-padding-mobile) !important;
+    }
+}
+
+/* === RESPONSIVE BREAKPOINT STANDARDIZATION === */
+
+/* Desktop (1024px and up) */
+@media (min-width: 1025px) {
+    .container {
+        padding-left: var(--container-padding-desktop) !important;
+        padding-right: var(--container-padding-desktop) !important;
+    }
+}
+
+/* Tablet (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container {
+        padding-left: var(--container-padding-tablet) !important;
+        padding-right: var(--container-padding-tablet) !important;
+    }
+
+    .section-padding {
+        padding-top: var(--section-padding-vertical-tablet) !important;
+        padding-bottom: var(--section-padding-vertical-tablet) !important;
+    }
+}
+
+/* Mobile (575px - 768px) */
+@media (max-width: 768px) and (min-width: 576px) {
+    .container {
+        padding-left: var(--container-padding-mobile) !important;
+        padding-right: var(--container-padding-mobile) !important;
+    }
+
+    .section-padding {
+        padding-top: var(--section-padding-vertical-mobile) !important;
+        padding-bottom: var(--section-padding-vertical-mobile) !important;
+    }
+}
+
+/* Small Mobile (up to 575px) */
+@media (max-width: 575px) {
+    .container {
+        padding-left: var(--container-padding-mobile) !important;
+        padding-right: var(--container-padding-mobile) !important;
+    }
+
+    .section-padding {
+        padding-top: var(--section-padding-vertical-mobile) !important;
+        padding-bottom: var(--section-padding-vertical-mobile) !important;
+    }
+
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* === UTILITY CLASSES FOR SPACING === */
+
+/* Margin utilities */
+.m-0 { margin: 0 !important; }
+.mt-0 { margin-top: 0 !important; }
+.mb-0 { margin-bottom: 0 !important; }
+.mx-auto { margin-left: auto !important; margin-right: auto !important; }
+
+/* Padding utilities */
+.p-0 { padding: 0 !important; }
+.px-0 { padding-left: 0 !important; padding-right: 0 !important; }
+.py-0 { padding-top: 0 !important; padding-bottom: 0 !important; }
+
+/* === CLEARFIX === */
+.clearfix::after {
+    content: "" !important;
+    display: table !important;
+    clear: both !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   END OF STANDARDIZED SPACING & ALIGNMENT CSS
+   ═══════════════════════════════════════════════════════════════════════════ */

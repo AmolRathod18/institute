@@ -1,5 +1,5 @@
-/**
- * Frontend.Club - Contact Form Handler
+﻿/**
+ * Reszolute - Contact Form Handler
  * Handles form validation and submission
  */
 

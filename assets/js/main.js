@@ -1,5 +1,5 @@
-/**
- * Frontend.Club - Main JavaScript
+﻿/**
+ * Reszolute - Main JavaScript
  * Handles navigation, scroll effects, and animations
  */
 
@@ -370,32 +370,37 @@ if (typeof emailjs !== 'undefined') {
     // ===========================
     function animateCounters() {
         const counters = document.querySelectorAll('[data-target]');
-        
-        counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-target'));
-            const duration = 2000; // 2 seconds
-            const increment = target / (duration / 16);
-            let current = 0;
 
-            const updateCounter = () => {
-                current += increment;
-                if (current < target) {
-                    counter.textContent = Math.floor(current);
-                    requestAnimationFrame(updateCounter);
+        counters.forEach(counter => {
+            const target   = parseInt(counter.getAttribute('data-target'), 10);
+            const suffix   = counter.getAttribute('data-suffix') || '+';
+            const duration = 1800;
+            let startTime  = null;
+            let done       = false;
+
+            const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
+
+            const step = (timestamp) => {
+                if (!startTime) startTime = timestamp;
+                const elapsed  = timestamp - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const value    = Math.floor(easeOutQuart(progress) * target);
+                counter.textContent = value + (progress < 1 ? '' : suffix);
+                if (progress < 1) {
+                    requestAnimationFrame(step);
                 } else {
-                    counter.textContent = target;
+                    done = true;
                 }
             };
 
-            // Trigger when counter comes into view
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting && current === 0) {
-                        updateCounter();
+                    if (entry.isIntersecting && !done && !startTime) {
+                        requestAnimationFrame(step);
                         observer.unobserve(entry.target);
                     }
                 });
-            });
+            }, { threshold: 0.5 });
 
             observer.observe(counter);
         });
@@ -424,131 +429,146 @@ if (typeof emailjs !== 'undefined') {
         revealObserver.observe(el);
     });
     // ===========================
-    // HERO IMAGE SLIDER
+    // HERO IMAGE SLIDER  (fixed)
     // ===========================
     const initHeroSlider = () => {
-        // Slide data with background images, titles, and subtitles
+        // ── Slide data ────────────────────────────────────────────
+        // Each entry maps 1-to-1 with the .hero-slide element in HTML.
+        // The background-image is already set in HTML via inline style;
+        // we NEVER overwrite it from JS (that was the original bug).
         const slides = [
             {
-                title: "Transform Your Digital Vision Into Reality",
-                subtitle: "Expert software testing, web development, and design services to accelerate your business growth.",
-                link: "contact.html",
-                image: "assets/img/landing.png"
+                title: 'Transform Your Digital Vision Into Reality',
+                subtitle: 'Expert software testing, web development, and design services to accelerate your business growth.',
+                link: 'contact.html'
             },
             {
-                title: "Comprehensive Software Testing Solutions",
-                subtitle: "Ensure flawless software delivery with our rigorous quality assurance and testing expertise.",
-                link: "services/testing.html",
-                image: "assets/img/IMG1.jpg"
+                title: 'Comprehensive Software Testing Solutions',
+                subtitle: 'Ensure flawless software delivery with our rigorous quality assurance and testing expertise.',
+                link: 'services/testing.html'
             },
             {
-                title: "Modern Frontend Development",
-                subtitle: "Build responsive, fast, and beautiful web applications with cutting-edge technologies.",
-                link: "services/frontend.html",
-                image: "assets/img/Front_End.jpg"
+                title: 'Modern Frontend Development',
+                subtitle: 'Build responsive, fast, and beautiful web applications with cutting-edge technologies.',
+                link: 'services/frontend.html'
             },
             {
-                title: "Expert UI/UX Design Services",
-                subtitle: "Create engaging, intuitive digital experiences that users love and businesses thrive with.",
-                link: "services/uiux.html",
-                image: "assets/img/UI_UX.jpg"
+                title: 'Expert UI/UX Design Services',
+                subtitle: 'Create engaging, intuitive digital experiences that users love and businesses thrive with.',
+                link: 'services/uiux.html'
             }
         ];
 
-        // Get DOM elements
-        const sliderContainer = document.querySelector('.hero-slides-wrapper');
-        const heroTitle = document.getElementById('heroTitle');
+        // ── DOM references ─────────────────────────────────────────
+        const heroTitle    = document.getElementById('heroTitle');
         const heroSubtitle = document.getElementById('heroSubtitle');
         const heroLearnMore = document.getElementById('heroLearnMore');
-        const heroContent = document.getElementById('heroContent');
-        const indicators = document.querySelectorAll('.indicator');
-        const prevBtn = document.getElementById('heroPrev');
-        const nextBtn = document.getElementById('heroNext');
+        const heroContent  = document.getElementById('heroContent');
+        const slideEls     = document.querySelectorAll('.hero-slide');
+        const indicators   = document.querySelectorAll('.indicator');
+        const prevBtn      = document.getElementById('heroPrev');
+        const nextBtn      = document.getElementById('heroNext');
 
-        // Return if elements not found
-        if (!sliderContainer || !heroTitle || !heroSubtitle || !heroLearnMore || !heroContent || indicators.length === 0) {
-            return;
-        }
+        // Guard — exit silently if hero markup is absent (other pages)
+        if (!heroTitle || !heroSubtitle || !heroContent || !slideEls.length) return;
 
+        // ── State ─────────────────────────────────────────────────
         let currentIndex = 0;
         let autoPlayInterval;
+        let isAnimating  = false; // prevent double-trigger mid-transition
 
-        // Update slide content and styling
+        // ── Core: update slide (FIXED) ─────────────────────────────
+        //
+        // BUG that was here:
+        //   slideElements.forEach(el => el.style.backgroundImage = `url('${slide.image}')`);
+        //   → set the SAME image on ALL slides, destroying the cross-fade.
+        //
+        // FIX: each .hero-slide already has its own background-image from
+        //   HTML inline style. We only toggle the `active` class to let the
+        //   CSS `opacity` transition handle the cross-fade between slides.
         const updateSlide = (index) => {
+            if (isAnimating) return;
+            isAnimating = true;
+
             const slide = slides[index];
 
-            // Fade out current content
-            heroContent.classList.add('fade-out');
+            // 1. Fade background slides — ONLY toggle .active, never rewrite backgroundImage
+            slideEls.forEach((el, i) => el.classList.toggle('active', i === index));
 
-            // Update slide backgrounds
-            const slideElements = document.querySelectorAll('.hero-slide');
-            slideElements.forEach((slideEl, idx) => {
-                slideEl.classList.toggle('active', idx === index);
-                // Update background image
-                slideEl.style.backgroundImage = `url('${slide.image}')`;
-            });
+            // 2. Fade text out (CSS transition does the work — see style.css .hero-content)
+            heroContent.style.opacity = '0';
+            heroContent.style.transform = 'translateY(8px)';
 
-            // Update content after fade
+            // 3. Wait for text fade-out to complete, then swap text and fade back in.
+            //    Using a fixed 350ms (matches the CSS transition duration) keeps it tight.
+            const FADE_MS = 350;
             setTimeout(() => {
-                heroTitle.textContent = slide.title;
+                // Swap text content
+                heroTitle.textContent    = slide.title;
                 heroSubtitle.textContent = slide.subtitle;
-                heroLearnMore.href = slide.link;
-                heroContent.classList.remove('fade-out');
-            }, 300);
+                if (heroLearnMore) heroLearnMore.href = slide.link;
 
-            // Update indicators
-            indicators.forEach((btn, idx) => {
-                btn.classList.toggle('active', idx === index);
-            });
+                // Fade text back in
+                heroContent.style.opacity   = '1';
+                heroContent.style.transform = 'translateY(0)';
+
+                // Allow next transition only after fade-in completes
+                setTimeout(() => { isAnimating = false; }, FADE_MS);
+            }, FADE_MS);
+
+            // 4. Update dot indicators
+            indicators.forEach((btn, i) => btn.classList.toggle('active', i === index));
         };
 
-        // Next slide
-        const nextSlide = () => {
+        // ── Navigation helpers ─────────────────────────────────────
+        const goToNext = () => {
             currentIndex = (currentIndex + 1) % slides.length;
             updateSlide(currentIndex);
-            resetAutoPlay();
         };
 
-        // Previous slide
-        const prevSlide = () => {
+        const goToPrev = () => {
             currentIndex = (currentIndex - 1 + slides.length) % slides.length;
             updateSlide(currentIndex);
-            resetAutoPlay();
         };
 
-        // Auto-play slides every 3 seconds
+        // ── Auto-play (3500 ms as specified) ──────────────────────
         const startAutoPlay = () => {
-            autoPlayInterval = setInterval(() => {
-                nextSlide();
-            }, 3000);
+            autoPlayInterval = setInterval(goToNext, 3500);
         };
 
-        // Reset auto-play timer
         const resetAutoPlay = () => {
             clearInterval(autoPlayInterval);
             startAutoPlay();
         };
 
-        // Event listeners
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
+        // ── Event listeners ────────────────────────────────────────
+        if (nextBtn) nextBtn.addEventListener('click', () => { goToNext(); resetAutoPlay(); });
+        if (prevBtn) prevBtn.addEventListener('click', () => { goToPrev(); resetAutoPlay(); });
 
-        // Indicator clicks
-        indicators.forEach((indicator) => {
-            indicator.addEventListener('click', () => {
-                currentIndex = parseInt(indicator.dataset.index);
-                updateSlide(currentIndex);
-                resetAutoPlay();
+        indicators.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const idx = parseInt(btn.dataset.index, 10);
+                if (idx !== currentIndex) {
+                    currentIndex = idx;
+                    updateSlide(currentIndex);
+                    resetAutoPlay();
+                }
             });
         });
 
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') nextSlide();
-            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') { goToNext(); resetAutoPlay(); }
+            if (e.key === 'ArrowLeft')  { goToPrev(); resetAutoPlay(); }
         });
 
-        // Start auto-play
+        // Pause on hover to avoid interrupting reading
+        const heroSection = document.querySelector('.hero-slider');
+        if (heroSection) {
+            heroSection.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+            heroSection.addEventListener('mouseleave', startAutoPlay);
+        }
+
+        // ── Kick off ───────────────────────────────────────────────
         startAutoPlay();
     };
 
@@ -561,7 +581,7 @@ if (typeof emailjs !== 'undefined') {
 
 
     // ===========================
-    console.log('%cFrontend.Club', 'font-size: 24px; font-weight: bold; color: #0066CC;');
+    console.log('%cReszolute', 'font-size: 24px; font-weight: bold; color: #0066CC;');
     console.log('%cBuilt with ❤️ using Bootstrap 5 & Vanilla JS', 'font-size: 12px; color: #6B7280;');
 
 })();

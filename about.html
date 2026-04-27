@@ -1,125 +1,286 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Learn about Reszolute - Our mission, team, and commitment to delivering exceptional web development and design services.">
+    <meta name="description" content="Learn about Reszolute - Our mission, team, and commitment to delivering exceptional web development and design services.">
     <title>About Us - Reszolute</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* ── About Page Specific Styles ── */
+        .about-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #0c1a3a 60%, #0284c7 100%);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; left: 0; right: 0;
+            height: 60px;
+            background: white;
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+        .about-hero .breadcrumb-nav ol {
+            list-style: none; padding: 0; margin: 0 0 1.5rem;
+            display: flex; gap: 0.5rem; align-items: center;
+        }
+        .about-hero .breadcrumb-nav ol li { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+        .about-hero .breadcrumb-nav ol li a { color: rgba(255,255,255,0.75); text-decoration: none; }
+        .about-hero .breadcrumb-nav ol li:not(:last-child)::after { content: '/'; margin-left: 0.5rem; }
+        .about-hero .page-title { color: white; font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 800; margin-bottom: 1rem; }
+        .about-hero .page-subtitle { color: rgba(255,255,255,0.7); font-size: 1.2rem; max-width: 550px; }
+
+        /* Story Section */
+        .about-image {
+            width: 100%; border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+            object-fit: cover;
+        }
+
+        /* Stats Bar */
+        .about-stats-bar {
+            background: #0066CC;
+            padding: 2.5rem 0;
+        }
+        .about-stat { text-align: center; color: white; }
+        .about-stat .stat-num { font-size: 2.5rem; font-weight: 800; font-family: 'Poppins', sans-serif; line-height: 1; }
+        .about-stat .stat-lbl { font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-top: 0.3rem; }
+
+        /* MVV Cards */
+        .mvv-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .mvv-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: #bae6fd;
+        }
+        .mvv-icon {
+            width: 70px; height: 70px;
+            border-radius: 18px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; margin: 0 auto 1.5rem;
+        }
+        .mvv-icon.mission { background: linear-gradient(135deg, #eff6ff, #dbeafe); color: #1d4ed8; }
+        .mvv-icon.vision  { background: linear-gradient(135deg, #ecfdf5, #d1fae5); color: #047857; }
+        .mvv-icon.values  { background: linear-gradient(135deg, #fff7ed, #fed7aa); color: #c2410c; }
+        .mvv-card h3 { font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 1rem; }
+        .mvv-list { list-style: none; padding: 0; text-align: left; }
+        .mvv-list li { display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0; color: #475569; font-size: 0.95rem; }
+        .mvv-list li i { color: #10b981; font-size: 1.1rem; }
+
+        /* Strength Cards */
+        .strength-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .strength-card:hover {
+            background: white;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+            border-color: #bae6fd;
+            transform: translateY(-4px);
+        }
+        .strength-icon {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 1.25rem;
+        }
+
+        /* Team Cards */
+        .team-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .team-card:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            transform: translateY(-6px);
+            border-color: #bae6fd;
+        }
+        .team-avatar-ring {
+            width: 90px; height: 90px;
+            border-radius: 50%;
+            margin: 0 auto 1.25rem;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.5rem;
+        }
+        .team-card h4 { font-size: 1.1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.2rem; }
+        .team-role { font-size: 0.875rem; font-weight: 600; color: #0ea5e9; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem; }
+        .team-desc { font-size: 0.9rem; color: #64748b; line-height: 1.6; margin-bottom: 1rem; }
+        .team-socials a { color: #94a3b8; font-size: 1.1rem; margin: 0 0.3rem; transition: color 0.2s; }
+        .team-socials a:hover { color: #0ea5e9; }
+
+        /* CTA Section */
+        .about-cta {
+            background: linear-gradient(135deg, #0066CC 0%, #003380 100%);
+            padding: 80px 0;
+            position: relative; overflow: hidden;
+        }
+        .about-cta::before {
+            content: '';
+            position: absolute; inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.06) 1.5px, transparent 1.5px);
+            background-size: 28px 28px;
+        }
+        .about-cta h2 { color: white; font-size: clamp(1.8rem, 4vw, 2.75rem); font-weight: 800; margin-bottom: 1rem; }
+        .about-cta p  { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2rem; }
+        .btn-cta-white { background: white; color: #0066CC; font-weight: 700; border: none; padding: 0.85rem 2rem; border-radius: 8px; transition: all 0.3s ease; }
+        .btn-cta-white:hover { background: #f0f9ff; color: #0066CC; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        .btn-cta-ghost { background: transparent; color: white; font-weight: 600; border: 2px solid rgba(255,255,255,0.5); padding: 0.85rem 2rem; border-radius: 8px; transition: all 0.3s ease; }
+        .btn-cta-ghost:hover { border-color: white; background: rgba(255,255,255,0.1); color: white; }
+    </style>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation will be loaded by component loader -->
 
     <main id="main-content">
-        <!-- Page Header - Enhanced with Gradient -->
-        <section class="about-page-header">
-            <div class="container">
+
+        <!-- ── Hero Banner ── -->
+        <section class="about-hero">
+            <div class="container position-relative" style="z-index: 2;">
                 <nav class="breadcrumb-nav">
                     <ol>
-                        <li><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
-                        <li class="current"><i class="bi bi-info-circle"></i> About Us</li>
+                        <li><a href="index.html"><i class="bi bi-house-fill"></i> Home</a></li>
+                        <li class="current">About Us</li>
                     </ol>
                 </nav>
-                <div class="header-content">
-                    <h1 class="page-title">Our Journey to Excellence</h1>
-                    <p class="page-subtitle">Building digital solutions that transform businesses globally</p>
+                <span class="section-eyebrow-tag" style="background: rgba(255,255,255,0.1); color: #38bdf8; border-color: rgba(56,189,248,0.3);">Our Story</span>
+                <h1 class="page-title mt-3">Our Journey to Excellence</h1>
+                <p class="page-subtitle">Building digital solutions that transform businesses globally since 2020.</p>
+            </div>
+        </section>
+
+        <!-- ── Our Approach ── -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="row g-4 text-center justify-content-center">
+                    <div class="col-md-4">
+                        <div style="background: white; padding: 2.5rem 1.5rem; border-radius: 16px; border: 1px solid rgba(0, 102, 204, 0.08); height: 100%;">
+                            <div style="width: 60px; height: 60px; background: rgba(0, 102, 204, 0.1); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.5rem;">
+                                <i class="bi bi-lightbulb-fill"></i>
+                            </div>
+                            <h4 style="font-weight: 700; margin-bottom: 1rem; color: #0f172a;">Strategic Thinking</h4>
+                            <p style="color: #64748b; margin: 0; line-height: 1.6;">We start by understanding your core business goals to build solutions that actually drive results.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div style="background: white; padding: 2.5rem 1.5rem; border-radius: 16px; border: 1px solid rgba(0, 102, 204, 0.08); height: 100%;">
+                            <div style="width: 60px; height: 60px; background: rgba(16, 185, 129, 0.1); color: #10B981; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.5rem;">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                            <h4 style="font-weight: 700; margin-bottom: 1rem; color: #0f172a;">Agile Execution</h4>
+                            <p style="color: #64748b; margin: 0; line-height: 1.6;">Rapid, iterative development ensures you see progress quickly and can adapt to market changes.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div style="background: white; padding: 2.5rem 1.5rem; border-radius: 16px; border: 1px solid rgba(0, 102, 204, 0.08); height: 100%;">
+                            <div style="width: 60px; height: 60px; background: rgba(255, 107, 53, 0.1); color: var(--accent-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.5rem;">
+                                <i class="bi bi-shield-check-fill"></i>
+                            </div>
+                            <h4 style="font-weight: 700; margin-bottom: 1rem; color: #0f172a;">Quality Assurance</h4>
+                            <p style="color: #64748b; margin: 0; line-height: 1.6;">Rigorous testing and peer reviews guarantee robust, secure, and highly performant applications.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Company Story Section - Enhanced -->
-        <section class="about-story section-padding">
+        <!-- ── Our Story ── -->
+        <section class="section-padding bg-white">
             <div class="container">
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6">
-                        <span class="section-eyebrow-tag">Our Story</span>
-                        <h2 class="section-title mb-4">From Vision to Innovation</h2>
-                        <p class="lead mb-3">
-                            Founded in 2020, Reszolute emerged from a simple vision: to create an agency that combines technical excellence with genuine client partnerships.
-                        </p>
-                        <p class="text-justify mb-3">
-                            What started as a small team of passionate developers has grown into a full-service digital solutions provider serving clients across the globe. Our journey has been marked by a commitment to staying at the forefront of web technologies, maintaining the highest quality standards, and building lasting relationships with our clients.
-                        </p>
-                        <p class="text-justify mb-4">
-                            We believe that great digital solutions come from understanding not just the technical requirements, but the business goals and user needs that drive them. Today, Reszolute is known for delivering innovative solutions that transform ideas into reality.
-                        </p>
-                        <!-- <div class="story-metrics">
-                            <div class="metric-item">
-                                <div class="metric-icon">
-                                    <i class="bi bi-lightning-charge-fill"></i>
-                                </div>
-                                <div>
-                                    <strong>500+</strong>
-                                    <span>Projects Delivered</span>
-                                </div>
-                            </div>
-                            <div class="metric-item">
-                                <div class="metric-icon">
-                                    <i class="bi bi-globe"></i>
-                                </div>
-                                <div>
-                                    <strong>50+ Countries</strong>
-                                    <span>Global Presence</span>
-                                </div>
-                            </div>
-                        </div> -->
+                        <div class="position-relative">
+                            <div class="d-none d-md-block" style="position: absolute; inset: -16px; background: linear-gradient(135deg, rgba(14,165,233,0.12), rgba(16,185,129,0.08)); border-radius: 28px; transform: rotate(-2deg); z-index: 0;"></div>
+                            <img src="assets/img/About.jpg" alt="Reszolute Team" class="about-image position-relative" style="z-index: 1;">
+                        </div>
                     </div>
                     <div class="col-lg-6">
-                        <img src="assets/img/About.jpg" alt="Reszolute Team" class="img-fluid about-image">
+                        <div class="section-header">
+                            <span class="section-eyebrow-tag">Our Story</span>
+                            <h2 class="section-title mb-4">From Vision to Innovation</h2>
+                        </div>
+                        <p class="lead mb-3" style="color: #475569; line-height: 1.8;">
+                            Founded in 2020, Reszolute emerged from a simple vision: to create an agency that combines technical excellence with genuine client partnerships.
+                        </p>
+                        <p class="mb-3" style="color: #64748b; line-height: 1.8;">
+                            What started as a small team of passionate developers has grown into a full-service digital solutions provider serving clients across the globe. Our journey has been marked by a commitment to staying at the forefront of web technologies and building lasting client relationships.
+                        </p>
+                        <p class="mb-4" style="color: #64748b; line-height: 1.8;">
+                            We believe that great digital solutions come from understanding business goals and user needs. Today, Reszolute is known for delivering innovative solutions that transform ideas into reality.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Mission, Vision, Values Section - Enhanced -->
-        <section class="mission-vision-values section-padding bg-light">
+        <!-- ── Mission, Vision & Values ── -->
+        <section class="section-padding bg-light">
             <div class="container">
-                <div class="section-header text-center mb-5">
+                <div class="section-header text-center">
                     <span class="section-eyebrow-tag">Foundation</span>
                     <h2 class="section-title">Mission, Vision & Values</h2>
+                    <p class="section-subtitle">The principles that guide everything we do</p>
                 </div>
                 <div class="row g-4">
-                    <!-- Mission -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="mvv-card mission-card h-100">
-                            <div class="mvv-icon mission-icon">
-                                <i class="bi bi-target"></i>
-                            </div>
+                    <div class="col-md-4">
+                        <div class="mvv-card h-100">
+                            <div class="mvv-icon mission"><i class="bi bi-bullseye"></i></div>
                             <h3>Our Mission</h3>
-                            <p>To deliver exceptional digital solutions that empower businesses to succeed in the digital age through innovative technology, creative design, and unwavering quality.</p>
+                            <p style="color: #64748b; line-height: 1.7; margin: 0;">To deliver exceptional digital solutions that empower businesses to succeed in the digital age through innovative technology, creative design, and unwavering quality.</p>
                         </div>
                     </div>
-                    <!-- Vision -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="mvv-card vision-card h-100">
-                            <div class="mvv-icon vision-icon">
-                                <i class="bi bi-telescope"></i>
-                            </div>
+                    <div class="col-md-4">
+                        <div class="mvv-card h-100">
+                            <div class="mvv-icon vision"><i class="bi bi-eye-fill"></i></div>
                             <h3>Our Vision</h3>
-                            <p>To be the most trusted and innovative digital solutions partner globally, recognized for our excellence, integrity, and transformative impact.</p>
+                            <p style="color: #64748b; line-height: 1.7; margin: 0;">To be the most trusted and innovative digital solutions partner globally, recognized for our excellence, integrity, and transformative impact on clients' businesses.</p>
                         </div>
                     </div>
-                    <!-- Values -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="mvv-card values-card h-100">
-                            <div class="mvv-icon values-icon">
-                                <i class="bi bi-heart-fill"></i>
-                            </div>
+                    <div class="col-md-4">
+                        <div class="mvv-card h-100">
+                            <div class="mvv-icon values"><i class="bi bi-heart-fill"></i></div>
                             <h3>Our Values</h3>
                             <ul class="mvv-list">
-                                <li><i class="bi bi-check2-circle"></i> <strong>Excellence</strong></li>
-                                <li><i class="bi bi-check2-circle"></i> <strong>Integrity</strong></li>
-                                <li><i class="bi bi-check2-circle"></i> <strong>Innovation</strong></li>
-                                <li><i class="bi bi-check2-circle"></i> <strong>Collaboration</strong></li>
+                                <li><i class="bi bi-check2-circle"></i> <strong>Excellence</strong> in every deliverable</li>
+                                <li><i class="bi bi-check2-circle"></i> <strong>Integrity</strong> in all interactions</li>
+                                <li><i class="bi bi-check2-circle"></i> <strong>Innovation</strong> at the forefront</li>
+                                <li><i class="bi bi-check2-circle"></i> <strong>Collaboration</strong> & partnership</li>
                             </ul>
                         </div>
                     </div>
@@ -127,172 +288,117 @@
             </div>
         </section>
 
-        <!-- Statistics Section - Enhanced
-        <section class="statistics section-padding">
+        <!-- ── Why Choose Us ── -->
+        <section class="section-padding bg-white">
             <div class="container">
-                <div class="section-header text-center mb-5">
-                    <span class="section-eyebrow-tag">By The Numbers</span>
-                    <h2 class="section-title">Our Impact</h2>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="stat-card-enhanced completed-stat">
-                            <div class="stat-icon">
-                                <i class="bi bi-trophy-fill"></i>
-                            </div>
-                            <div class="stat-number" data-target="500">0</div>
-                            <p class="stat-label">Projects Completed</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="stat-card-enhanced clients-stat">
-                            <div class="stat-icon">
-                                <i class="bi bi-people-fill"></i>
-                            </div>
-                            <div class="stat-number" data-target="200">0</div>
-                            <p class="stat-label">Happy Clients</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="stat-card-enhanced team-stat">
-                            <div class="stat-icon">
-                                <i class="bi bi-person-badge-fill"></i>
-                            </div>
-                            <div class="stat-number" data-target="50">0</div>
-                            <p class="stat-label">Team Members</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="stat-card-enhanced experience-stat">
-                            <div class="stat-icon">
-                                <i class="bi bi-calendar-check-fill"></i>
-                            </div>
-                            <div class="stat-number" data-target="6">0</div>
-                            <p class="stat-label">Years of Excellence</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- Why Choose Us Section -->
-        <section class="why-choose-us section-padding bg-light">
-            <div class="container">
-                <div class="section-header text-center mb-5">
+                <div class="section-header text-center">
                     <span class="section-eyebrow-tag">Our Strengths</span>
                     <h2 class="section-title">Why Choose Reszolute?</h2>
+                    <p class="section-subtitle">What sets us apart from the competition</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="benefit-card-enhanced p-4">
-                            <div class="benefit-icon award-icon">
-                                <i class="bi bi-award"></i>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="strength-card">
+                            <div class="strength-icon" style="background: linear-gradient(135deg, #eff6ff, #dbeafe); color: #1d4ed8;">
+                                <i class="bi bi-award-fill"></i>
                             </div>
-                            <h4>Industry Expertise</h4>
-                            <p class="mb-0">Our team brings deep expertise across frontend development, testing, design, and team augmentation with proven track records.</p>
+                            <h5 style="font-weight: 700; color: #0f172a; margin-bottom: 0.75rem;">Industry Expertise</h5>
+                            <p style="color: #64748b; font-size: 0.93rem; line-height: 1.6; margin: 0;">Deep expertise in frontend, testing, design, and team augmentation with proven track records.</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="benefit-card-enhanced p-4">
-                            <div class="benefit-icon tech-icon">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="strength-card">
+                            <div class="strength-icon" style="background: linear-gradient(135deg, #ecfdf5, #d1fae5); color: #047857;">
                                 <i class="bi bi-lightning-charge-fill"></i>
                             </div>
-                            <h4>Cutting-Edge Technology</h4>
-                            <p class="mb-0">We leverage the latest frameworks, tools, and best practices to deliver modern, scalable, and future-proof solutions.</p>
+                            <h5 style="font-weight: 700; color: #0f172a; margin-bottom: 0.75rem;">Cutting-Edge Tech</h5>
+                            <p style="color: #64748b; font-size: 0.93rem; line-height: 1.6; margin: 0;">We leverage the latest frameworks and best practices to deliver modern, scalable solutions.</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="benefit-card-enhanced p-4">
-                            <div class="benefit-icon client-icon">
-                                <i class="bi bi-hand-thumbs-up"></i>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="strength-card">
+                            <div class="strength-icon" style="background: linear-gradient(135deg, #fff7ed, #fed7aa); color: #c2410c;">
+                                <i class="bi bi-hand-thumbs-up-fill"></i>
                             </div>
-                            <h4>Client-Centric Approach</h4>
-                            <p class="mb-0">Your success is our success. We work closely with you, understand your goals, and deliver solutions that exceed expectations.</p>
+                            <h5 style="font-weight: 700; color: #0f172a; margin-bottom: 0.75rem;">Client-Centric</h5>
+                            <p style="color: #64748b; font-size: 0.93rem; line-height: 1.6; margin: 0;">Your success is our success. We work closely with you to deliver solutions that exceed expectations.</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="benefit-card-enhanced p-4">
-                            <div class="benefit-icon results-icon">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="strength-card">
+                            <div class="strength-icon" style="background: linear-gradient(135deg, #fdf4ff, #e9d5ff); color: #7c3aed;">
                                 <i class="bi bi-graph-up-arrow"></i>
                             </div>
-                            <h4>Proven Results</h4>
-                            <p class="mb-0">Our portfolio speaks for itself with increased user engagement, improved performance, and measurable business growth.</p>
+                            <h5 style="font-weight: 700; color: #0f172a; margin-bottom: 0.75rem;">Proven Results</h5>
+                            <p style="color: #64748b; font-size: 0.93rem; line-height: 1.6; margin: 0;">Our portfolio showcases real business impact — improved performance, engagement, and growth.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Our Leadership Team Section - Enhanced -->
-        <section class="our-team section-padding">
+        <!-- ── Leadership Team ── -->
+        <section class="section-padding bg-light">
             <div class="container">
-                <div class="section-header text-center mb-5">
+                <div class="section-header text-center">
                     <span class="section-eyebrow-tag">Leadership</span>
                     <h2 class="section-title">Meet Our Team</h2>
                     <p class="section-subtitle">Experienced leaders driving innovation and excellence</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="team-card-enhanced">
-                            <div class="team-avatar ceo-avatar">
-                                <i class="bi bi-person-circle"></i>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="team-card h-100">
+                            <div class="team-avatar-ring" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">
+                                <i class="bi bi-person-fill" style="color: #1d4ed8;"></i>
                             </div>
-                            <div class="team-info">
-                                <h4>Alex Johnson</h4>
-                                <p class="team-role">CEO & Founder</p>
-                                <p class="team-desc">15+ years in web development and digital transformation. Visionary leader passionate about innovation.</p>
-                                <div class="team-socials">
-                                    <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                                    <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
-                                </div>
+                            <h4>Alex Johnson</h4>
+                            <p class="team-role">CEO & Founder</p>
+                            <p class="team-desc">15+ years in web development and digital transformation. Visionary leader passionate about innovation.</p>
+                            <div class="team-socials">
+                                <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" title="Twitter"><i class="bi bi-twitter-x"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="team-card-enhanced">
-                            <div class="team-avatar cto-avatar">
-                                <i class="bi bi-person-circle"></i>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="team-card h-100">
+                            <div class="team-avatar-ring" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">
+                                <i class="bi bi-person-fill" style="color: #047857;"></i>
                             </div>
-                            <div class="team-info">
-                                <h4>Sarah Mitchell</h4>
-                                <p class="team-role">CTO</p>
-                                <p class="team-desc">Tech innovator specializing in modern frontend architectures and scalable systems.</p>
-                                <div class="team-socials">
-                                    <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                                    <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
-                                </div>
+                            <h4>Sarah Mitchell</h4>
+                            <p class="team-role">Chief Technology Officer</p>
+                            <p class="team-desc">Tech innovator specializing in modern frontend architectures and scalable systems.</p>
+                            <div class="team-socials">
+                                <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" title="Twitter"><i class="bi bi-twitter-x"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="team-card-enhanced">
-                            <div class="team-avatar design-avatar">
-                                <i class="bi bi-person-circle"></i>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="team-card h-100">
+                            <div class="team-avatar-ring" style="background: linear-gradient(135deg, #fde8cf, #fcd5a0);">
+                                <i class="bi bi-person-fill" style="color: #c2410c;"></i>
                             </div>
-                            <div class="team-info">
-                                <h4>Michael Chen</h4>
-                                <p class="team-role">Head of Design</p>
-                                <p class="team-desc">Award-winning designer passionate about creating intuitive and beautiful user experiences.</p>
-                                <div class="team-socials">
-                                    <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                                    <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
-                                </div>
+                            <h4>Michael Chen</h4>
+                            <p class="team-role">Head of Design</p>
+                            <p class="team-desc">Award-winning designer passionate about creating intuitive and beautiful user experiences.</p>
+                            <div class="team-socials">
+                                <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" title="Twitter"><i class="bi bi-twitter-x"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="team-card-enhanced">
-                            <div class="team-avatar qa-avatar">
-                                <i class="bi bi-person-circle"></i>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="team-card h-100">
+                            <div class="team-avatar-ring" style="background: linear-gradient(135deg, #ede9fe, #ddd6fe);">
+                                <i class="bi bi-person-fill" style="color: #7c3aed;"></i>
                             </div>
-                            <div class="team-info">
-                                <h4>Emma Rodriguez</h4>
-                                <p class="team-role">Head of QA</p>
-                                <p class="team-desc">Quality assurance expert ensuring excellence in every deliverable we produce.</p>
-                                <div class="team-socials">
-                                    <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                                    <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
-                                </div>
+                            <h4>Emma Rodriguez</h4>
+                            <p class="team-role">Head of QA</p>
+                            <p class="team-desc">Quality assurance expert ensuring excellence in every deliverable we produce for clients.</p>
+                            <div class="team-socials">
+                                <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" title="Twitter"><i class="bi bi-twitter-x"></i></a>
                             </div>
                         </div>
                     </div>
@@ -300,23 +406,27 @@
             </div>
         </section>
 
-        <!-- Call to Action Section -->
-        <section class="about-cta section-padding">
-            <div class="container">
-                <div class="cta-content text-center">
-                    <h2 class="cta-title mb-3">Ready to Partner with Reszolute?</h2>
-                    <p class="cta-subtitle mb-4">Let's discuss how we can transform your digital vision into reality.</p>
-                    <div class="cta-buttons">
-                        <a href="contact.html" class="btn btn-primary btn-lg">
-                            <i class="bi bi-rocket-takeoff-fill"></i> Start Your Journey
-                        </a>
-                        <a href="services.html" class="btn btn-outline-primary btn-lg">
-                            <i class="bi bi-briefcase"></i> View Our Services
-                        </a>
+        <!-- ── CTA Section ── -->
+        <section class="about-cta">
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-7">
+                        <span class="section-eyebrow-tag" style="background: rgba(255,255,255,0.1); color: #38bdf8; border-color: rgba(56,189,248,0.3); margin-bottom: 1.5rem; display: inline-block;">Get In Touch</span>
+                        <h2>Ready to Partner with Reszolute?</h2>
+                        <p>Let's discuss how we can transform your digital vision into reality with our team of experts.</p>
+                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="contact.html" class="btn-cta-white btn">
+                                <i class="bi bi-rocket-takeoff-fill me-2"></i>Start Your Journey
+                            </a>
+                            <a href="services.html" class="btn-cta-ghost btn">
+                                <i class="bi bi-briefcase me-2"></i>View Our Services
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer will be loaded by component loader -->

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,496 +27,269 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+
     <style>
-        /* ===== MODERN SERVICES PAGE - LIGHT THEME ===== */
-
-        /* Services Grid */
-        .services-grid {
-            background: #ffffff;
-            padding: 100px 0;
-        }
-
-        .modern-service-card {
-            background: #ffffff;
-            border: none;
-            border-radius: 20px !important;
+        /* ── Services Hero ── */
+        .services-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #0c1a3a 55%, #0066CC 100%);
+            padding: 100px 0 80px;
+            position: relative;
             overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-            position: relative;
-            box-shadow: 0 8px 24px rgba(0, 102, 204, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
-            animation: slideInUp 0.6s ease-out;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
         }
-
-        .modern-service-card:nth-child(1) { animation-delay: 0.1s; }
-        .modern-service-card:nth-child(2) { animation-delay: 0.2s; }
-        .modern-service-card:nth-child(3) { animation-delay: 0.3s; }
-        .modern-service-card:nth-child(4) { animation-delay: 0.4s; }
-
-        .modern-service-card::before {
+        .services-hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .services-hero::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #0066CC, #FF6B35);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-            z-index: 10;
-            border-radius: 20px 20px 0 0 !important;
+            bottom: -2px; left: 0; right: 0;
+            height: 60px;
+            background: #f8fafc;
+            clip-path: ellipse(55% 100% at 50% 100%);
         }
-
-        .modern-service-card:hover {
-            transform: translateY(-20px) scale(1.02);
-            box-shadow: 0 30px 80px rgba(0, 102, 204, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08);
+        .services-hero .breadcrumb-nav ol {
+            list-style: none; padding: 0; margin: 0 0 1.5rem;
+            display: flex; gap: 0.5rem; align-items: center;
         }
+        .services-hero .breadcrumb-nav ol li { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+        .services-hero .breadcrumb-nav ol li a { color: rgba(255,255,255,0.75); text-decoration: none; }
+        .services-hero .breadcrumb-nav ol li:not(:last-child)::after { content: '/'; margin-left: 0.5rem; }
+        .services-hero .page-title { color: white; font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 800; margin-bottom: 1rem; }
+        .services-hero .page-subtitle { color: rgba(255,255,255,0.75); font-size: 1.15rem; max-width: 560px; }
 
-        .modern-service-card:hover::before {
-            transform: scaleX(1);
+        /* ── Stats Bar ── */
+        .services-stats {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1.75rem 0;
         }
+        .s-stat { text-align: center; }
+        .s-stat .num { font-size: 1.75rem; font-weight: 800; font-family: 'Poppins', sans-serif; color: #0066CC; line-height: 1; }
+        .s-stat .lbl { font-size: 0.82rem; color: #64748b; margin-top: 0.2rem; font-weight: 500; }
 
-        .service-image-wrapper {
-            position: relative;
-            height: 250px;
+        /* ── Service Cards ── */
+        .services-section { background: #f8fafc; padding: 80px 0; }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
             overflow: hidden;
-            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
-        }
-
-        .service-image-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(255, 107, 53, 0.05));
-            z-index: 1;
-            pointer-events: none;
-            transition: all 0.5s ease;
-        }
-
-        .modern-service-card:hover .service-image-wrapper::after {
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.15), rgba(255, 107, 53, 0.1));
-        }
-
-        .service-image-wrapper img {
-            width: 100%;
+            transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-            position: relative;
-            z-index: 0;
-        }
-
-        .modern-service-card:hover .service-image-wrapper img {
-            transform: scale(1.08) rotate(1deg);
-        }
-
-        .service-content-wrapper {
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .service-icon-wrapper {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #0066CC, #0052A3);
-            color: white;
-            border-radius: 16px !important;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2), 0 0 0 0 rgba(0, 102, 204, 0.1);
+            display: flex; flex-direction: column;
             position: relative;
         }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.1);
+            border-color: transparent;
+        }
 
-        .service-icon-wrapper::before {
+        /* Top accent stripe per card */
+        .service-card::before {
             content: '';
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(135deg, #0066CC, #0052A3);
-            border-radius: 16px !important;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: -1;
-            filter: blur(8px);
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 4px;
+            border-radius: 20px 20px 0 0;
+            transition: height 0.3s ease;
         }
+        .service-card:hover::before { height: 5px; }
+        .card-testing::before   { background: linear-gradient(90deg, #dc2626, #ef4444); }
+        .card-frontend::before  { background: linear-gradient(90deg, #1d4ed8, #3b82f6); }
+        .card-design::before    { background: linear-gradient(90deg, #7c3aed, #a855f7); }
+        .card-staff::before     { background: linear-gradient(90deg, #047857, #10b981); }
 
-        .modern-service-card:hover .service-icon-wrapper {
-            transform: scale(1.2) rotate(-5deg);
-            box-shadow: 0 15px 45px rgba(0, 102, 204, 0.3), 0 0 30px rgba(0, 102, 204, 0.15);
+        /* Card icon header */
+        .card-icon-header {
+            padding: 2rem 2rem 0;
+            display: flex; align-items: center; gap: 1.25rem;
         }
-
-        .modern-service-card:hover .service-icon-wrapper::before {
-            opacity: 1;
-        }
-
-        .service-title {
+        .card-icon-box {
+            width: 64px; height: 64px;
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
             font-size: 1.75rem;
-            font-weight: 800;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-            font-family: 'Poppins', sans-serif;
-            transition: color 0.4s ease;
-        }
-
-        .modern-service-card:hover .service-title {
-            color: #0066CC;
-        }
-
-        .service-description {
-            font-size: 1rem;
-            color: #6b7280;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-            transition: color 0.4s ease;
-        }
-
-        .modern-service-card:hover .service-description {
-            color: #5a6276;
-        }
-
-        .service-features {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .service-features li {
-            padding: 0.75rem 0;
-            color: #4b5563;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: all 0.3s ease;
-        }
-
-        .modern-service-card:hover .service-features li {
-            color: #2d3748;
-            padding-left: 0.5rem;
-        }
-
-        .service-features i {
-            color: #0066CC;
-            font-weight: bold;
+            flex-shrink: 0;
             transition: transform 0.3s ease;
         }
+        .service-card:hover .card-icon-box { transform: scale(1.1) rotate(-5deg); }
+        .icon-testing  { background: linear-gradient(135deg, #fef2f2, #fee2e2); color: #dc2626; }
+        .icon-frontend { background: linear-gradient(135deg, #eff6ff, #dbeafe); color: #1d4ed8; }
+        .icon-design   { background: linear-gradient(135deg, #fdf4ff, #e9d5ff); color: #7c3aed; }
+        .icon-staff    { background: linear-gradient(135deg, #ecfdf5, #d1fae5); color: #047857; }
 
-        .modern-service-card:hover .service-features li i {
-            transform: scale(1.1);
+        .card-badge {
+            font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.8px;
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
         }
+        .badge-testing  { background: #fef2f2; color: #dc2626; }
+        .badge-frontend { background: #eff6ff; color: #1d4ed8; }
+        .badge-design   { background: #fdf4ff; color: #7c3aed; }
+        .badge-staff    { background: #ecfdf5; color: #047857; }
 
-        .service-cta {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 0.5rem;
-            padding: 14px 28px;
-            background: linear-gradient(135deg, #0066CC, #0052A3);
-            color: white;
-            border-radius: 10px !important;
+        .card-body-content { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-body-content h2 { font-size: 1.4rem; font-weight: 800; color: #0f172a; margin-bottom: 0.6rem; font-family: 'Poppins', sans-serif; }
+        .card-body-content p  { color: #64748b; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem; }
+
+        .service-features { list-style: none; padding: 0; margin-bottom: 1.75rem; flex-grow: 1; }
+        .service-features li {
+            display: flex; align-items: center; gap: 0.6rem;
+            padding: 0.45rem 0;
+            color: #475569; font-size: 0.92rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .service-features li:last-child { border-bottom: none; }
+        .service-features li i { font-size: 0.9rem; flex-shrink: 0; }
+        .fi-testing  { color: #dc2626; }
+        .fi-frontend { color: #1d4ed8; }
+        .fi-design   { color: #7c3aed; }
+        .fi-staff    { color: #047857; }
+
+        .card-cta {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 700; font-size: 0.9rem;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: auto;
-            width: fit-content;
-            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.2);
-        }
-
-        .service-cta:hover {
-            background: linear-gradient(135deg, #0052A3, #003d7a);
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(0, 102, 204, 0.3);
-            color: white;
-        }
-
-        .service-cta:active {
-            transform: translateY(-1px);
-        }
-
-        /* Process Section */
-        .process-section {
-            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
-            padding: 100px 0;
-        }
-
-        .process-section .section-title {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-        }
-
-        .process-section .section-subtitle {
-            font-size: 1.2rem;
-            color: #6b7280;
-        }
-
-        .process-step {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 16px !important;
-            padding: 40px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            animation: slideInUp 0.6s ease-out;
-            height: 100%;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        }
-
-        .process-step:nth-child(1) { animation-delay: 0.1s; }
-        .process-step:nth-child(2) { animation-delay: 0.2s; }
-        .process-step:nth-child(3) { animation-delay: 0.3s; }
-        .process-step:nth-child(4) { animation-delay: 0.4s; }
-
-        .process-step::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #0066CC, #FF6B35);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .process-step:hover {
-            border-color: #0066CC;
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 102, 204, 0.12);
-        }
-
-        .process-step:hover::before {
-            transform: scaleX(1);
-        }
-
-        .process-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #0066CC, #0052A3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .process-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #0f0f2e;
-            margin-bottom: 1rem;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .process-description {
-            color: #6b7280;
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 0;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
-            padding: 80px 0;
-            color: white;
-        }
-
-        .cta-section .cta-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 1rem;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .cta-section .cta-text {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 0;
-        }
-
-        .btn-light-cta {
-            background: white;
-            color: #0066CC;
-            font-weight: 600;
-            padding: 14px 32px;
-            border-radius: 8px !important;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            align-self: flex-start;
         }
+        .cta-testing  { background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; }
+        .cta-testing:hover  { box-shadow: 0 8px 20px rgba(220,38,38,0.35);  transform: translateY(-2px); color: white; }
+        .cta-frontend { background: linear-gradient(135deg, #1d4ed8, #1e40af); color: white; }
+        .cta-frontend:hover { box-shadow: 0 8px 20px rgba(29,78,216,0.35);  transform: translateY(-2px); color: white; }
+        .cta-design   { background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; }
+        .cta-design:hover   { box-shadow: 0 8px 20px rgba(124,58,237,0.35); transform: translateY(-2px); color: white; }
+        .cta-staff    { background: linear-gradient(135deg, #047857, #065f46); color: white; }
+        .cta-staff:hover    { box-shadow: 0 8px 20px rgba(4,120,87,0.35);   transform: translateY(-2px); color: white; }
 
-        .btn-light-cta:hover {
-            background: #f0f7ff;
-            color: #0052A3;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
+        /* ── Process Section ── */
+        .process-section {
+            background: white;
+            padding: 80px 0;
         }
+        .process-step-card {
+            position: relative;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 2rem 1.75rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .process-step-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+            background: white;
+            border-color: #bae6fd;
+        }
+        .step-number {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+            margin: 0 auto 1.25rem;
+            color: white;
+        }
+        .sn-1 { background: linear-gradient(135deg, #0066CC, #0284c7); }
+        .sn-2 { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+        .sn-3 { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .sn-4 { background: linear-gradient(135deg, #047857, #10b981); }
+        .process-step-card h3 { font-size: 1.1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.6rem; }
+        .process-step-card p  { color: #64748b; font-size: 0.9rem; line-height: 1.7; margin: 0; }
 
-        /* Animations */
+        /* ── CTA Section ── */
+        .services-cta {
+            background: linear-gradient(135deg, #0066CC 0%, #003380 100%);
+            padding: 80px 0;
+            position: relative; overflow: hidden;
+        }
+        .services-cta::before {
+            content: '';
+            position: absolute; inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.06) 1.5px, transparent 1.5px);
+            background-size: 28px 28px;
+        }
+        .services-cta h2 { color: white; font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 0.75rem; }
+        .services-cta p  { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 0; }
+        .btn-cta-wh {
+            background: white; color: #0066CC; font-weight: 700;
+            border: none; padding: 0.85rem 2rem; border-radius: 10px;
+            transition: all 0.3s ease; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-cta-wh:hover { background: #f0f9ff; color: #0066CC; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); }
+
         @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .modern-service-card {
-                margin-bottom: 2rem;
-                border-radius: 16px;
-            }
-
-            .service-title {
-                font-size: 1.4rem;
-            }
-
-            .service-image-wrapper {
-                height: 200px;
-            }
-
-            .service-icon-wrapper {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-
-            .service-content-wrapper {
-                padding: 30px;
-            }
-
-            .service-cta {
-                padding: 12px 24px;
-                font-size: 0.95rem;
-            }
-
-            .process-section .section-title,
-            .cta-section .cta-title {
-                font-size: 2rem;
-            }
-
-            .cta-section {
-                text-align: center;
-            }
-
-            .cta-section .text-lg-end {
-                text-align: center !important;
-                margin-top: 1.5rem;
-            }
-
-            .btn-light-cta {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .modern-service-card {
-                border-radius: 12px;
-            }
-
-            .service-title {
-                font-size: 1.2rem;
-            }
-
-            .service-image-wrapper {
-                height: 150px;
-            }
-
-            .service-content-wrapper {
-                padding: 24px;
-            }
-
-            .service-icon-wrapper {
-                width: 55px;
-                height: 55px;
-                font-size: 1.3rem;
-            }
-
-            .service-features li {
-                font-size: 0.9rem;
-            }
-
-            .process-section .section-title,
-            .cta-section .cta-title {
-                font-size: 1.6rem;
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <!-- Skip to content -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-
     <!-- Navigation will be loaded by component loader -->
 
     <main id="main-content">
-        <!-- Page Header -->
-        <section class="page-header">
-            <div class="container">
+
+        <!-- ── Hero ── -->
+        <section class="services-hero">
+            <div class="container position-relative" style="z-index: 2;">
                 <nav class="breadcrumb-nav">
                     <ol>
-                        <li><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
-                        <li class="current"><i class="bi bi-briefcase"></i> Services</li>
+                        <li><a href="index.html"><i class="bi bi-house-fill"></i> Home</a></li>
+                        <li class="current">Services</li>
                     </ol>
                 </nav>
+                <span class="section-eyebrow-tag" style="background: rgba(255,255,255,0.1); color: #38bdf8; border-color: rgba(56,189,248,0.3); margin-bottom: 1.25rem; display: inline-block;">What We Offer</span>
                 <h1 class="page-title">Our Services</h1>
-                <p class="page-subtitle">Comprehensive solutions designed to drive your business forward</p>
+                <p class="page-subtitle">Comprehensive solutions designed to accelerate your business growth and digital transformation.</p>
             </div>
         </section>
 
-        <!-- Services Grid -->
-        <section class="services-grid">
+
+
+        <!-- ── Service Cards ── -->
+        <section class="services-section">
             <div class="container">
+                <div class="section-header text-center mb-5">
+                    <span class="section-eyebrow-tag">What We Do</span>
+                    <h2 class="section-title">Explore Our Services</h2>
+                    <p class="section-subtitle">From testing to design, we cover your full digital needs</p>
+                </div>
                 <div class="row g-4">
+
                     <!-- Software Testing -->
                     <div class="col-lg-6">
-                        <div class="modern-service-card">
-                            <div class="service-header service-header-testing">
-                                <div class="service-icon-wrapper-large">
-                                    <i class="bi bi-bug"></i>
+                        <div class="service-card card-testing">
+                            <div class="card-icon-header">
+                                <div class="card-icon-box icon-testing">
+                                    <i class="bi bi-bug-fill"></i>
+                                </div>
+                                <div>
+                                    <span class="card-badge badge-testing">QA & Testing</span>
+                                    <h2 style="margin: 0.3rem 0 0; font-size: 1.35rem; font-weight: 800; color: #0f172a; font-family: 'Poppins', sans-serif;">Software Testing</h2>
                                 </div>
                             </div>
-                            <div class="service-content-wrapper">
-                                <h2 class="service-title">Software Testing</h2>
-                                <p class="service-description">Comprehensive quality assurance services ensuring your software meets the highest standards of reliability and performance.</p>
+                            <div class="card-body-content">
+                                <p>Comprehensive quality assurance services ensuring your software meets the highest standards of reliability, performance, and security.</p>
                                 <ul class="service-features">
-                                    <li><i class="bi bi-check-circle-fill"></i> Functional Testing & QA</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Test Automation Frameworks</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Performance & Load Testing</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Security Testing & Assessment</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> API Testing Services</li>
+                                    <li><i class="bi bi-check-circle-fill fi-testing"></i> Functional Testing & QA</li>
+                                    <li><i class="bi bi-check-circle-fill fi-testing"></i> Test Automation Frameworks</li>
+                                    <li><i class="bi bi-check-circle-fill fi-testing"></i> Performance & Load Testing</li>
+                                    <li><i class="bi bi-check-circle-fill fi-testing"></i> Security Testing & Assessment</li>
+                                    <li><i class="bi bi-check-circle-fill fi-testing"></i> API Testing Services</li>
                                 </ul>
-                                <a href="services/testing.html" class="service-cta">
-                                    <i class="bi bi-arrow-right"></i> Learn More
+                                <a href="services/testing.html" class="card-cta cta-testing">
+                                    Learn More <i class="bi bi-arrow-right"></i>
                                 </a>
                             </div>
                         </div>
@@ -524,25 +297,27 @@
 
                     <!-- Frontend Development -->
                     <div class="col-lg-6">
-                        <div class="modern-service-card">
-                            <div class="service-image-wrapper">
-                                <img src="assets/img/front-end.webp" alt="Modern frontend web development">
-                            </div>
-                            <div class="service-content-wrapper">
-                                <div class="service-icon-wrapper">
+                        <div class="service-card card-frontend">
+                            <div class="card-icon-header">
+                                <div class="card-icon-box icon-frontend">
                                     <i class="bi bi-code-slash"></i>
                                 </div>
-                                <h2 class="service-title">Frontend Development</h2>
-                                <p class="service-description">Build modern, responsive web applications with clean code and dynamic user interactions that engage your audience.</p>
+                                <div>
+                                    <span class="card-badge badge-frontend">Development</span>
+                                    <h2 style="margin: 0.3rem 0 0; font-size: 1.35rem; font-weight: 800; color: #0f172a; font-family: 'Poppins', sans-serif;">Frontend Development</h2>
+                                </div>
+                            </div>
+                            <div class="card-body-content">
+                                <p>Build modern, responsive web applications with clean code and dynamic user interactions that engage your audience and drive conversions.</p>
                                 <ul class="service-features">
-                                    <li><i class="bi bi-check-circle-fill"></i> HTML/CSS/JavaScript Development</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> React, Angular & Vue Expertise</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Progressive Web Apps (PWAs)</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Responsive Design</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Performance Optimization</li>
+                                    <li><i class="bi bi-check-circle-fill fi-frontend"></i> HTML / CSS / JavaScript</li>
+                                    <li><i class="bi bi-check-circle-fill fi-frontend"></i> React, Angular & Vue Expertise</li>
+                                    <li><i class="bi bi-check-circle-fill fi-frontend"></i> Progressive Web Apps (PWAs)</li>
+                                    <li><i class="bi bi-check-circle-fill fi-frontend"></i> Responsive & Mobile-First Design</li>
+                                    <li><i class="bi bi-check-circle-fill fi-frontend"></i> Performance Optimization</li>
                                 </ul>
-                                <a href="services/frontend.html" class="service-cta">
-                                    <i class="bi bi-arrow-right"></i> Learn More
+                                <a href="services/frontend.html" class="card-cta cta-frontend">
+                                    Learn More <i class="bi bi-arrow-right"></i>
                                 </a>
                             </div>
                         </div>
@@ -550,25 +325,27 @@
 
                     <!-- UI/UX Design -->
                     <div class="col-lg-6">
-                        <div class="modern-service-card">
-                            <div class="service-image-wrapper">
-                                <img src="assets/img/ui-ux-design.webp" alt="User experience and interface design">
-                            </div>
-                            <div class="service-content-wrapper">
-                                <div class="service-icon-wrapper">
-                                    <i class="bi bi-palette"></i>
+                        <div class="service-card card-design">
+                            <div class="card-icon-header">
+                                <div class="card-icon-box icon-design">
+                                    <i class="bi bi-palette-fill"></i>
                                 </div>
-                                <h2 class="service-title">UI/UX Design</h2>
-                                <p class="service-description">Create intuitive, engaging user experiences through research-driven design that puts your users first.</p>
+                                <div>
+                                    <span class="card-badge badge-design">Design</span>
+                                    <h2 style="margin: 0.3rem 0 0; font-size: 1.35rem; font-weight: 800; color: #0f172a; font-family: 'Poppins', sans-serif;">UI/UX Design</h2>
+                                </div>
+                            </div>
+                            <div class="card-body-content">
+                                <p>Create intuitive, visually compelling user experiences through research-driven design that puts your users first and drives engagement.</p>
                                 <ul class="service-features">
-                                    <li><i class="bi bi-check-circle-fill"></i> User Research & Analysis</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Wireframing & Prototyping</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Usability Testing</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Design System Development</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Interactive Mockups</li>
+                                    <li><i class="bi bi-check-circle-fill fi-design"></i> User Research & Analysis</li>
+                                    <li><i class="bi bi-check-circle-fill fi-design"></i> Wireframing & Prototyping</li>
+                                    <li><i class="bi bi-check-circle-fill fi-design"></i> Usability Testing</li>
+                                    <li><i class="bi bi-check-circle-fill fi-design"></i> Design System Development</li>
+                                    <li><i class="bi bi-check-circle-fill fi-design"></i> Interactive Mockups (Figma)</li>
                                 </ul>
-                                <a href="services/uiux.html" class="service-cta">
-                                    <i class="bi bi-arrow-right"></i> Learn More
+                                <a href="services/uiux.html" class="card-cta cta-design">
+                                    Learn More <i class="bi bi-arrow-right"></i>
                                 </a>
                             </div>
                         </div>
@@ -576,89 +353,95 @@
 
                     <!-- Staff Augmentation -->
                     <div class="col-lg-6">
-                        <div class="modern-service-card">
-                            <div class="service-image-wrapper">
-                                <img src="assets/img/staff.webp" alt="Professional staff augmentation services">
-                            </div>
-                            <div class="service-content-wrapper">
-                                <div class="service-icon-wrapper">
-                                    <i class="bi bi-people"></i>
+                        <div class="service-card card-staff">
+                            <div class="card-icon-header">
+                                <div class="card-icon-box icon-staff">
+                                    <i class="bi bi-people-fill"></i>
                                 </div>
-                                <h2 class="service-title">Staff Augmentation</h2>
-                                <p class="service-description">Scale your team with skilled professionals who seamlessly integrate with your existing workflow and culture.</p>
+                                <div>
+                                    <span class="card-badge badge-staff">Staffing</span>
+                                    <h2 style="margin: 0.3rem 0 0; font-size: 1.35rem; font-weight: 800; color: #0f172a; font-family: 'Poppins', sans-serif;">Staff Augmentation</h2>
+                                </div>
+                            </div>
+                            <div class="card-body-content">
+                                <p>Scale your team with skilled professionals who seamlessly integrate with your existing workflow, culture, and long-term goals.</p>
                                 <ul class="service-features">
-                                    <li><i class="bi bi-check-circle-fill"></i> Short-term Contract Staffing</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Long-term Project Teams</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Dedicated Development Teams</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Talent Acquisition Support</li>
-                                    <li><i class="bi bi-check-circle-fill"></i> Flexible Engagement Models</li>
+                                    <li><i class="bi bi-check-circle-fill fi-staff"></i> Short-term Contract Staffing</li>
+                                    <li><i class="bi bi-check-circle-fill fi-staff"></i> Long-term Project Teams</li>
+                                    <li><i class="bi bi-check-circle-fill fi-staff"></i> Dedicated Development Teams</li>
+                                    <li><i class="bi bi-check-circle-fill fi-staff"></i> Talent Acquisition Support</li>
+                                    <li><i class="bi bi-check-circle-fill fi-staff"></i> Flexible Engagement Models</li>
                                 </ul>
-                                <a href="services/staff-augmentation.html" class="service-cta">
-                                    <i class="bi bi-arrow-right"></i> Learn More
+                                <a href="services/staff-augmentation.html" class="card-cta cta-staff">
+                                    Learn More <i class="bi bi-arrow-right"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Process Section -->
+        <!-- ── Our Process ── -->
         <section class="process-section">
             <div class="container">
                 <div class="section-header text-center">
+                    <span class="section-eyebrow-tag">How We Work</span>
                     <h2 class="section-title">Our Process</h2>
-                    <p class="section-subtitle">A proven methodology for delivering exceptional results</p>
+                    <p class="section-subtitle">A proven methodology for delivering exceptional, on-time results</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="process-step">
-                            <div class="process-number">01</div>
-                            <h3 class="process-title">Discovery</h3>
-                            <p class="process-description">We analyze your requirements, understand your goals, and define project scope.</p>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="process-step-card">
+                            <div class="step-number sn-1">01</div>
+                            <h3>Discovery</h3>
+                            <p>We analyze your requirements, understand your goals, and clearly define the project scope and success criteria.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="process-step">
-                            <div class="process-number">02</div>
-                            <h3 class="process-title">Planning</h3>
-                            <p class="process-description">Create detailed roadmap, timeline, and resource allocation for project success.</p>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="process-step-card">
+                            <div class="step-number sn-2">02</div>
+                            <h3>Planning</h3>
+                            <p>Create a detailed roadmap, timeline, and resource allocation plan to ensure every project milestone is met.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="process-step">
-                            <div class="process-number">03</div>
-                            <h3 class="process-title">Execution</h3>
-                            <p class="process-description">Agile development with regular updates, testing, and quality assurance.</p>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="process-step-card">
+                            <div class="step-number sn-3">03</div>
+                            <h3>Execution</h3>
+                            <p>Agile development with regular sprint updates, continuous testing, and transparent quality assurance reports.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="process-step">
-                            <div class="process-number">04</div>
-                            <h3 class="process-title">Delivery</h3>
-                            <p class="process-description">Launch, training, and ongoing support to ensure long-term success.</p>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="process-step-card">
+                            <div class="step-number sn-4">04</div>
+                            <h3>Delivery</h3>
+                            <p>Smooth launch, handover documentation, team training, and ongoing support to ensure long-term success.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="row align-items-center">
+        <!-- ── CTA ── -->
+        <section class="services-cta">
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="row align-items-center g-4">
                     <div class="col-lg-8">
-                        <h2 class="cta-title">Let's Build Something Great Together</h2>
-                        <p class="cta-text">Schedule a free consultation to discuss your project and discover how we can help.</p>
+                        <span class="section-eyebrow-tag" style="background: rgba(255,255,255,0.1); color: #38bdf8; border-color: rgba(56,189,248,0.3); margin-bottom: 1rem; display: inline-block;">Free Consultation</span>
+                        <h2>Let's Build Something Great Together</h2>
+                        <p>Schedule a free consultation to discuss your project and discover exactly how we can help.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a href="contact.html" class="btn-light-cta">
-                            <i class="bi bi-telephone"></i> Contact Us Now
+                        <a href="contact.html" class="btn-cta-wh">
+                            <i class="bi bi-telephone-fill"></i> Contact Us Now
                         </a>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer will be loaded by component loader -->

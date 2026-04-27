@@ -29,7 +29,7 @@ class ComponentLoader {
             brandLink.href = isInSubdirectory ? '../index.html' : 'index.html';
             const logo = brandLink.querySelector('.logo-img');
             if (logo) {
-                logo.src = isInSubdirectory ? '../assets/img/Logo_6.png' : 'assets/img/Logo_6.png';
+                logo.src = isInSubdirectory ? '../assets/img/Final_Logo.png' : 'assets/img/Final_Logo.png';
             }
         }
 
@@ -162,9 +162,8 @@ class ComponentLoader {
         // --- Mobile menu auto-close for regular nav links ---
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth < 992 && navbarCollapse) {
-                    const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
-                    bsCollapse.hide();
+                if (window.innerWidth < 992 && navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    toggler.click();
                 }
             });
         });
@@ -172,11 +171,19 @@ class ComponentLoader {
         // --- Auto-close menu when dropdown item is clicked ---
         dropdownItems.forEach(item => {
             item.addEventListener('click', () => {
-                if (window.innerWidth < 992 && navbarCollapse) {
-                    const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
-                    bsCollapse.hide();
+                if (window.innerWidth < 992 && navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    toggler.click();
                 }
             });
+        });
+
+        // --- Auto-close menu on outside click ---
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth < 992 && navbarCollapse && navbarCollapse.classList.contains('show')) {
+                if (!navbar.contains(e.target)) {
+                    toggler.click();
+                }
+            }
         });
 
         // --- Navbar scroll shadow effect ---

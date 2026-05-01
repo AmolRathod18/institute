@@ -84,7 +84,7 @@ class ComponentLoader {
             const rootPath = this.getRootPath();
             const navbarPath = rootPath === '../' ? '../components/navbar.html' : 'components/navbar.html';
             
-            const response = await fetch(navbarPath);
+            const response = await fetch(navbarPath, { cache: 'no-store' });
             if (!response.ok) {
                 throw new Error(`Failed to load navbar: ${response.statusText}`);
             }
@@ -279,7 +279,7 @@ class ComponentLoader {
             const rootPath = this.getRootPath();
             const footerPath = rootPath === '../' ? '../components/footer.html' : 'components/footer.html';
             
-            const response = await fetch(footerPath);
+            const response = await fetch(footerPath, { cache: 'no-store' });
             if (!response.ok) {
                 throw new Error(`Failed to load footer: ${response.statusText}`);
             }
@@ -314,7 +314,7 @@ class ComponentLoader {
             const rootPath = this.getRootPath();
             const scrollToTopPath = rootPath === '../' ? '../components/scroll-to-top.html' : 'components/scroll-to-top.html';
             
-            const response = await fetch(scrollToTopPath);
+            const response = await fetch(scrollToTopPath, { cache: 'no-store' });
             if (!response.ok) {
                 throw new Error(`Failed to load scroll-to-top: ${response.statusText}`);
             }

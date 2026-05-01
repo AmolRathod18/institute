@@ -9,29 +9,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/premium.css">
     <style>
         /* === TESTING PAGE SPECIFIC === */
         .testing-hero {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 40%, #0f0f0f 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #0c1a3a 55%, #0066CC 100%);
         }
         .testing-hero .svc-hero-blob:nth-child(1) {
             width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(14,165,233,0.22) 0%, transparent 70%);
             top: -100px; right: -100px;
             animation: blobFloat 8s ease-in-out infinite;
         }
         .testing-hero .svc-hero-blob:nth-child(2) {
             width: 350px; height: 350px;
-            background: radial-gradient(circle, rgba(100,100,100,0.2) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);
             bottom: -80px; left: -80px;
             animation: blobFloat 10s ease-in-out infinite reverse;
         }
         .testing-hero .svc-hero-blob:nth-child(3) {
             width: 250px; height: 250px;
-            background: radial-gradient(circle, rgba(80,80,80,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%);
             top: 30%; left: 30%;
             animation: blobFloat 6s ease-in-out infinite 2s;
         }
@@ -39,31 +40,31 @@
             0%,100% { transform: translateY(0) scale(1); }
             50% { transform: translateY(30px) scale(1.05); }
         }
-        .testing-badge { background: linear-gradient(135deg,#000000,#333333); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-        .test-card-1 { --svc-gradient: linear-gradient(90deg,#000000,#1f2937); }
-        .test-card-1 .svc-card-icon { background: linear-gradient(135deg,#000000,#1f2937); color:white; }
-        .test-card-2 { --svc-gradient: linear-gradient(90deg,#1f2937,#333333); }
-        .test-card-2 .svc-card-icon { background: linear-gradient(135deg,#1f2937,#333333); color:white; }
-        .test-card-3 { --svc-gradient: linear-gradient(90deg,#333333,#1f2937); }
-        .test-card-3 .svc-card-icon { background: linear-gradient(135deg,#333333,#1f2937); color:white; }
-        .test-card-4 { --svc-gradient: linear-gradient(90deg,#4b5563,#1f2937); }
-        .test-card-4 .svc-card-icon { background: linear-gradient(135deg,#4b5563,#1f2937); color:white; }
-        .test-card-5 { --svc-gradient: linear-gradient(90deg,#1f2937,#333333); }
-        .test-card-5 .svc-card-icon { background: linear-gradient(135deg,#1f2937,#333333); color:white; }
-        .test-card-6 { --svc-gradient: linear-gradient(90deg,#333333,#4b5563); }
-        .test-card-6 .svc-card-icon { background: linear-gradient(135deg,#333333,#4b5563); color:white; }
-        .step-1 { background: linear-gradient(135deg,#000000,#1f2937); }
-        .step-2 { background: linear-gradient(135deg,#1f2937,#333333); }
-        .step-3 { background: linear-gradient(135deg,#333333,#1f2937); }
-        .step-4 { background: linear-gradient(135deg,#4b5563,#1f2937); }
-        .step-5 { background: linear-gradient(135deg,#1f2937,#333333); }
-        .av-1 { background: linear-gradient(135deg,#000000,#1f2937); }
-        .av-2 { background: linear-gradient(135deg,#1f2937,#333333); }
-        .av-3 { background: linear-gradient(135deg,#333333,#1f2937); }
-        .testing-cta { background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 60%, #0f0f0f 100%); }
+        .testing-badge { background: linear-gradient(135deg,#2563EB,#0EA5E9); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .test-card-1 { --svc-gradient: linear-gradient(90deg,#2563EB,#1D4ED8); }
+        .test-card-1 .svc-card-icon { background: linear-gradient(135deg,#2563EB,#1D4ED8); color:white; }
+        .test-card-2 { --svc-gradient: linear-gradient(90deg,#0EA5E9,#0284C7); }
+        .test-card-2 .svc-card-icon { background: linear-gradient(135deg,#0EA5E9,#0284C7); color:white; }
+        .test-card-3 { --svc-gradient: linear-gradient(90deg,#06B6D4,#0EA5E9); }
+        .test-card-3 .svc-card-icon { background: linear-gradient(135deg,#06B6D4,#0EA5E9); color:white; }
+        .test-card-4 { --svc-gradient: linear-gradient(90deg,#14B8A6,#0D9488); }
+        .test-card-4 .svc-card-icon { background: linear-gradient(135deg,#14B8A6,#0D9488); color:white; }
+        .test-card-5 { --svc-gradient: linear-gradient(90deg,#3B82F6,#1D4ED8); }
+        .test-card-5 .svc-card-icon { background: linear-gradient(135deg,#3B82F6,#1D4ED8); color:white; }
+        .test-card-6 { --svc-gradient: linear-gradient(90deg,#2563EB,#0EA5E9); }
+        .test-card-6 .svc-card-icon { background: linear-gradient(135deg,#2563EB,#0EA5E9); color:white; }
+        .step-1 { background: linear-gradient(135deg,#2563EB,#1D4ED8); }
+        .step-2 { background: linear-gradient(135deg,#0EA5E9,#0284C7); }
+        .step-3 { background: linear-gradient(135deg,#06B6D4,#0EA5E9); }
+        .step-4 { background: linear-gradient(135deg,#14B8A6,#0D9488); }
+        .step-5 { background: linear-gradient(135deg,#3B82F6,#1D4ED8); }
+        .av-1 { background: linear-gradient(135deg,#2563EB,#1D4ED8); }
+        .av-2 { background: linear-gradient(135deg,#0EA5E9,#0284C7); }
+        .av-3 { background: linear-gradient(135deg,#14B8A6,#0D9488); }
+        .testing-cta { background: linear-gradient(135deg, #0f172a 0%, #0c1a3a 55%, #0066CC 100%); }
         .testing-cta::before {
             content:''; position:absolute; inset:0;
-            background: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.15) 0%, transparent 65%);
+            background: radial-gradient(ellipse at 50% 50%, rgba(56,189,248,0.16) 0%, transparent 65%);
             pointer-events:none;
         }
     </style>
@@ -86,9 +87,9 @@
                         <h1>Build Bug-Free,<br><span class="testing-badge">High-Performance</span><br>Software</h1>
                         <p class="lead">End-to-end QA testing services ensuring reliability, speed, and security at every stage of your development lifecycle.</p>
                         <div class="svc-hero-buttons">
-                            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#consultationModal">
-                                <i class="bi bi-rocket-takeoff-fill"></i> Get Free Consultation
-                            </button>
+                            <a href="../contact.html" class="btn btn-primary btn-lg">
+                                <i class="bi bi-rocket-takeoff-fill"></i> Contact Us
+                            </a>
                             <a href="#services" class="svc-cta-banner btn-outline-white" style="padding:14px 28px; border-radius:10px !important; display:inline-flex; align-items:center; gap:0.5rem; font-weight:700; border:2px solid rgba(255,255,255,0.5); color:white; background:rgba(255,255,255,0.1);">
                                 <i class="bi bi-grid-3x3-gap-fill"></i> View Services
                             </a>
@@ -286,9 +287,9 @@
                         <h2 class="svc-section-heading">Our Battle-Tested<br>Testing Process</h2>
                         <p class="svc-section-sub">A structured, transparent approach that delivers predictable results every single time.</p>
                         <div class="mt-4">
-                            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#consultationModal">
+                            <a href="../contact.html" class="btn btn-primary btn-lg">
                                 <i class="bi bi-rocket-takeoff-fill"></i> Start Today
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-7">
@@ -340,9 +341,9 @@
                     <h2>Ready to Ship Bug-Free Software?</h2>
                     <p>Join 500+ companies that trust Reszolute for their QA testing needs. Let's build quality together.</p>
                     <div class="d-flex justify-content-center gap-3 flex-wrap">
-                        <button class="btn-white" data-bs-toggle="modal" data-bs-target="#consultationModal">
-                            <i class="bi bi-rocket-takeoff-fill"></i> Get Free Consultation
-                        </button>
+                        <a href="../contact.html" class="btn-white">
+                            <i class="bi bi-rocket-takeoff-fill"></i> Contact Us
+                        </a>
                         <a href="../contact.html" class="btn-outline-white">
                             <i class="bi bi-telephone-fill"></i> Talk to an Expert
                         </a>
@@ -352,35 +353,9 @@
         </section>
     </main>
 
-    <!-- Consultation Modal -->
-    <div class="modal fade" id="consultationModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title text-dark fw-700">Get Free Consultation</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="consultationForm">
-                        <div class="mb-3"><label class="form-label text-dark">Name</label><input type="text" class="form-control" required></div>
-                        <div class="mb-3"><label class="form-label text-dark">Email</label><input type="email" class="form-control" required></div>
-                        <div class="mb-3"><label class="form-label text-dark">Project Type</label>
-                            <select class="form-select" required>
-                                <option>Web Application</option><option>Mobile App</option><option>API/Backend</option><option>Other</option>
-                            </select>
-                        </div>
-                        <div class="mb-3"><label class="form-label text-dark">Message</label><textarea class="form-control" rows="3" required></textarea></div>
-                    </form>
-                </div>
-                <div class="modal-footer border-0">
-                    <button class="btn btn-primary" onclick="document.getElementById('consultationForm').submit();">Send Request</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/components.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/router.js" defer></script>
 </body>
 </html>

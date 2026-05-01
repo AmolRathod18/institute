@@ -3,11 +3,13 @@
  * Handles form validation and submission
  */
 
-(function() {
+function initContactForm() {
     'use strict';
 
     const contactForm = document.getElementById('contactForm');
     if (!contactForm) return;
+    if (contactForm.dataset.initialized === 'true') return;
+    contactForm.dataset.initialized = 'true';
 
     const submitButton = contactForm.querySelector('button[type="submit"]');
     const btnText = submitButton.querySelector('.btn-text');
@@ -139,7 +141,7 @@
                 phone: formData.phone || 'Not provided',
                 service: formData.service || 'Not specified',
                 message: formData.message,
-                to_email: 'khanmkj96@gmail.com'
+                to_email: 'contact@reszolute.com'
             };
 
             // Send email via EmailJS
@@ -164,13 +166,13 @@
                 
                 const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone || 'Not provided'}%0D%0AService: ${formData.service || 'Not specified'}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
                 
-                const mailtoLink = `mailto:khanmkj96@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+                const mailtoLink = `mailto:contact@reszolute.com?subject=${encodeURIComponent(subject)}&body=${body}`;
                 window.location.href = mailtoLink;
                 
                 showSuccessMessage();
                 contactForm.reset();
             } catch (mailtoError) {
-                alert('There was an error sending your message. Please contact us directly at khanmkj96@gmail.com');
+                alert('There was an error sending your message. Please contact us directly at contact@reszolute.com');
             }
         } finally {
             // Reset button state
@@ -233,4 +235,10 @@
     });
     */
 
-})();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactForm);
+} else {
+    initContactForm();
+}

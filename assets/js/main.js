@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Reszolute - Main JavaScript
  * Handles navigation, scroll effects, and animations
  */
@@ -226,47 +226,32 @@ if (typeof emailjs !== 'undefined') {
         initializeCardHoverEffects();
     }
 
+    // Parallax disabled — causes visual glitches during SPA navigation
+
+
     // ===========================
-    // PARALLAX SCROLL EFFECT
+    // SCROLL PROGRESS BAR (read-progress while scrolling)
     // ===========================
+    let _scrollBar = null;
+    function getOrCreateScrollBar() {
+        if (_scrollBar) return _scrollBar;
+        // Re-use router-progress if router.js is loaded, else create own
+        _scrollBar = document.getElementById('router-progress');
+        if (!_scrollBar) {
+            _scrollBar = document.createElement('div');
+            _scrollBar.id = 'scroll-read-progress';
+            _scrollBar.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:#111111;z-index:9998;width:0%;transition:width 0.1s ease;pointer-events:none;';
+            document.body.appendChild(_scrollBar);
+        }
+        return _scrollBar;
+    }
     window.addEventListener('scroll', () => {
-        const parallaxElements = document.querySelectorAll('.why-us-image img, .service-image img, .hero-slide');
-        parallaxElements.forEach(element => {
-            const scrollPosition = window.scrollY;
-            if (element.classList && element.classList.contains('hero-slide')) {
-                // Don't parallax hero slider
-                return;
-            }
-            element.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-        });
-    });
+        const bar = getOrCreateScrollBar();
+        const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        // Only update when not navigating (router sets opacity:0 when hiding)
+        if (bar && bar.style.opacity !== '0') bar.style.width = pct + '%';
+    }, { passive: true });
 
-    // ===========================
-    // SCROLL PROGRESS BAR
-    // ===========================
-    const createProgressBar = () => {
-        const progressBar = document.createElement('div');
-        progressBar.className = 'scroll-progress-bar';
-        progressBar.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #0066CC, #FF6B35);
-            z-index: 999;
-            width: 0%;
-            transition: width 0.1s ease;
-        `;
-        document.body.appendChild(progressBar);
-        return progressBar;
-    };
-
-    const progressBar = createProgressBar();
-
-    window.addEventListener('scroll', () => {
-        const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        progressBar.style.width = scrollPercentage + '%';
-    });
 
     // ===========================
     // BUTTON RIPPLE EFFECT
@@ -354,6 +339,30 @@ if (typeof emailjs !== 'undefined') {
     // ===========================
     // CONSOLE BRANDING
     // ===========================
+    // TECH ICON FALLBACKS (when CDN logos fail)
+    // ===========================
+    function initializeTechLogoFallbacks() {
+        const logoImgs = document.querySelectorAll('.tech-logo-item img');
+        logoImgs.forEach((img) => {
+            if (img.dataset.fallbackBound === 'true') return;
+            img.dataset.fallbackBound = 'true';
+            img.addEventListener('error', function() {
+                this.style.display = 'none';
+                const item = this.closest('.tech-logo-item');
+                if (!item || item.querySelector('.tech-fallback-icon')) return;
+                const icon = document.createElement('i');
+                icon.className = 'bi bi-tools tech-fallback-icon';
+                item.insertBefore(icon, item.firstChild);
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeTechLogoFallbacks);
+    } else {
+        initializeTechLogoFallbacks();
+    }
+
     // STAGGERED CARD ANIMATIONS
     // ===========================
     const cardGroups = document.querySelectorAll('.row');
@@ -406,6 +415,8 @@ if (typeof emailjs !== 'undefined') {
         });
     }
 
+    // Expose globally for router re-init after navigation
+    window.animateCounters = animateCounters;
     animateCounters();
 
     // ===========================
@@ -568,9 +579,12 @@ if (typeof emailjs !== 'undefined') {
             heroSection.addEventListener('mouseleave', startAutoPlay);
         }
 
-        // ── Kick off ───────────────────────────────────────────────
+    // ── Kick off ───────────────────────────────────────────────
         startAutoPlay();
     };
+
+    // Expose globally for router re-init after navigation
+    window.initHeroSlider = initHeroSlider;
 
     // Initialize hero slider when DOM is ready
     if (document.readyState === 'loading') {

@@ -17,42 +17,9 @@ class ComponentLoader {
      * Adjust all hrefs in component to account for nested directories
      */
     static adjustPaths(html, basePath) {
-        const isInSubdirectory = basePath === '../';
-        
-        // Create a temporary container to parse HTML
-        const temp = document.createElement('div');
-        temp.innerHTML = html;
-
-        // Adjust navbar brand link
-        const brandLink = temp.querySelector('.navbar-brand');
-        if (brandLink) {
-            brandLink.href = isInSubdirectory ? '../index.html' : 'index.html';
-            const logo = brandLink.querySelector('.logo-img');
-            if (logo) {
-                logo.src = isInSubdirectory ? '../assets/img/Final_Logo.png' : 'assets/img/Final_Logo.png';
-            }
-        }
-
-        // Adjust all links (nav links, footer links, buttons, etc.)
-        const allLinks = temp.querySelectorAll('a[href], [href]');
-        allLinks.forEach(link => {
-            let href = link.getAttribute('href');
-            if (href && !href.startsWith('http') && href !== '#') {
-                if (isInSubdirectory && !href.startsWith('../')) {
-                    // Add ../ prefix if in subdirectory and not already prefixed
-                    if (!href.startsWith('services/')) {
-                        link.href = '../' + href;
-                    } else {
-                        link.href = '../' + href;
-                    }
-                } else if (!isInSubdirectory && href.startsWith('../')) {
-                    // Remove ../ prefix if in root directory
-                    link.href = href.replace('../', '');
-                }
-            }
-        });
-
-        return temp.innerHTML;
+        // Components now use root-relative paths (e.g. /services/uiux.html)
+        // No path adjustment is needed regardless of page depth.
+        return html;
     }
 
     /**

@@ -28,12 +28,12 @@
 
 /* === CSS VARIABLES (DESIGN SYSTEM) === */
 :root {
-    /* Colors — Clean Minimal: Black + White + Light Gray */
-    --primary-color: #000000;
-    --primary-dark: #1f2937;
-    --primary-light: #f5f5f5;
-    --accent-color: #000000;
-    --accent-dark: #1f2937;
+    /* Colors — Professional Blue + Orange Theme */
+    --primary-color: #0066CC;
+    --primary-dark: #004C99;
+    --primary-light: #3385D6;
+    --accent-color: #FF6B35;
+    --accent-dark: #E55A1F;
     
     /* Grays */
     --gray-50: #F9FAFB;
@@ -48,10 +48,10 @@
     --gray-900: #111827;
     
     /* Semantic Colors */
-    --success-color: #000000;
-    --warning-color: #666666;
-    --danger-color: #333333;
-    --info-color: #000000;
+    --success-color: #10B981;
+    --warning-color: #F59E0B;
+    --danger-color: #EF4444;
+    --info-color: #0066CC;
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -220,13 +220,14 @@ img {
     bottom: 0.55rem;
     left: 0.9rem; right: 0.9rem;
     height: 2px;
-    background: #000000;
+    background: #0066CC;
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: none;
 }
 .nav-link:hover::after,
-.nav-link.active::after { transform: scaleX(1); }
+.nav-link.active::after { transform: scaleX(0); }
 .nav-link.dropdown-toggle::after { display: none; }
 .dropdown-toggle.nav-link::after {
     display: inline-block; content: '';
@@ -494,15 +495,16 @@ img {
     transform-origin: center;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 2px;
+    display: none;
 }
 
 .nav-link:hover::after,
 .nav-link:focus::after {
-    transform: scaleX(1);
+    transform: scaleX(0);
 }
 
 .nav-link.active::after {
-    transform: scaleX(1);
+    transform: scaleX(0);
     background: #ffffff;
 }
 
@@ -3118,39 +3120,39 @@ html {
 
 /* Hero Section Animations */
 .hero-title {
-    animation: slideInLeft 0.8s ease-out;
+    animation: slideInLeft 1.5s ease-out;
 }
 
 .hero-subtitle {
-    animation: slideInLeft 0.8s ease-out 0.2s both;
+    animation: slideInLeft 1.5s ease-out 0.375s both;
 }
 
 .hero-cta {
-    animation: slideInLeft 0.8s ease-out 0.4s both;
+    animation: slideInLeft 1.5s ease-out 0.75s both;
 }
 
 .hero-stats {
-    animation: slideInLeft 0.8s ease-out 0.6s both;
+    animation: slideInLeft 1.5s ease-out 1.125s both;
 }
 
 .stat-item {
-    animation: scaleUp 0.6s ease-out;
+    animation: scaleUp 1.5s ease-out;
 }
 
 .stat-item:nth-child(1) {
-    animation: scaleUp 0.6s ease-out 0.8s both;
+    animation: scaleUp 1.5s ease-out 1.5s both;
 }
 
 .stat-item:nth-child(2) {
-    animation: scaleUp 0.6s ease-out 1s both;
+    animation: scaleUp 1.5s ease-out 1.875s both;
 }
 
 .stat-item:nth-child(3) {
-    animation: scaleUp 0.6s ease-out 1.2s both;
+    animation: scaleUp 1.5s ease-out 2.25s both;
 }
 
 .hero-image img {
-    animation: slideInRight 0.8s ease-out 0.3s both;
+    animation: slideInRight 1.5s ease-out 0.5625s both;
 }
 
 /* Service Cards Animations */

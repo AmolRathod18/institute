@@ -745,3 +745,12 @@ h1,h2,h3,h4,h5,h6 {
     background-clip: border-box !important;
     -webkit-text-fill-color: #ffffff !important;
 }
+
+/* All toolkit headings on 4 service pages must be solid black */
+.toolkit-heading {
+    color: #000000 !important;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #000000 !important;
+}

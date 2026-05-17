@@ -269,6 +269,11 @@
             return;
         }
 
+        // Update URL
+        if (pushState) {
+            history.pushState({ url: resolved }, page.title, resolved);
+        }
+
         // Fade out current content
         await fadeOut(main);
 
@@ -277,11 +282,6 @@
         document.title  = page.title;
         applyDynamicHeadStyles(page.headStyles);
         await ensurePageScripts(page.pageScripts);
-
-        // Update URL
-        if (pushState) {
-            history.pushState({ url: resolved }, page.title, resolved);
-        }
 
         // Update active nav
         updateActiveNav(getPathname(resolved));
@@ -312,7 +312,7 @@
 
         if (fromDir === currentDir) return;  // same directory, nothing to fix
 
-        // Fix image src and anchor hrefs
+        // Fix image src and anchor/link hrefs
         container.querySelectorAll('img[src], a[href], link[href]').forEach(el => {
             const attr = el.tagName === 'A' || el.tagName === 'LINK' ? 'href' : 'src';
             const val = el.getAttribute(attr);
@@ -324,6 +324,26 @@
                 const absolute = new URL(val, fromDir).href;
                 el.setAttribute(attr, absolute);
             } catch {}
+        });
+
+        // Fix inline CSS url(...) references (e.g., hero slide background-image)
+        container.querySelectorAll('[style]').forEach(el => {
+            const styleVal = el.getAttribute('style');
+            if (!styleVal || !styleVal.includes('url(')) return;
+
+            const updated = styleVal.replace(/url\((['"]?)([^'")]+)\1\)/gi, (match, quote, rawUrl) => {
+                if (!rawUrl || rawUrl.startsWith('http') || rawUrl.startsWith('//') || rawUrl.startsWith('data:')) {
+                    return match;
+                }
+                try {
+                    const absolute = new URL(rawUrl, fromDir).href;
+                    return `url('${absolute}')`;
+                } catch {
+                    return match;
+                }
+            });
+
+            el.setAttribute('style', updated);
         });
     }
 

@@ -17,8 +17,8 @@ class ComponentLoader {
      * Adjust all hrefs in component to account for nested directories
      */
     static adjustPaths(html, basePath) {
-        // Components now use root-relative paths (e.g. /services/uiux.html)
-        // No path adjustment is needed regardless of page depth.
+        // Keep root-absolute component URLs intact.
+        // This avoids stale relative links when SPA navigation changes page depth.
         return html;
     }
 

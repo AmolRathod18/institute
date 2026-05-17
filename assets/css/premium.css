@@ -177,9 +177,9 @@ h1,h2,h3,h4,h5,h6 {
    HERO SLIDER — reduced height, faster load
    ============================================================ */
 .hero-slider {
-    height: 68vh !important;
-    min-height: 460px;
-    max-height: 780px;
+    height: calc(68vh + 2cm) !important;
+    min-height: calc(460px + 2cm);
+    max-height: calc(780px + 2cm);
 }
 .hero-slide {
     background-size: cover !important;
@@ -670,7 +670,7 @@ h1,h2,h3,h4,h5,h6 {
 .section-header  { margin-bottom: 3rem !important; }
 @media (max-width: 768px) {
     .section-padding { padding: 52px 0 !important; }
-    .hero-slider { height: 58vh !important; min-height: 380px; }
+    .hero-slider { height: calc(58vh + 2cm) !important; min-height: calc(380px + 2cm); }
     .hero-slide { background-size: cover !important; background-position: center 32% !important; }
     .hero-slide:nth-child(1) { background-position: center 40% !important; }
     .hero-slide:nth-child(2) { background-position: center 26% !important; }
@@ -711,3 +711,37 @@ h1,h2,h3,h4,h5,h6 {
 /* Page header breadcrumb */
 .breadcrumb-nav a { color: rgba(255,255,255,0.75) !important; }
 .breadcrumb-nav .current { color: #ffffff !important; }
+
+/* Services pages: force main section heading to solid black */
+.svc-section-heading {
+    color: #000000 !important;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+
+/* Final override: increase hero height by ~2cm */
+.hero-slider {
+    height: calc(68vh + 76px) !important;
+    min-height: 536px !important;
+    max-height: 856px !important;
+}
+
+@media (max-width: 768px) {
+    .hero-slider {
+        height: calc(58vh + 76px) !important;
+        min-height: 456px !important;
+    }
+}
+
+/* Specific page hero titles must stay white */
+.services-hero .page-title,
+.about-hero .page-title,
+.careers-hero .page-title {
+    color: #ffffff !important;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #ffffff !important;
+}

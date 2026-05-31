@@ -213,32 +213,32 @@ h1,h2,h3,h4,h5,h6 {
     margin-bottom: 1.8rem !important;
 }
 
-/* Hero buttons — yellow/black */
+/* Hero buttons — black and white */
 .btn-hero-primary {
-    background: #FFD700 !important;
+    background: #ffffff !important;
     color: #111111 !important;
     border: none !important;
     font-weight: 700 !important;
-    box-shadow: 0 4px 18px rgba(255,215,0,0.3) !important;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.3) !important;
     border-radius: 6px !important;
 }
 .btn-hero-primary:hover {
-    background: #FFC107 !important;
+    background: #f0f0f0 !important;
     color: #000000 !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 8px 24px rgba(255,215,0,0.4) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
 }
 .btn-hero-outline {
     background: transparent !important;
-    border: 2px solid #FFD700 !important;
-    color: #FFD700 !important;
+    border: 2px solid #ffffff !important;
+    color: #ffffff !important;
     border-radius: 6px !important;
     backdrop-filter: none !important;
 }
 .btn-hero-outline:hover {
-    background: #FFD700 !important;
+    background: #ffffff !important;
     color: #111111 !important;
-    border-color: #FFD700 !important;
+    border-color: #ffffff !important;
     transform: translateY(-2px) !important;
 }
 

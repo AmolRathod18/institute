@@ -14,25 +14,25 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/premium.css">
     <style>
-        /* === STAFF AUG PAGE SPECIFIC === */
+        /* === STAFF AUG PAGE SPECIFIC - Monochrome Theme === */
         .staff-hero {
-            background: linear-gradient(135deg, #0a1628 0%, #0d2240 40%, #1a1028 100%);
+            background: linear-gradient(135deg, #111111 0%, #1a1a1a 40%, #2a2a2a 100%);
         }
         .staff-hero .svc-hero-blob:nth-child(1) {
             width: 520px; height: 520px;
-            background: radial-gradient(circle, rgba(255,107,53,0.45) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(100,100,100,0.15) 0%, transparent 70%);
             top: -120px; right: -80px;
             animation: staffBlob 10s ease-in-out infinite;
         }
         .staff-hero .svc-hero-blob:nth-child(2) {
             width: 360px; height: 360px;
-            background: radial-gradient(circle, rgba(0,102,204,0.4) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(80,80,80,0.12) 0%, transparent 70%);
             bottom: -70px; left: -70px;
             animation: staffBlob 8s ease-in-out infinite reverse;
         }
         .staff-hero .svc-hero-blob:nth-child(3) {
             width: 240px; height: 240px;
-            background: radial-gradient(circle, rgba(245,158,11,0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(120,120,120,0.1) 0%, transparent 70%);
             top: 45%; left: 22%;
             animation: staffBlob 13s ease-in-out infinite 1.5s;
         }
@@ -40,7 +40,7 @@
             0%,100% { transform: translateY(0) scale(1); }
             50% { transform: translateY(25px) scale(1.04); }
         }
-        .staff-badge { background: linear-gradient(135deg,#FF6B35,#F59E0B); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .staff-badge { background: linear-gradient(135deg,#333333,#555555); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
         /* Team cards visual */
         .team-visual {
@@ -97,7 +97,7 @@
             position: absolute;
             bottom: 0; left: 0; right: 0;
             height: 4px;
-            background: var(--eng-color, linear-gradient(90deg,#FF6B35,#F59E0B));
+            background: var(--eng-color, linear-gradient(90deg,#333333,#555555));
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.4s ease;
@@ -123,14 +123,14 @@
         .eng-list li:last-child { border-bottom: none; }
         .eng-list li i { color: #10B981; font-size: 0.9rem; flex-shrink: 0; }
 
-        .eng-1 { --eng-color: linear-gradient(90deg,#4b5563,#1f2937); }
-        .eng-1 .eng-icon { background: linear-gradient(135deg,#4b5563,#1f2937); }
-        .eng-2 { --eng-color: linear-gradient(90deg,#000000,#1f2937); }
-        .eng-2 .eng-icon { background: linear-gradient(135deg,#000000,#1f2937); }
-        .eng-3 { --eng-color: linear-gradient(90deg,#1f2937,#333333); }
-        .eng-3 .eng-icon { background: linear-gradient(135deg,#1f2937,#333333); }
-        .eng-4 { --eng-color: linear-gradient(90deg,#333333,#1f2937); }
-        .eng-4 .eng-icon { background: linear-gradient(135deg,#333333,#1f2937); }
+        .eng-1 { --eng-color: linear-gradient(90deg,#333333,#1a1a1a); }
+        .eng-1 .eng-icon { background: linear-gradient(135deg,#333333,#1a1a1a); }
+        .eng-2 { --eng-color: linear-gradient(90deg,#111111,#1a1a1a); }
+        .eng-2 .eng-icon { background: linear-gradient(135deg,#111111,#1a1a1a); }
+        .eng-3 { --eng-color: linear-gradient(90deg,#1a1a1a,#222222); }
+        .eng-3 .eng-icon { background: linear-gradient(135deg,#1a1a1a,#222222); }
+        .eng-4 { --eng-color: linear-gradient(90deg,#222222,#1a1a1a); }
+        .eng-4 .eng-icon { background: linear-gradient(135deg,#222222,#1a1a1a); }
 
         /* Benefit pills */
         .benefit-pill {
@@ -159,21 +159,21 @@
         .benefit-pill h4 { font-size:1rem; font-weight:700; color:#0f172a; margin-bottom:0.35rem; }
         .benefit-pill p { font-size:0.88rem; color:#666666; margin:0; line-height:1.6; }
 
-        .bp-1 .benefit-pill-icon { background: linear-gradient(135deg,#4b5563,#1f2937); }
-        .bp-2 .benefit-pill-icon { background: linear-gradient(135deg,#000000,#1f2937); }
-        .bp-3 .benefit-pill-icon { background: linear-gradient(135deg,#333333,#1f2937); }
-        .bp-4 .benefit-pill-icon { background: linear-gradient(135deg,#1f2937,#333333); }
-        .bp-5 .benefit-pill-icon { background: linear-gradient(135deg,#4b5563,#1f2937); }
-        .bp-6 .benefit-pill-icon { background: linear-gradient(135deg,#1f2937,#333333); }
+        .bp-1 .benefit-pill-icon { background: linear-gradient(135deg,#333333,#1a1a1a); }
+        .bp-2 .benefit-pill-icon { background: linear-gradient(135deg,#111111,#1a1a1a); }
+        .bp-3 .benefit-pill-icon { background: linear-gradient(135deg,#222222,#1a1a1a); }
+        .bp-4 .benefit-pill-icon { background: linear-gradient(135deg,#1a1a1a,#222222); }
+        .bp-5 .benefit-pill-icon { background: linear-gradient(135deg,#333333,#1a1a1a); }
+        .bp-6 .benefit-pill-icon { background: linear-gradient(135deg,#1a1a1a,#222222); }
 
-        .av-sa-1 { background: linear-gradient(135deg,#4b5563,#1f2937); }
-        .av-sa-2 { background: linear-gradient(135deg,#000000,#1f2937); }
-        .av-sa-3 { background: linear-gradient(135deg,#1f2937,#333333); }
+        .av-sa-1 { background: linear-gradient(135deg,#333333,#1a1a1a); }
+        .av-sa-2 { background: linear-gradient(135deg,#111111,#1a1a1a); }
+        .av-sa-3 { background: linear-gradient(135deg,#1a1a1a,#222222); }
 
-        .staff-cta { background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 60%, #0f0f0f 100%); }
+        .staff-cta { background: linear-gradient(135deg, #111111 0%, #1a1a1a 60%, #0f0f0f 100%); }
         .staff-cta::before {
             content:''; position:absolute; inset:0;
-            background: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.15) 0%, transparent 65%);
+            background: radial-gradient(ellipse at 50% 50%, rgba(100,100,100,0.1) 0%, transparent 65%);
             pointer-events:none;
         }
     </style>

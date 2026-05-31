@@ -14,25 +14,25 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/premium.css">
     <style>
-        /* === TESTING PAGE SPECIFIC === */
+        /* === TESTING PAGE SPECIFIC - Monochrome Theme === */
         .testing-hero {
-            background: linear-gradient(135deg, #0f172a 0%, #0c1a3a 55%, #0066CC 100%);
+            background: linear-gradient(135deg, #111111 0%, #1a1a1a 55%, #2a2a2a 100%);
         }
         .testing-hero .svc-hero-blob:nth-child(1) {
             width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(14,165,233,0.22) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(100,100,100,0.15) 0%, transparent 70%);
             top: -100px; right: -100px;
             animation: blobFloat 8s ease-in-out infinite;
         }
         .testing-hero .svc-hero-blob:nth-child(2) {
             width: 350px; height: 350px;
-            background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(80,80,80,0.12) 0%, transparent 70%);
             bottom: -80px; left: -80px;
             animation: blobFloat 10s ease-in-out infinite reverse;
         }
         .testing-hero .svc-hero-blob:nth-child(3) {
             width: 250px; height: 250px;
-            background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(120,120,120,0.1) 0%, transparent 70%);
             top: 30%; left: 30%;
             animation: blobFloat 6s ease-in-out infinite 2s;
         }
@@ -40,31 +40,31 @@
             0%,100% { transform: translateY(0) scale(1); }
             50% { transform: translateY(30px) scale(1.05); }
         }
-        .testing-badge { background: linear-gradient(135deg,#2563EB,#0EA5E9); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-        .test-card-1 { --svc-gradient: linear-gradient(90deg,#2563EB,#1D4ED8); }
-        .test-card-1 .svc-card-icon { background: linear-gradient(135deg,#2563EB,#1D4ED8); color:white; }
-        .test-card-2 { --svc-gradient: linear-gradient(90deg,#0EA5E9,#0284C7); }
-        .test-card-2 .svc-card-icon { background: linear-gradient(135deg,#0EA5E9,#0284C7); color:white; }
-        .test-card-3 { --svc-gradient: linear-gradient(90deg,#06B6D4,#0EA5E9); }
-        .test-card-3 .svc-card-icon { background: linear-gradient(135deg,#06B6D4,#0EA5E9); color:white; }
-        .test-card-4 { --svc-gradient: linear-gradient(90deg,#14B8A6,#0D9488); }
-        .test-card-4 .svc-card-icon { background: linear-gradient(135deg,#14B8A6,#0D9488); color:white; }
-        .test-card-5 { --svc-gradient: linear-gradient(90deg,#3B82F6,#1D4ED8); }
-        .test-card-5 .svc-card-icon { background: linear-gradient(135deg,#3B82F6,#1D4ED8); color:white; }
-        .test-card-6 { --svc-gradient: linear-gradient(90deg,#2563EB,#0EA5E9); }
-        .test-card-6 .svc-card-icon { background: linear-gradient(135deg,#2563EB,#0EA5E9); color:white; }
-        .step-1 { background: linear-gradient(135deg,#2563EB,#1D4ED8); }
-        .step-2 { background: linear-gradient(135deg,#0EA5E9,#0284C7); }
-        .step-3 { background: linear-gradient(135deg,#06B6D4,#0EA5E9); }
-        .step-4 { background: linear-gradient(135deg,#14B8A6,#0D9488); }
-        .step-5 { background: linear-gradient(135deg,#3B82F6,#1D4ED8); }
-        .av-1 { background: linear-gradient(135deg,#2563EB,#1D4ED8); }
-        .av-2 { background: linear-gradient(135deg,#0EA5E9,#0284C7); }
-        .av-3 { background: linear-gradient(135deg,#14B8A6,#0D9488); }
-        .testing-cta { background: linear-gradient(135deg, #0f172a 0%, #0c1a3a 55%, #0066CC 100%); }
+        .testing-badge { background: linear-gradient(135deg,#333333,#555555); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .test-card-1 { --svc-gradient: linear-gradient(90deg,#222222,#1a1a1a); }
+        .test-card-1 .svc-card-icon { background: linear-gradient(135deg,#222222,#1a1a1a); color:white; }
+        .test-card-2 { --svc-gradient: linear-gradient(90deg,#333333,#2a2a2a); }
+        .test-card-2 .svc-card-icon { background: linear-gradient(135deg,#333333,#2a2a2a); color:white; }
+        .test-card-3 { --svc-gradient: linear-gradient(90deg,#2a2a2a,#1f1f1f); }
+        .test-card-3 .svc-card-icon { background: linear-gradient(135deg,#2a2a2a,#1f1f1f); color:white; }
+        .test-card-4 { --svc-gradient: linear-gradient(90deg,#444444,#333333); }
+        .test-card-4 .svc-card-icon { background: linear-gradient(135deg,#444444,#333333); color:white; }
+        .test-card-5 { --svc-gradient: linear-gradient(90deg,#2a2a2a,#1a1a1a); }
+        .test-card-5 .svc-card-icon { background: linear-gradient(135deg,#2a2a2a,#1a1a1a); color:white; }
+        .test-card-6 { --svc-gradient: linear-gradient(90deg,#333333,#2a2a2a); }
+        .test-card-6 .svc-card-icon { background: linear-gradient(135deg,#333333,#2a2a2a); color:white; }
+        .step-1 { background: linear-gradient(135deg,#222222,#1a1a1a); }
+        .step-2 { background: linear-gradient(135deg,#333333,#2a2a2a); }
+        .step-3 { background: linear-gradient(135deg,#2a2a2a,#1f1f1f); }
+        .step-4 { background: linear-gradient(135deg,#444444,#333333); }
+        .step-5 { background: linear-gradient(135deg,#2a2a2a,#1a1a1a); }
+        .av-1 { background: linear-gradient(135deg,#222222,#1a1a1a); }
+        .av-2 { background: linear-gradient(135deg,#333333,#2a2a2a); }
+        .av-3 { background: linear-gradient(135deg,#444444,#333333); }
+        .testing-cta { background: linear-gradient(135deg, #111111 0%, #1a1a1a 55%, #2a2a2a 100%); }
         .testing-cta::before {
             content:''; position:absolute; inset:0;
-            background: radial-gradient(ellipse at 50% 50%, rgba(56,189,248,0.16) 0%, transparent 65%);
+            background: radial-gradient(ellipse at 50% 50%, rgba(80,80,80,0.1) 0%, transparent 65%);
             pointer-events:none;
         }
     </style>

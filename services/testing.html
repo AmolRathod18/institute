@@ -14,25 +14,25 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/premium.css">
     <style>
-        /* === TESTING PAGE SPECIFIC - Monochrome Theme === */
+        /* === TESTING PAGE SPECIFIC - Yellow, Black, White Theme === */
         .testing-hero {
             background: linear-gradient(135deg, #111111 0%, #1a1a1a 55%, #2a2a2a 100%);
         }
         .testing-hero .svc-hero-blob:nth-child(1) {
             width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(100,100,100,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, transparent 70%);
             top: -100px; right: -100px;
             animation: blobFloat 8s ease-in-out infinite;
         }
         .testing-hero .svc-hero-blob:nth-child(2) {
             width: 350px; height: 350px;
-            background: radial-gradient(circle, rgba(80,80,80,0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,193,7,0.15) 0%, transparent 70%);
             bottom: -80px; left: -80px;
             animation: blobFloat 10s ease-in-out infinite reverse;
         }
         .testing-hero .svc-hero-blob:nth-child(3) {
             width: 250px; height: 250px;
-            background: radial-gradient(circle, rgba(120,120,120,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,215,0,0.12) 0%, transparent 70%);
             top: 30%; left: 30%;
             animation: blobFloat 6s ease-in-out infinite 2s;
         }
@@ -40,31 +40,31 @@
             0%,100% { transform: translateY(0) scale(1); }
             50% { transform: translateY(30px) scale(1.05); }
         }
-        .testing-badge { background: linear-gradient(135deg,#333333,#555555); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-        .test-card-1 { --svc-gradient: linear-gradient(90deg,#222222,#1a1a1a); }
-        .test-card-1 .svc-card-icon { background: linear-gradient(135deg,#222222,#1a1a1a); color:white; }
-        .test-card-2 { --svc-gradient: linear-gradient(90deg,#333333,#2a2a2a); }
-        .test-card-2 .svc-card-icon { background: linear-gradient(135deg,#333333,#2a2a2a); color:white; }
-        .test-card-3 { --svc-gradient: linear-gradient(90deg,#2a2a2a,#1f1f1f); }
-        .test-card-3 .svc-card-icon { background: linear-gradient(135deg,#2a2a2a,#1f1f1f); color:white; }
-        .test-card-4 { --svc-gradient: linear-gradient(90deg,#444444,#333333); }
-        .test-card-4 .svc-card-icon { background: linear-gradient(135deg,#444444,#333333); color:white; }
-        .test-card-5 { --svc-gradient: linear-gradient(90deg,#2a2a2a,#1a1a1a); }
-        .test-card-5 .svc-card-icon { background: linear-gradient(135deg,#2a2a2a,#1a1a1a); color:white; }
-        .test-card-6 { --svc-gradient: linear-gradient(90deg,#333333,#2a2a2a); }
-        .test-card-6 .svc-card-icon { background: linear-gradient(135deg,#333333,#2a2a2a); color:white; }
-        .step-1 { background: linear-gradient(135deg,#222222,#1a1a1a); }
-        .step-2 { background: linear-gradient(135deg,#333333,#2a2a2a); }
-        .step-3 { background: linear-gradient(135deg,#2a2a2a,#1f1f1f); }
-        .step-4 { background: linear-gradient(135deg,#444444,#333333); }
-        .step-5 { background: linear-gradient(135deg,#2a2a2a,#1a1a1a); }
-        .av-1 { background: linear-gradient(135deg,#222222,#1a1a1a); }
-        .av-2 { background: linear-gradient(135deg,#333333,#2a2a2a); }
-        .av-3 { background: linear-gradient(135deg,#444444,#333333); }
+        .testing-badge { background: linear-gradient(135deg,#FFD700,#FFC107); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .test-card-1 { --svc-gradient: linear-gradient(90deg,#FFD700,#FFC107); }
+        .test-card-1 .svc-card-icon { background: linear-gradient(135deg,#FFD700,#FFC107); color:#111111; }
+        .test-card-2 { --svc-gradient: linear-gradient(90deg,#FFC107,#FFB300); }
+        .test-card-2 .svc-card-icon { background: linear-gradient(135deg,#FFC107,#FFB300); color:#111111; }
+        .test-card-3 { --svc-gradient: linear-gradient(90deg,#FFD700,#FF8C00); }
+        .test-card-3 .svc-card-icon { background: linear-gradient(135deg,#FFD700,#FF8C00); color:#111111; }
+        .test-card-4 { --svc-gradient: linear-gradient(90deg,#FFC107,#FFD700); }
+        .test-card-4 .svc-card-icon { background: linear-gradient(135deg,#FFC107,#FFD700); color:#111111; }
+        .test-card-5 { --svc-gradient: linear-gradient(90deg,#FFD700,#FFC107); }
+        .test-card-5 .svc-card-icon { background: linear-gradient(135deg,#FFD700,#FFC107); color:#111111; }
+        .test-card-6 { --svc-gradient: linear-gradient(90deg,#FFC107,#FFD700); }
+        .test-card-6 .svc-card-icon { background: linear-gradient(135deg,#FFC107,#FFD700); color:#111111; }
+        .step-1 { background: linear-gradient(135deg,#FFD700,#FFC107); }
+        .step-2 { background: linear-gradient(135deg,#FFC107,#FFB300); }
+        .step-3 { background: linear-gradient(135deg,#FFD700,#FF8C00); }
+        .step-4 { background: linear-gradient(135deg,#FFC107,#FFD700); }
+        .step-5 { background: linear-gradient(135deg,#FFD700,#FFC107); }
+        .av-1 { background: linear-gradient(135deg,#FFD700,#FFC107); }
+        .av-2 { background: linear-gradient(135deg,#FFC107,#FFB300); }
+        .av-3 { background: linear-gradient(135deg,#FFC107,#FFD700); }
         .testing-cta { background: linear-gradient(135deg, #111111 0%, #1a1a1a 55%, #2a2a2a 100%); }
         .testing-cta::before {
             content:''; position:absolute; inset:0;
-            background: radial-gradient(ellipse at 50% 50%, rgba(80,80,80,0.1) 0%, transparent 65%);
+            background: radial-gradient(ellipse at 50% 50%, rgba(255,215,0,0.15) 0%, transparent 65%);
             pointer-events:none;
         }
     </style>

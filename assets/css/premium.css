@@ -52,12 +52,12 @@ form, .btn, .nav-link, .navbar-brand {
     speak: never !important;
 }
 
-/* === ROOT OVERRIDES === */
+/* === ROOT OVERRIDES - Yellow, Black, White Theme === */
 :root {
     --primary-color: #111111;
     --primary-dark:  #000000;
     --primary-light: #f5f5f5;
-    --accent-color:  #111111;
+    --accent-color:  #FFD700;
     --font-primary:  'Poppins', sans-serif;
     --font-heading:  'Poppins', sans-serif;
     --gray-50:  #FAFAFA;
@@ -130,21 +130,21 @@ h1,h2,h3,h4,h5,h6 {
 }
 .nav-link::after { background: #111111 !important; }
 
-/* CTA button */
+/* CTA button - Yellow accent */
 .btn-navbar-cta {
-    background: #111111 !important;
-    color: #ffffff !important;
+    background: #FFD700 !important;
+    color: #111111 !important;
     font-size: 0.85rem !important;
     font-weight: 600 !important;
     padding: 0.55rem 1.35rem !important;
     border-radius: 6px !important;
     box-shadow: none !important;
-    border: 1.5px solid #111111 !important;
+    border: 1.5px solid #FFD700 !important;
     transition: background 0.2s, color 0.2s;
 }
 .btn-navbar-cta:hover {
-    background: #333333 !important;
-    color: #ffffff !important;
+    background: #FFC107 !important;
+    color: #000000 !important;
     transform: none !important;
 }
 
@@ -213,32 +213,32 @@ h1,h2,h3,h4,h5,h6 {
     margin-bottom: 1.8rem !important;
 }
 
-/* Hero buttons — monochrome */
+/* Hero buttons — yellow/black */
 .btn-hero-primary {
-    background: #ffffff !important;
+    background: #FFD700 !important;
     color: #111111 !important;
     border: none !important;
     font-weight: 700 !important;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.22) !important;
+    box-shadow: 0 4px 18px rgba(255,215,0,0.3) !important;
     border-radius: 6px !important;
 }
 .btn-hero-primary:hover {
-    background: #f0f0f0 !important;
+    background: #FFC107 !important;
     color: #000000 !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.28) !important;
+    box-shadow: 0 8px 24px rgba(255,215,0,0.4) !important;
 }
 .btn-hero-outline {
     background: transparent !important;
-    border: 2px solid rgba(255,255,255,0.7) !important;
-    color: #ffffff !important;
+    border: 2px solid #FFD700 !important;
+    color: #FFD700 !important;
     border-radius: 6px !important;
     backdrop-filter: none !important;
 }
 .btn-hero-outline:hover {
-    background: #ffffff !important;
+    background: #FFD700 !important;
     color: #111111 !important;
-    border-color: #ffffff !important;
+    border-color: #FFD700 !important;
     transform: translateY(-2px) !important;
 }
 
@@ -263,13 +263,13 @@ h1,h2,h3,h4,h5,h6 {
 /* Remove eyebrow tags */
 .section-eyebrow-tag, .svc-section-label, .toolkit-eyebrow { display: none !important; }
 
-/* Thin black underline accent on section titles */
+/* Thin yellow underline accent on section titles */
 .section-header.text-center .section-title::after {
     content: '';
     display: block;
     width: 48px;
     height: 3px;
-    background: #111111;
+    background: #FFD700;
     margin: 0.75rem auto 0;
 }
 
@@ -283,17 +283,18 @@ h1,h2,h3,h4,h5,h6 {
     border-radius: 12px !important;
     overflow: hidden;
     transition: all 0.3s ease !important;
+    border-left: 4px solid #FFD700 !important;
 }
 .service-card:hover {
     transform: translateY(-8px) !important;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.12) !important;
-    border-color: #d4d4d4 !important;
+    box-shadow: 0 16px 40px rgba(255,215,0,0.15) !important;
+    border-color: #FFD700 !important;
 }
 /* Service card overlay - DISABLED */
 .service-card::before { display: none !important; }
-/* card header — neutral dark */
+/* card header — black with yellow accent */
 .service-card-header {
-    background: linear-gradient(135deg, #111111 0%, #2a2a2a 100%) !important;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
     min-height: 120px !important;
 }
 .service-card-header-glow { display: none; }
@@ -325,14 +326,14 @@ h1,h2,h3,h4,h5,h6 {
 
 .card-cta,
 .cta-testing, .cta-frontend, .cta-design, .cta-staff {
-    background: #111111 !important;
-    color: #ffffff !important;
+    background: #FFD700 !important;
+    color: #111111 !important;
     border-radius: 6px !important;
 }
 .cta-testing:hover, .cta-frontend:hover, .cta-design:hover, .cta-staff:hover {
-    background: #333333 !important;
-    color: #ffffff !important;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.22) !important;
+    background: #FFC107 !important;
+    color: #000000 !important;
+    box-shadow: 0 6px 18px rgba(255,215,0,0.3) !important;
     transform: translateY(-2px) !important;
 }
 
@@ -348,12 +349,12 @@ h1,h2,h3,h4,h5,h6 {
 .btn-cta-wh { color: #111111 !important; }
 .btn-cta-wh:hover { color: #000000 !important; }
 
-/* Process step numbers */
+/* Process step numbers - Yellow */
 .step-number, .sn-1, .sn-2, .sn-3, .sn-4 {
-    background: #111111 !important;
-    color: #ffffff !important;
+    background: #FFD700 !important;
+    color: #111111 !important;
 }
-.process-step-card:hover { border-color: #bbbbbb !important; }
+.process-step-card:hover { border-color: #FFD700 !important; }
 
 /* ============================================================
    WHY US SECTION
@@ -534,15 +535,15 @@ h1,h2,h3,h4,h5,h6 {
     margin: 0.25rem 0.35rem 0.25rem 0;
 }
 .btn-cta-outline {
-    border: 1.5px solid rgba(255,255,255,0.5) !important;
-    color: #ffffff !important;
+    border: 1.5px solid #FFD700 !important;
+    color: #FFD700 !important;
     background: transparent !important;
     border-radius: 6px !important;
 }
 .btn-cta-outline:hover {
-    background: rgba(255,255,255,0.12) !important;
-    color: #ffffff !important;
-    border-color: rgba(255,255,255,0.8) !important;
+    background: #FFD700 !important;
+    color: #111111 !important;
+    border-color: #FFD700 !important;
 }
 .btn-light {
     background: #ffffff !important;
@@ -551,7 +552,7 @@ h1,h2,h3,h4,h5,h6 {
     border-radius: 6px !important;
 }
 .btn-light:hover {
-    background: #eeeeee !important;
+    background: #f5f5f5 !important;
     color: #000000 !important;
     transform: translateY(-2px) !important;
 }
@@ -639,31 +640,32 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /* ============================================================
-   BUTTONS — global monochrome
+   BUTTONS — global yellow/black theme
    ============================================================ */
 .btn-primary {
-    background: #111111 !important;
-    border-color: #111111 !important;
-    color: #ffffff !important;
+    background: #FFD700 !important;
+    border-color: #FFD700 !important;
+    color: #111111 !important;
     border-radius: 6px !important;
     font-weight: 600 !important;
 }
 .btn-primary:hover {
-    background: #333333 !important;
-    border-color: #333333 !important;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.2) !important;
+    background: #FFC107 !important;
+    border-color: #FFC107 !important;
+    color: #000000 !important;
+    box-shadow: 0 6px 18px rgba(255,215,0,0.3) !important;
     transform: translateY(-2px) !important;
 }
 .btn-outline-primary {
-    color: #111111 !important;
-    border: 2px solid #111111 !important;
+    color: #FFD700 !important;
+    border: 2px solid #FFD700 !important;
     background: transparent !important;
     border-radius: 6px !important;
 }
 .btn-outline-primary:hover {
-    background: #111111 !important;
-    color: #ffffff !important;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15) !important;
+    background: #FFD700 !important;
+    color: #111111 !important;
+    box-shadow: 0 6px 18px rgba(255,215,0,0.3) !important;
 }
 
 /* ============================================================

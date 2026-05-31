@@ -14,25 +14,25 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/premium.css">
     <style>
-        /* === FRONTEND PAGE SPECIFIC - Monochrome Theme === */
+        /* === FRONTEND PAGE SPECIFIC - Yellow, Black, White Theme === */
         .frontend-hero {
             background: linear-gradient(135deg, #111111 0%, #1a1a1a 40%, #2a2a2a 100%);
         }
         .frontend-hero .svc-hero-blob:nth-child(1) {
             width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(100,100,100,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, transparent 70%);
             top: -120px; right: -80px;
             animation: blobFloat 9s ease-in-out infinite;
         }
         .frontend-hero .svc-hero-blob:nth-child(2) {
             width: 350px; height: 350px;
-            background: radial-gradient(circle, rgba(80,80,80,0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,193,7,0.15) 0%, transparent 70%);
             bottom: -60px; left: -80px;
             animation: blobFloat 7s ease-in-out infinite reverse;
         }
         .frontend-hero .svc-hero-blob:nth-child(3) {
             width: 200px; height: 200px;
-            background: radial-gradient(circle, rgba(120,120,120,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,215,0,0.12) 0%, transparent 70%);
             top: 40%; left: 20%;
             animation: blobFloat 12s ease-in-out infinite 1s;
         }
@@ -40,13 +40,13 @@
             0%,100% { transform: translateY(0) scale(1); }
             50% { transform: translateY(28px) scale(1.04); }
         }
-        .fe-badge { background: linear-gradient(135deg,#333333,#555555); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .fe-badge { background: linear-gradient(135deg,#FFD700,#FFC107); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
         /* Code window floating graphic */
         .code-window {
             background: #1a1a1a;
             border-radius: 14px !important;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,215,0,0.2);
             box-shadow: 0 30px 80px rgba(0,0,0,0.5);
             overflow: hidden;
         }
@@ -59,43 +59,43 @@
         }
         .code-dot { width:12px; height:12px; border-radius:50%; }
         .code-dot-r { background:#ef4444; }
-        .code-dot-y { background:#f59e0b; }
+        .code-dot-y { background:#FFD700; }
         .code-dot-g { background:#10b981; }
         .code-body { padding: 1.5rem; font-family: 'Poppins', sans-serif; font-size: 0.85rem; line-height: 1.7; }
-        .code-kw { color: #c792ea; }
+        .code-kw { color: #FFD700; }
         .code-fn { color: #82aaff; }
         .code-str { color: #c3e88d; }
         .code-tag { color: #f07178; }
-        .code-attr { color: #ffcb6b; }
+        .code-attr { color: #FFC107; }
         .code-com { color: #546e7a; }
         .code-num { color: #f78c6c; }
 
-        .fe-card-1 { --svc-gradient: linear-gradient(90deg,#222222,#1a1a1a); }
-        .fe-card-1 .svc-card-icon { background: linear-gradient(135deg,#222222,#1a1a1a); color:white; }
-        .fe-card-2 { --svc-gradient: linear-gradient(90deg,#1a1a1a,#222222); }
-        .fe-card-2 .svc-card-icon { background: linear-gradient(135deg,#1a1a1a,#222222); color:white; }
-        .fe-card-3 { --svc-gradient: linear-gradient(90deg,#333333,#1a1a1a); }
-        .fe-card-3 .svc-card-icon { background: linear-gradient(135deg,#333333,#1a1a1a); color:white; }
-        .fe-card-4 { --svc-gradient: linear-gradient(90deg,#1a1a1a,#222222); }
-        .fe-card-4 .svc-card-icon { background: linear-gradient(135deg,#1a1a1a,#222222); color:white; }
-        .fe-card-5 { --svc-gradient: linear-gradient(90deg,#222222,#333333); }
-        .fe-card-5 .svc-card-icon { background: linear-gradient(135deg,#222222,#333333); color:white; }
-        .fe-card-6 { --svc-gradient: linear-gradient(90deg,#111111,#1a1a1a); }
-        .fe-card-6 .svc-card-icon { background: linear-gradient(135deg,#111111,#1a1a1a); color:white; }
+        .fe-card-1 { --svc-gradient: linear-gradient(90deg,#FFD700,#FFC107); }
+        .fe-card-1 .svc-card-icon { background: linear-gradient(135deg,#FFD700,#FFC107); color:#111111; }
+        .fe-card-2 { --svc-gradient: linear-gradient(90deg,#FFC107,#FFB300); }
+        .fe-card-2 .svc-card-icon { background: linear-gradient(135deg,#FFC107,#FFB300); color:#111111; }
+        .fe-card-3 { --svc-gradient: linear-gradient(90deg,#FFD700,#FF8C00); }
+        .fe-card-3 .svc-card-icon { background: linear-gradient(135deg,#FFD700,#FF8C00); color:#111111; }
+        .fe-card-4 { --svc-gradient: linear-gradient(90deg,#FFC107,#FFD700); }
+        .fe-card-4 .svc-card-icon { background: linear-gradient(135deg,#FFC107,#FFD700); color:#111111; }
+        .fe-card-5 { --svc-gradient: linear-gradient(90deg,#FFD700,#FFC107); }
+        .fe-card-5 .svc-card-icon { background: linear-gradient(135deg,#FFD700,#FFC107); color:#111111; }
+        .fe-card-6 { --svc-gradient: linear-gradient(90deg,#FFC107,#FFB300); }
+        .fe-card-6 .svc-card-icon { background: linear-gradient(135deg,#FFC107,#FFB300); color:#111111; }
 
-        .fe-step-1 { background: linear-gradient(135deg,#222222,#1a1a1a); }
-        .fe-step-2 { background: linear-gradient(135deg,#1a1a1a,#222222); }
-        .fe-step-3 { background: linear-gradient(135deg,#333333,#1a1a1a); }
-        .fe-step-4 { background: linear-gradient(135deg,#1a1a1a,#222222); }
+        .fe-step-1 { background: linear-gradient(135deg,#FFD700,#FFC107); }
+        .fe-step-2 { background: linear-gradient(135deg,#FFC107,#FFB300); }
+        .fe-step-3 { background: linear-gradient(135deg,#FFD700,#FF8C00); }
+        .fe-step-4 { background: linear-gradient(135deg,#FFC107,#FFD700); }
 
-        .fe-av-1 { background: linear-gradient(135deg,#222222,#1a1a1a); }
-        .fe-av-2 { background: linear-gradient(135deg,#1a1a1a,#222222); }
-        .fe-av-3 { background: linear-gradient(135deg,#333333,#1a1a1a); }
+        .fe-av-1 { background: linear-gradient(135deg,#FFD700,#FFC107); }
+        .fe-av-2 { background: linear-gradient(135deg,#FFC107,#FFB300); }
+        .fe-av-3 { background: linear-gradient(135deg,#FFD700,#FF8C00); }
 
         .fe-cta { background: linear-gradient(135deg, #111111 0%, #1a1a1a 60%, #0f0f0f 100%); }
         .fe-cta::before {
             content:''; position:absolute; inset:0;
-            background: radial-gradient(ellipse at 50% 50%, rgba(100,100,100,0.1) 0%, transparent 65%);
+            background: radial-gradient(ellipse at 50% 50%, rgba(255,215,0,0.15) 0%, transparent 65%);
             pointer-events:none;
         }
     </style>

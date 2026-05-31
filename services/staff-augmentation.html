@@ -14,25 +14,25 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/premium.css">
     <style>
-        /* === STAFF AUG PAGE SPECIFIC - Monochrome Theme === */
+        /* === STAFF AUG PAGE SPECIFIC - Yellow, Black, White Theme === */
         .staff-hero {
             background: linear-gradient(135deg, #111111 0%, #1a1a1a 40%, #2a2a2a 100%);
         }
         .staff-hero .svc-hero-blob:nth-child(1) {
             width: 520px; height: 520px;
-            background: radial-gradient(circle, rgba(100,100,100,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, transparent 70%);
             top: -120px; right: -80px;
             animation: staffBlob 10s ease-in-out infinite;
         }
         .staff-hero .svc-hero-blob:nth-child(2) {
             width: 360px; height: 360px;
-            background: radial-gradient(circle, rgba(80,80,80,0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,193,7,0.15) 0%, transparent 70%);
             bottom: -70px; left: -70px;
             animation: staffBlob 8s ease-in-out infinite reverse;
         }
         .staff-hero .svc-hero-blob:nth-child(3) {
             width: 240px; height: 240px;
-            background: radial-gradient(circle, rgba(120,120,120,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,215,0,0.12) 0%, transparent 70%);
             top: 45%; left: 22%;
             animation: staffBlob 13s ease-in-out infinite 1.5s;
         }
@@ -40,7 +40,7 @@
             0%,100% { transform: translateY(0) scale(1); }
             50% { transform: translateY(25px) scale(1.04); }
         }
-        .staff-badge { background: linear-gradient(135deg,#333333,#555555); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .staff-badge { background: linear-gradient(135deg,#FFD700,#FFC107); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
         /* Team cards visual */
         .team-visual {
@@ -49,22 +49,23 @@
             gap: 1rem;
         }
         .team-member-card {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,215,0,0.1);
+            border: 1px solid rgba(255,215,0,0.3);
             border-radius: 16px !important;
             padding: 1.25rem;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
         .team-member-card:hover {
-            background: rgba(255,255,255,0.14);
+            background: rgba(255,215,0,0.15);
             transform: translateY(-4px);
+            border-color: rgba(255,215,0,0.5);
         }
         .team-avatar {
             width: 52px; height: 52px;
             border-radius: 50% !important;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem; font-weight: 800; color: white;
+            font-size: 1.4rem; font-weight: 800; color: #111111;
             margin-bottom: 0.75rem;
         }
         .team-role-tag {
@@ -78,15 +79,15 @@
             margin-bottom: 0.4rem;
         }
         .team-member-card h6 { font-size:0.92rem; font-weight:700; color:#fff; margin:0; }
-        .team-member-card small { color:rgba(255,255,255,0.55); font-size:0.78rem; }
+        .team-member-card small { color:rgba(255,255,255,0.75); font-size:0.78rem; }
 
         /* Engagement model cards */
         .eng-card {
             background: #fff;
             border-radius: 20px !important;
             padding: 2rem;
-            border: 1.5px solid #e8ecf4;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1.5px solid #FFD700;
+            box-shadow: 0 4px 20px rgba(255,215,0,0.1);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -97,12 +98,12 @@
             position: absolute;
             bottom: 0; left: 0; right: 0;
             height: 4px;
-            background: var(--eng-color, linear-gradient(90deg,#333333,#555555));
+            background: var(--eng-color, linear-gradient(90deg,#FFD700,#FFC107));
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.4s ease;
         }
-        .eng-card:hover { transform: translateY(-12px); box-shadow: 0 28px 65px rgba(0,0,0,0.11); }
+        .eng-card:hover { transform: translateY(-12px); box-shadow: 0 28px 65px rgba(255,215,0,0.2); }
         .eng-card:hover::after { transform: scaleX(1); }
         .eng-icon {
             width: 64px; height: 64px;
@@ -121,16 +122,16 @@
             border-bottom: 1px solid #f3f4f6;
         }
         .eng-list li:last-child { border-bottom: none; }
-        .eng-list li i { color: #10B981; font-size: 0.9rem; flex-shrink: 0; }
+        .eng-list li i { color: #FFD700; font-size: 0.9rem; flex-shrink: 0; }
 
-        .eng-1 { --eng-color: linear-gradient(90deg,#333333,#1a1a1a); }
-        .eng-1 .eng-icon { background: linear-gradient(135deg,#333333,#1a1a1a); }
-        .eng-2 { --eng-color: linear-gradient(90deg,#111111,#1a1a1a); }
-        .eng-2 .eng-icon { background: linear-gradient(135deg,#111111,#1a1a1a); }
-        .eng-3 { --eng-color: linear-gradient(90deg,#1a1a1a,#222222); }
-        .eng-3 .eng-icon { background: linear-gradient(135deg,#1a1a1a,#222222); }
-        .eng-4 { --eng-color: linear-gradient(90deg,#222222,#1a1a1a); }
-        .eng-4 .eng-icon { background: linear-gradient(135deg,#222222,#1a1a1a); }
+        .eng-1 { --eng-color: linear-gradient(90deg,#FFD700,#FFC107); }
+        .eng-1 .eng-icon { background: linear-gradient(135deg,#FFD700,#FFC107); }
+        .eng-2 { --eng-color: linear-gradient(90deg,#FFC107,#FFB300); }
+        .eng-2 .eng-icon { background: linear-gradient(135deg,#FFC107,#FFB300); }
+        .eng-3 { --eng-color: linear-gradient(90deg,#FFD700,#FF8C00); }
+        .eng-3 .eng-icon { background: linear-gradient(135deg,#FFD700,#FF8C00); }
+        .eng-4 { --eng-color: linear-gradient(90deg,#FFC107,#FFD700); }
+        .eng-4 .eng-icon { background: linear-gradient(135deg,#FFC107,#FFD700); }
 
         /* Benefit pills */
         .benefit-pill {
@@ -140,15 +141,15 @@
             padding: 1.25rem;
             background: #fff;
             border-radius: 16px !important;
-            border: 1.5px solid #e5e5e5;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            border: 1.5px solid #FFD700;
+            box-shadow: 0 2px 12px rgba(255,215,0,0.1);
             transition: all 0.3s ease;
             height: 100%;
         }
         .benefit-pill:hover {
-            border-color: #000000;
+            border-color: #FFC107;
             transform: translateX(6px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(255,215,0,0.2);
         }
         .benefit-pill-icon {
             width: 52px; height: 52px;
@@ -159,21 +160,21 @@
         .benefit-pill h4 { font-size:1rem; font-weight:700; color:#0f172a; margin-bottom:0.35rem; }
         .benefit-pill p { font-size:0.88rem; color:#666666; margin:0; line-height:1.6; }
 
-        .bp-1 .benefit-pill-icon { background: linear-gradient(135deg,#333333,#1a1a1a); }
-        .bp-2 .benefit-pill-icon { background: linear-gradient(135deg,#111111,#1a1a1a); }
-        .bp-3 .benefit-pill-icon { background: linear-gradient(135deg,#222222,#1a1a1a); }
-        .bp-4 .benefit-pill-icon { background: linear-gradient(135deg,#1a1a1a,#222222); }
-        .bp-5 .benefit-pill-icon { background: linear-gradient(135deg,#333333,#1a1a1a); }
-        .bp-6 .benefit-pill-icon { background: linear-gradient(135deg,#1a1a1a,#222222); }
+        .bp-1 .benefit-pill-icon { background: linear-gradient(135deg,#FFD700,#FFC107); }
+        .bp-2 .benefit-pill-icon { background: linear-gradient(135deg,#FFC107,#FFB300); }
+        .bp-3 .benefit-pill-icon { background: linear-gradient(135deg,#FFD700,#FF8C00); }
+        .bp-4 .benefit-pill-icon { background: linear-gradient(135deg,#FFC107,#FFD700); }
+        .bp-5 .benefit-pill-icon { background: linear-gradient(135deg,#FFD700,#FFC107); }
+        .bp-6 .benefit-pill-icon { background: linear-gradient(135deg,#FFC107,#FFB300); }
 
-        .av-sa-1 { background: linear-gradient(135deg,#333333,#1a1a1a); }
-        .av-sa-2 { background: linear-gradient(135deg,#111111,#1a1a1a); }
-        .av-sa-3 { background: linear-gradient(135deg,#1a1a1a,#222222); }
+        .av-sa-1 { background: linear-gradient(135deg,#FFD700,#FFC107); }
+        .av-sa-2 { background: linear-gradient(135deg,#FFC107,#FFB300); }
+        .av-sa-3 { background: linear-gradient(135deg,#FFD700,#FF8C00); }
 
         .staff-cta { background: linear-gradient(135deg, #111111 0%, #1a1a1a 60%, #0f0f0f 100%); }
         .staff-cta::before {
             content:''; position:absolute; inset:0;
-            background: radial-gradient(ellipse at 50% 50%, rgba(100,100,100,0.1) 0%, transparent 65%);
+            background: radial-gradient(ellipse at 50% 50%, rgba(255,215,0,0.15) 0%, transparent 65%);
             pointer-events:none;
         }
     </style>

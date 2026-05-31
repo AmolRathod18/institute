@@ -14,25 +14,25 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/premium.css">
     <style>
-        /* === UIUX PAGE SPECIFIC - Monochrome Theme === */
+        /* === UIUX PAGE SPECIFIC - Yellow, Black, White Theme === */
         .uiux-hero {
             background: linear-gradient(135deg, #111111 0%, #1a1a1a 40%, #2a2a2a 100%);
         }
         .uiux-hero .svc-hero-blob:nth-child(1) {
             width: 550px; height: 550px;
-            background: radial-gradient(circle, rgba(100,100,100,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, transparent 70%);
             top: -150px; right: -100px;
             animation: uiBlob1 9s ease-in-out infinite;
         }
         .uiux-hero .svc-hero-blob:nth-child(2) {
             width: 380px; height: 380px;
-            background: radial-gradient(circle, rgba(80,80,80,0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,193,7,0.15) 0%, transparent 70%);
             bottom: -80px; left: -60px;
             animation: uiBlob1 12s ease-in-out infinite reverse;
         }
         .uiux-hero .svc-hero-blob:nth-child(3) {
             width: 300px; height: 300px;
-            background: radial-gradient(circle, rgba(120,120,120,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,215,0,0.12) 0%, transparent 70%);
             top: 35%; left: 25%;
             animation: uiBlob1 7s ease-in-out infinite 2s;
         }
@@ -41,7 +41,7 @@
             50% { transform: translateY(25px) scale(1.05) rotate(3deg); }
         }
 
-        .ui-badge { background: linear-gradient(135deg,#333333,#555555); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .ui-badge { background: linear-gradient(135deg,#FFD700,#FFC107); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
         /* UI Mock Screenshot */
         .ui-mock {
@@ -52,45 +52,45 @@
             border: 1px solid rgba(0,0,0,0.1);
         }
         .ui-mock-topbar {
-            background: linear-gradient(135deg,#333333,#222222);
+            background: linear-gradient(135deg,#FFD700,#FFC107);
             padding: 1rem 1.25rem;
             display: flex; align-items: center; gap: 0.75rem;
         }
-        .ui-mock-dot { width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.4); }
+        .ui-mock-dot { width:10px; height:10px; border-radius:50%; background:rgba(0,0,0,0.2); }
         .ui-mock-body { padding: 1.25rem; }
         .ui-color-swatch { width: 100%; height: 10px; border-radius: 5px; margin-bottom: 0.75rem; }
         .ui-element { background: #f8faff; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; }
         .ui-element i { font-size:1.2rem; }
         .ui-element span { font-size: 0.82rem; font-weight: 600; color: #374151; }
         .ui-progress { height: 6px; border-radius: 3px; background: #e5e7eb; margin-bottom: 0.5rem; overflow: hidden; }
-        .ui-progress-bar { height: 100%; border-radius: 3px; }
+        .ui-progress-bar { height: 100%; border-radius: 3px; background: #FFD700; }
 
-        .ui-card-1 { --svc-gradient: linear-gradient(90deg,#222222,#1a1a1a); }
-        .ui-card-1 .svc-card-icon { background: linear-gradient(135deg,#222222,#1a1a1a); color:white; }
-        .ui-card-2 { --svc-gradient: linear-gradient(90deg,#1a1a1a,#111111); }
-        .ui-card-2 .svc-card-icon { background: linear-gradient(135deg,#1a1a1a,#111111); color:white; }
-        .ui-card-3 { --svc-gradient: linear-gradient(90deg,#333333,#1a1a1a); }
-        .ui-card-3 .svc-card-icon { background: linear-gradient(135deg,#333333,#1a1a1a); color:white; }
-        .ui-card-4 { --svc-gradient: linear-gradient(90deg,#444444,#1a1a1a); }
-        .ui-card-4 .svc-card-icon { background: linear-gradient(135deg,#444444,#1a1a1a); color:white; }
-        .ui-card-5 { --svc-gradient: linear-gradient(90deg,#333333,#1a1a1a); }
-        .ui-card-5 .svc-card-icon { background: linear-gradient(135deg,#333333,#1a1a1a); color:white; }
-        .ui-card-6 { --svc-gradient: linear-gradient(90deg,#1a1a1a,#222222); }
-        .ui-card-6 .svc-card-icon { background: linear-gradient(135deg,#1a1a1a,#222222); color:white; }
+        .ui-card-1 { --svc-gradient: linear-gradient(90deg,#FFD700,#FFC107); }
+        .ui-card-1 .svc-card-icon { background: linear-gradient(135deg,#FFD700,#FFC107); color:#111111; }
+        .ui-card-2 { --svc-gradient: linear-gradient(90deg,#FFC107,#FFB300); }
+        .ui-card-2 .svc-card-icon { background: linear-gradient(135deg,#FFC107,#FFB300); color:#111111; }
+        .ui-card-3 { --svc-gradient: linear-gradient(90deg,#FFD700,#FF8C00); }
+        .ui-card-3 .svc-card-icon { background: linear-gradient(135deg,#FFD700,#FF8C00); color:#111111; }
+        .ui-card-4 { --svc-gradient: linear-gradient(90deg,#FFC107,#FFD700); }
+        .ui-card-4 .svc-card-icon { background: linear-gradient(135deg,#FFC107,#FFD700); color:#111111; }
+        .ui-card-5 { --svc-gradient: linear-gradient(90deg,#FFD700,#FFC107); }
+        .ui-card-5 .svc-card-icon { background: linear-gradient(135deg,#FFD700,#FFC107); color:#111111; }
+        .ui-card-6 { --svc-gradient: linear-gradient(90deg,#FFC107,#FFB300); }
+        .ui-card-6 .svc-card-icon { background: linear-gradient(135deg,#FFC107,#FFB300); color:#111111; }
 
-        .ui-step-1 { background: linear-gradient(135deg,#222222,#1a1a1a); }
-        .ui-step-2 { background: linear-gradient(135deg,#1a1a1a,#111111); }
-        .ui-step-3 { background: linear-gradient(135deg,#333333,#1a1a1a); }
-        .ui-step-4 { background: linear-gradient(135deg,#444444,#1a1a1a); }
+        .ui-step-1 { background: linear-gradient(135deg,#FFD700,#FFC107); }
+        .ui-step-2 { background: linear-gradient(135deg,#FFC107,#FFB300); }
+        .ui-step-3 { background: linear-gradient(135deg,#FFD700,#FF8C00); }
+        .ui-step-4 { background: linear-gradient(135deg,#FFC107,#FFD700); }
 
-        .ui-av-1 { background: linear-gradient(135deg,#222222,#1a1a1a); }
-        .ui-av-2 { background: linear-gradient(135deg,#1a1a1a,#111111); }
-        .ui-av-3 { background: linear-gradient(135deg,#333333,#1a1a1a); }
+        .ui-av-1 { background: linear-gradient(135deg,#FFD700,#FFC107); }
+        .ui-av-2 { background: linear-gradient(135deg,#FFC107,#FFB300); }
+        .ui-av-3 { background: linear-gradient(135deg,#FFD700,#FF8C00); }
 
         .uiux-cta { background: linear-gradient(135deg, #111111 0%, #1a1a1a 60%, #0f0f0f 100%); }
         .uiux-cta::before {
             content:''; position:absolute; inset:0;
-            background: radial-gradient(ellipse at 50% 50%, rgba(100,100,100,0.1) 0%, transparent 65%);
+            background: radial-gradient(ellipse at 50% 50%, rgba(255,215,0,0.15) 0%, transparent 65%);
             pointer-events:none;
         }
     </style>

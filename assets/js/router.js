@@ -252,15 +252,11 @@
         const main = document.querySelector('main');
         if (!main) { isNavigating = false; return; }
 
-        // Show a thin loading bar at the top
-        showProgress();
-
         // Fetch target page
         const page = await fetchPage(resolved);
 
         if (!page) {
             // Fallback: real navigation if fetch fails
-            hideProgress();
             location.href = url;
             return;
         }
@@ -294,7 +290,6 @@
         // Post-navigation tasks
         reinitPage();
 
-        hideProgress();
         isNavigating = false;
     }
 
@@ -341,42 +336,6 @@
 
             el.setAttribute('style', updated);
         });
-    }
-
-    // ─── Progress bar ─────────────────────────────────────────────────────────
-
-    let progressBar = null;
-    let progressTimer = null;
-
-    function showProgress() {
-        if (!progressBar) {
-            progressBar = document.createElement('div');
-            progressBar.id = 'router-progress';
-            progressBar.style.cssText = [
-                'position:fixed', 'top:0', 'left:0', 'height:2px',
-                'background:#111111', 'z-index:9999',
-                'width:0%', 'transition:width 0.25s ease',
-                'pointer-events:none'
-            ].join(';');
-            document.body.appendChild(progressBar);
-        }
-        progressBar.style.width = '0%';
-        progressBar.style.opacity = '1';
-
-        // Animate to 80% while waiting for fetch
-        clearTimeout(progressTimer);
-        progressTimer = setTimeout(() => {
-            if (progressBar) progressBar.style.width = '75%';
-        }, 50);
-    }
-
-    function hideProgress() {
-        if (!progressBar) return;
-        clearTimeout(progressTimer);
-        progressBar.style.width = '100%';
-        setTimeout(() => {
-            if (progressBar) progressBar.style.opacity = '0';
-        }, 250);
     }
 
     // ─── Link interceptors ────────────────────────────────────────────────────

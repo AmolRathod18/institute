@@ -183,11 +183,7 @@
             document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(el => {
                 try { new bootstrap.Dropdown(el); } catch {}
             });
-        }
 
-        // Scroll progress bar reset
-        const bar = document.querySelector('.scroll-progress-bar');
-        if (bar) bar.style.width = '0%';
     }
 
     /** Lightweight Intersection Observer for .fade-in card reveals */

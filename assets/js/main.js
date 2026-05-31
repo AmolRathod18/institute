@@ -229,28 +229,7 @@ if (typeof emailjs !== 'undefined') {
     // Parallax disabled — causes visual glitches during SPA navigation
 
 
-    // ===========================
-    // SCROLL PROGRESS BAR (read-progress while scrolling)
-    // ===========================
-    let _scrollBar = null;
-    function getOrCreateScrollBar() {
-        if (_scrollBar) return _scrollBar;
-        // Re-use router-progress if router.js is loaded, else create own
-        _scrollBar = document.getElementById('router-progress');
-        if (!_scrollBar) {
-            _scrollBar = document.createElement('div');
-            _scrollBar.id = 'scroll-read-progress';
-            _scrollBar.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:#111111;z-index:9998;width:0%;transition:width 0.1s ease;pointer-events:none;';
-            document.body.appendChild(_scrollBar);
-        }
-        return _scrollBar;
-    }
-    window.addEventListener('scroll', () => {
-        const bar = getOrCreateScrollBar();
-        const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        // Only update when not navigating (router sets opacity:0 when hiding)
-        if (bar && bar.style.opacity !== '0') bar.style.width = pct + '%';
-    }, { passive: true });
+    // Scroll progress bar removed - using default browser scrollbar
 
 
     // ===========================
@@ -286,20 +265,7 @@ if (typeof emailjs !== 'undefined') {
         });
     });
 
-    // Add ripple animation to CSS dynamically
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes ripple-animation {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
-        }
-        .scroll-progress-bar {
-            box-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
-        }
-    `;
-    document.head.appendChild(style);
+    // Dynamic CSS for scroll progress bar removed
 
     // ===========================
     // FORM VALIDATION HELPER

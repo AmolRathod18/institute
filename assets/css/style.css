@@ -914,6 +914,7 @@ img {
     position: relative;
     height: 70vh;
     width: 100%;
+    overflow: hidden; /* FIX: prevent nested/internal scrollbar */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3735,6 +3736,7 @@ input[type="submit"] {
     /* Hero Responsive Adjustments */
     .hero-slider {
         height: 100vh;
+        overflow: hidden; /* ensure clipping at mobile too */
     }
 
     .hero-title {
@@ -5359,9 +5361,9 @@ h1, h2, h3, h4, h5, h6, p, a, li, span {
 }
 
 /* ---- Prevent horizontal scroll from row margins ---- */
-.container-fluid, .container {
-    overflow-x: hidden;
-}
+/* NOTE: overflow-x:hidden removed from .container — it implicitly sets
+   overflow-y:auto which creates a nested scrollbar inside the hero section. 
+   Horizontal overflow is already blocked by html,body{overflow-x:hidden}. */
 
 /* Fix Bootstrap row negative margins on small screens */
 @media (max-width: 575.98px) {
@@ -5405,7 +5407,7 @@ h1, h2, h3, h4, h5, h6, p, a, li, span {
 /* ---- Service Hero (qa-hero overrides for premium look) ---- */
 .svc-hero {
     position: relative;
-    overflow: hidden;
+    overflow: clip; /* FIX: clip without creating a scroll container (no nested scrollbar) */
     padding: 140px 0 80px;
     min-height: 92vh;
     display: flex;

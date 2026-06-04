@@ -1565,23 +1565,94 @@ h1.page-title {
     border-color: #d0d0d0;
 }
 
+.services-overview .row > [class*="col-"]:nth-child(1) .service-card {
+    --service-accent: #fbbf24;
+    --service-accent-soft: rgba(251, 191, 36, 0.32);
+}
+
+.services-overview .row > [class*="col-"]:nth-child(2) .service-card {
+    --service-accent: #38bdf8;
+    --service-accent-soft: rgba(56, 189, 248, 0.32);
+}
+
+.services-overview .row > [class*="col-"]:nth-child(3) .service-card {
+    --service-accent: #a78bfa;
+    --service-accent-soft: rgba(167, 139, 250, 0.32);
+}
+
+.services-overview .row > [class*="col-"]:nth-child(4) .service-card {
+    --service-accent: #34d399;
+    --service-accent-soft: rgba(52, 211, 153, 0.32);
+}
+
+.services-overview .service-card::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--service-accent, #0066CC), transparent);
+    opacity: 0.95;
+    z-index: 2;
+}
+
 .service-card-image {
     width: 100%;
-    height: 180px;
+    height: 196px;
     overflow: hidden;
-    background: #f8fafc;
+    background:
+        radial-gradient(circle at 18% 16%, var(--service-accent-soft, rgba(0, 102, 204, 0.28)), transparent 32%),
+        radial-gradient(circle at 86% 72%, rgba(255, 255, 255, 0.12), transparent 26%),
+        linear-gradient(135deg, #05142f 0%, #071d3f 48%, #061126 100%);
+    padding: 0.7rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card-image::before {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 22px 22px;
+    opacity: 0.55;
+    transform: skewY(-1deg);
+}
+
+.service-card-image::after {
+    content: '';
+    position: absolute;
+    width: 108px;
+    height: 108px;
+    right: -34px;
+    top: -34px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: var(--service-accent-soft, rgba(0, 102, 204, 0.25));
+    transform: rotate(18deg);
+    filter: blur(1px);
 }
 
 .service-card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
-    transition: transform 0.35s ease;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
+    transition: transform 0.35s ease, filter 0.35s ease;
 }
 
 .service-card:hover .service-card-image img {
-    transform: scale(1.05);
+    transform: translateY(-4px) scale(1.035);
+    filter: saturate(1.08) contrast(1.03);
 }
 
 /* --- Gradient Header --- */
@@ -5492,17 +5563,30 @@ h1, h2, h3, h4, h5, h6, p, a, li, span {
     position: relative;
     z-index: 2;
     animation: fadeInRight 0.8s ease-out 0.3s both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
 }
 
 .svc-hero-img-wrap img {
-    border-radius: 16px !important;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.35);
-    width: 80%;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    width: min(100%, 560px);
     height: auto;
     object-fit: contain;
-    max-height: 440px;
+    max-height: 460px;
     display: block;
     margin: 0 auto;
+}
+
+.svc-hero .svc-hero-badge,
+.svc-hero .svc-hero-img-badge,
+.svc-hero .svc-hero-blob {
+    display: none !important;
 }
 
 .svc-hero-img-badge {

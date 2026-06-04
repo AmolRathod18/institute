@@ -110,18 +110,29 @@
             display: flex; align-items: center; gap: 1.25rem;
         }
         .card-icon-box {
-            width: 64px; height: 64px;
+            width: 112px; height: 86px;
             border-radius: 16px;
             display: flex; align-items: center; justify-content: center;
             font-size: 1.75rem;
             flex-shrink: 0;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            padding: 0.35rem;
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: 0 14px 30px rgba(15,23,42,0.14);
         }
-        .service-card:hover .card-icon-box { transform: scale(1.1) rotate(-5deg); }
-        .icon-testing  { background: linear-gradient(135deg, #fef2f2, #fee2e2); color: #dc2626; }
-        .icon-frontend { background: linear-gradient(135deg, #eff6ff, #dbeafe); color: #1d4ed8; }
-        .icon-design   { background: linear-gradient(135deg, #fdf4ff, #e9d5ff); color: #7c3aed; }
-        .icon-staff    { background: linear-gradient(135deg, #ecfdf5, #d1fae5); color: #047857; }
+        .card-icon-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            box-shadow: 0 8px 18px rgba(15,23,42,0.22);
+        }
+        .service-card:hover .card-icon-box { transform: translateY(-3px) scale(1.04) rotate(-2deg); }
+        .icon-testing  { background: radial-gradient(circle at 15% 15%, rgba(251,191,36,0.38), transparent 34%), linear-gradient(135deg, #061126, #0b1f44); color: #dc2626; }
+        .icon-frontend { background: radial-gradient(circle at 15% 15%, rgba(56,189,248,0.36), transparent 34%), linear-gradient(135deg, #061126, #0b1f44); color: #1d4ed8; }
+        .icon-design   { background: radial-gradient(circle at 15% 15%, rgba(167,139,250,0.36), transparent 34%), linear-gradient(135deg, #061126, #0b1f44); color: #7c3aed; }
+        .icon-staff    { background: radial-gradient(circle at 15% 15%, rgba(52,211,153,0.36), transparent 34%), linear-gradient(135deg, #061126, #0b1f44); color: #047857; }
 
         .card-badge {
             font-size: 0.72rem; font-weight: 700;
@@ -271,7 +282,7 @@
                         <div class="service-card card-testing">
                             <div class="card-icon-header">
                                 <div class="card-icon-box icon-testing">
-                                    <i class="bi bi-bug-fill"></i>
+                                    <img src="assets/img/TESTING_2.png" alt="Software Testing service image" loading="lazy">
                                 </div>
                                 <div>
                                     <span class="card-badge badge-testing">QA & Testing</span>
@@ -299,7 +310,7 @@
                         <div class="service-card card-frontend">
                             <div class="card-icon-header">
                                 <div class="card-icon-box icon-frontend">
-                                    <i class="bi bi-code-slash"></i>
+                                    <img src="assets/img/FRONTEND_2.png" alt="Frontend Development service image" loading="lazy">
                                 </div>
                                 <div>
                                     <span class="card-badge badge-frontend">Development</span>
@@ -327,7 +338,7 @@
                         <div class="service-card card-design">
                             <div class="card-icon-header">
                                 <div class="card-icon-box icon-design">
-                                    <i class="bi bi-palette-fill"></i>
+                                    <img src="assets/img/UIUX_2.png" alt="UI UX Design service image" loading="lazy">
                                 </div>
                                 <div>
                                     <span class="card-badge badge-design">Design</span>
@@ -355,7 +366,7 @@
                         <div class="service-card card-staff">
                             <div class="card-icon-header">
                                 <div class="card-icon-box icon-staff">
-                                    <i class="bi bi-people-fill"></i>
+                                    <img src="assets/img/STAFF_2.png" alt="Staff Augmentation service image" loading="lazy">
                                 </div>
                                 <div>
                                     <span class="card-badge badge-staff">Staffing</span>

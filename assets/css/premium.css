@@ -759,3 +759,795 @@ h1,h2,h3,h4,h5,h6 {
     background-clip: border-box !important;
     -webkit-text-fill-color: #000000 !important;
 }
+
+/* ============================================================
+   ENTERPRISE DESIGN SYSTEM - FINAL PASS
+   ============================================================ */
+:root {
+    --primary-color: #0f4c81;
+    --primary-dark: #0a2540;
+    --primary-light: #e8f3ff;
+    --accent-color: #1aa6b7;
+    --accent-dark: #0f7280;
+    --surface-0: #ffffff;
+    --surface-1: #f6f8fb;
+    --surface-2: #eef3f8;
+    --ink-900: #071526;
+    --ink-800: #10243a;
+    --ink-700: #23384f;
+    --ink-600: #49627c;
+    --ink-500: #6b7d90;
+    --line-soft: #dbe5ee;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --shadow-card: 0 14px 36px rgba(7, 21, 38, 0.08);
+    --shadow-card-hover: 0 22px 54px rgba(7, 21, 38, 0.14);
+    --shadow-panel: 0 26px 70px rgba(7, 21, 38, 0.18);
+    --transition-polished: 220ms ease;
+}
+
+html {
+    background: var(--surface-0) !important;
+}
+
+body {
+    color: var(--ink-700) !important;
+    background: var(--surface-0) !important;
+    font-size: 16px !important;
+    line-height: 1.68 !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.service-title,
+.svc-section-heading,
+.toolkit-heading,
+.page-title {
+    color: var(--ink-900) !important;
+    letter-spacing: 0 !important;
+    text-wrap: balance;
+}
+
+p,
+.section-subtitle,
+.service-description,
+.svc-section-sub,
+.toolkit-subheading,
+.lead {
+    color: var(--ink-600) !important;
+}
+
+a,
+button,
+.btn,
+.service-card,
+.why-card,
+.mvv-card,
+.strength-card,
+.team-card,
+.perk-card,
+.track-card,
+.position-card,
+.process-step-card,
+.svc-card,
+.tool-card,
+.eng-card,
+.benefit-pill,
+.contact-form-panel,
+.contact-info-panel {
+    transition: transform var(--transition-polished), box-shadow var(--transition-polished), border-color var(--transition-polished), background var(--transition-polished), color var(--transition-polished) !important;
+}
+
+/* Navigation */
+#mainNav {
+    height: 76px !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+    border-bottom: 1px solid rgba(219, 229, 238, 0.92) !important;
+    box-shadow: 0 10px 34px rgba(7, 21, 38, 0.08) !important;
+    backdrop-filter: blur(16px) !important;
+}
+
+#mainNav .container {
+    height: 76px !important;
+}
+
+.logo-img {
+    height: 54px !important;
+}
+
+.brand-name {
+    color: var(--ink-900) !important;
+    font-size: 1.08rem !important;
+    letter-spacing: 0.02em !important;
+}
+
+.nav-link {
+    color: var(--ink-700) !important;
+    font-weight: 600 !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--primary-light) !important;
+    color: var(--primary-dark) !important;
+}
+
+.nav-bs-icon {
+    color: var(--primary-color) !important;
+}
+
+.dropdown-menu-enhanced {
+    border: 1px solid var(--line-soft) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: var(--shadow-panel) !important;
+}
+
+.dropdown-item {
+    border-radius: var(--radius-sm) !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background: var(--surface-1) !important;
+}
+
+.dd-icon-wrap {
+    background: var(--primary-light) !important;
+    color: var(--primary-color) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+/* Buttons */
+.btn,
+.btn-navbar-cta,
+.btn-primary,
+.btn-submit,
+.btn-apply,
+.btn-cta-white,
+.btn-cta-wh,
+.btn-white,
+.card-cta,
+.service-link {
+    border-radius: var(--radius-md) !important;
+    font-weight: 700 !important;
+}
+
+.btn-primary,
+.btn-navbar-cta,
+.btn-submit,
+.btn-apply,
+.btn-cta-white,
+.btn-cta-wh,
+.btn-white,
+.card-cta,
+.cta-testing,
+.cta-frontend,
+.cta-design,
+.cta-staff {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
+    border-color: transparent !important;
+    color: #ffffff !important;
+    box-shadow: 0 12px 26px rgba(15, 76, 129, 0.22) !important;
+}
+
+.btn-primary:hover,
+.btn-navbar-cta:hover,
+.btn-submit:hover,
+.btn-apply:hover,
+.btn-cta-white:hover,
+.btn-cta-wh:hover,
+.btn-white:hover,
+.card-cta:hover {
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color)) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 18px 34px rgba(15, 76, 129, 0.28) !important;
+}
+
+.btn-outline-primary,
+.btn-hero-outline,
+.btn-outline-white,
+.btn-cta-outline,
+.btn-cta-ghost {
+    background: transparent !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.72) !important;
+    color: #ffffff !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-hero-outline:hover,
+.btn-outline-white:hover,
+.btn-cta-outline:hover,
+.btn-cta-ghost:hover {
+    background: #ffffff !important;
+    border-color: #ffffff !important;
+    color: var(--primary-dark) !important;
+}
+
+/* Hero systems */
+.hero-slider {
+    min-height: 620px !important;
+    max-height: 820px !important;
+}
+
+.hero-overlay {
+    background:
+        linear-gradient(90deg, rgba(7, 21, 38, 0.88), rgba(7, 21, 38, 0.54) 48%, rgba(7, 21, 38, 0.28)),
+        radial-gradient(circle at 18% 22%, rgba(26, 166, 183, 0.28), transparent 34%) !important;
+}
+
+.hero-content-wrapper {
+    max-width: 1040px !important;
+}
+
+.hero-content {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+.hero-title {
+    color: #ffffff !important;
+    font-size: clamp(2.35rem, 5vw, 4.75rem) !important;
+    line-height: 1.04 !important;
+    letter-spacing: 0 !important;
+    max-width: 900px !important;
+    text-shadow: 0 18px 42px rgba(0, 0, 0, 0.34) !important;
+}
+
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.88) !important;
+    max-width: 680px !important;
+    font-size: clamp(1rem, 1.4vw, 1.22rem) !important;
+}
+
+.btn-hero-primary {
+    background: #ffffff !important;
+    color: var(--primary-dark) !important;
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.25) !important;
+}
+
+.btn-hero-primary:hover {
+    background: var(--primary-light) !important;
+    color: var(--primary-dark) !important;
+}
+
+.hero-indicators .indicator {
+    background: rgba(255, 255, 255, 0.48) !important;
+    border-radius: 999px !important;
+}
+
+.hero-indicators .indicator.active {
+    background: #ffffff !important;
+}
+
+.services-hero,
+.about-hero,
+.careers-hero,
+.contact-hero,
+.page-header,
+.svc-hero {
+    background:
+        radial-gradient(circle at 80% 12%, rgba(26, 166, 183, 0.28), transparent 32%),
+        linear-gradient(135deg, var(--ink-900) 0%, var(--primary-dark) 58%, #123f63 100%) !important;
+    padding: 118px 0 88px !important;
+}
+
+.services-hero::before,
+.about-hero::before,
+.careers-hero::before,
+.contact-hero::before,
+.services-cta::before,
+.about-cta::before,
+.careers-cta::before,
+.contact-info-panel::before,
+.contact-info-panel::after {
+    opacity: 0.45 !important;
+}
+
+.services-hero::after,
+.about-hero::after,
+.careers-hero::after,
+.contact-hero::after {
+    background: var(--surface-1) !important;
+}
+
+.services-hero .page-title,
+.about-hero .page-title,
+.careers-hero .page-title,
+.contact-hero .page-title,
+.page-header .page-title,
+.svc-hero h1 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.services-hero .page-subtitle,
+.about-hero .page-subtitle,
+.careers-hero .page-subtitle,
+.contact-hero .page-subtitle,
+.page-header .page-subtitle,
+.svc-hero .lead {
+    color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.breadcrumb-nav a,
+.breadcrumb-nav li,
+.breadcrumb-nav .current {
+    color: rgba(255, 255, 255, 0.78) !important;
+}
+
+/* Sections and headings */
+.section-padding,
+.svc-section,
+.toolkit-section,
+.services-section,
+.process-section,
+.contact-wrapper {
+    padding-top: 88px !important;
+    padding-bottom: 88px !important;
+}
+
+.bg-light,
+.services-section,
+.toolkit-section,
+.internship-section,
+.contact-wrapper,
+section[style*="background:#f8f9fa"],
+section[style*="background: #f7f7f7"] {
+    background: var(--surface-1) !important;
+}
+
+.section-header {
+    margin-bottom: 3.25rem !important;
+}
+
+.section-title,
+.svc-section-heading,
+.toolkit-heading {
+    font-size: clamp(1.9rem, 3.4vw, 3rem) !important;
+    line-height: 1.12 !important;
+    font-weight: 800 !important;
+}
+
+.section-subtitle,
+.svc-section-sub,
+.toolkit-subheading {
+    max-width: 680px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 1rem !important;
+}
+
+.section-header.text-center .section-title::after {
+    width: 60px !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color)) !important;
+    border-radius: 99px !important;
+}
+
+/* Cards and panels */
+.service-card,
+.why-card,
+.mvv-card,
+.strength-card,
+.team-card,
+.perk-card,
+.track-card,
+.position-card,
+.process-step-card,
+.svc-card,
+.tool-card,
+.eng-card,
+.benefit-pill,
+.contact-form-panel,
+.privacy-document {
+    background: var(--surface-0) !important;
+    border: 1px solid var(--line-soft) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: var(--shadow-card) !important;
+}
+
+.service-card:hover,
+.why-card:hover,
+.mvv-card:hover,
+.strength-card:hover,
+.team-card:hover,
+.perk-card:hover,
+.track-card:hover,
+.position-card:hover,
+.process-step-card:hover,
+.svc-card:hover,
+.tool-card:hover,
+.eng-card:hover,
+.benefit-pill:hover {
+    border-color: rgba(26, 166, 183, 0.36) !important;
+    box-shadow: var(--shadow-card-hover) !important;
+    transform: translateY(-6px) !important;
+}
+
+.why-icon,
+.mvv-icon,
+.strength-icon,
+.perk-icon,
+.svc-card-icon,
+.eng-icon,
+.benefit-pill-icon,
+.info-icon-box,
+.tool-icon,
+.step-number,
+.svc-step-num,
+.team-avatar-ring,
+.response-item .ri-icon {
+    background: var(--primary-light) !important;
+    color: var(--primary-color) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.why-icon i,
+.mvv-icon i,
+.strength-icon i,
+.perk-icon i,
+.track-card i,
+.benefit-item i,
+.service-features li i,
+.eng-list li i {
+    color: var(--primary-color) !important;
+}
+
+/* Home service cards */
+.services-overview .service-card {
+    border-left: 0 !important;
+}
+
+.services-overview .service-card::before {
+    display: block !important;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color)) !important;
+}
+
+.service-card-image {
+    background:
+        radial-gradient(circle at 20% 18%, rgba(26, 166, 183, 0.28), transparent 30%),
+        linear-gradient(135deg, #071526 0%, #0a2540 58%, #123f63 100%) !important;
+    border-bottom: 1px solid rgba(219, 229, 238, 0.22) !important;
+}
+
+.service-card-image::before {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.service-card-image img {
+    border-radius: var(--radius-sm) !important;
+}
+
+.service-card-body {
+    padding: 1.6rem 1.45rem 1rem !important;
+}
+
+.service-card-footer {
+    padding: 1.1rem 1.45rem 1.35rem !important;
+    border-top: 1px solid var(--line-soft) !important;
+}
+
+.service-link {
+    color: var(--primary-color) !important;
+}
+
+.service-link:hover {
+    color: var(--accent-dark) !important;
+}
+
+/* Services overview page cards */
+.card-testing::before,
+.card-frontend::before,
+.card-design::before,
+.card-staff::before {
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color)) !important;
+}
+
+.card-icon-box {
+    width: 116px !important;
+    height: 88px !important;
+    border-radius: var(--radius-md) !important;
+    background: linear-gradient(135deg, #071526, #123f63) !important;
+}
+
+.card-icon-box img {
+    border-radius: var(--radius-sm) !important;
+}
+
+.card-badge,
+.badge-testing,
+.badge-frontend,
+.badge-design,
+.badge-staff,
+.position-badge,
+.tech-badge,
+.meta-label {
+    background: var(--primary-light) !important;
+    color: var(--primary-color) !important;
+    border: 1px solid rgba(15, 76, 129, 0.12) !important;
+    border-radius: 999px !important;
+}
+
+/* Service detail pages */
+.svc-hero {
+    min-height: 720px !important;
+}
+
+.svc-hero-img-wrap {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+.svc-hero-img-wrap img {
+    width: min(100%, 620px) !important;
+    max-height: 500px !important;
+    filter: drop-shadow(0 28px 42px rgba(0, 0, 0, 0.34)) !important;
+}
+
+.svc-hero .svc-hero-badge,
+.svc-hero .svc-hero-img-badge,
+.svc-hero .svc-hero-blob {
+    display: none !important;
+}
+
+.svc-card {
+    padding: 1.75rem !important;
+}
+
+.svc-card::before,
+.tool-card::before,
+.eng-card::after {
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color)) !important;
+}
+
+.svc-process-step {
+    background: var(--surface-0) !important;
+    border: 1px solid var(--line-soft) !important;
+    border-radius: var(--radius-md) !important;
+    padding: 1.4rem !important;
+    box-shadow: var(--shadow-card) !important;
+}
+
+.toolkit-grid {
+    gap: 1rem !important;
+}
+
+.tool-card {
+    border-radius: var(--radius-md) !important;
+}
+
+/* Contact */
+.contact-info-panel {
+    background:
+        radial-gradient(circle at 88% 8%, rgba(26, 166, 183, 0.36), transparent 32%),
+        linear-gradient(160deg, var(--primary-dark), var(--primary-color)) !important;
+    border: 0 !important;
+    color: #ffffff !important;
+}
+
+.contact-info-panel h3,
+.contact-info-panel p,
+.contact-info-panel a,
+.info-item h5,
+.info-item p,
+.trust-item {
+    color: rgba(255, 255, 255, 0.86) !important;
+}
+
+.contact-info-panel h3 {
+    color: #ffffff !important;
+}
+
+.form-control,
+.form-select,
+.form-floating > .form-control,
+.form-floating > .form-select {
+    background: var(--surface-1) !important;
+    border: 1px solid var(--line-soft) !important;
+    border-radius: var(--radius-md) !important;
+    color: var(--ink-800) !important;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-floating > .form-control:focus,
+.form-floating > .form-select:focus {
+    background: #ffffff !important;
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 4px rgba(26, 166, 183, 0.14) !important;
+}
+
+#successMessage,
+#errorMessage {
+    border-radius: var(--radius-md) !important;
+}
+
+/* CTAs and footer */
+.cta-section,
+.services-cta,
+.about-cta,
+.careers-cta,
+.testing-cta,
+.fe-cta,
+.uiux-cta,
+.staff-cta {
+    background:
+        radial-gradient(circle at 16% 20%, rgba(26, 166, 183, 0.22), transparent 36%),
+        linear-gradient(135deg, var(--ink-900), var(--primary-dark)) !important;
+}
+
+.cta-title,
+.cta-section h2,
+.services-cta h2,
+.about-cta h2,
+.careers-cta h2,
+.svc-cta-banner h2 {
+    color: #ffffff !important;
+}
+
+.cta-text,
+.cta-section p,
+.services-cta p,
+.about-cta p,
+.careers-cta p,
+.svc-cta-banner p {
+    color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.cta-badges span {
+    background: rgba(255, 255, 255, 0.09) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 999px !important;
+}
+
+.footer {
+    background: #071526 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.footer-heading {
+    color: #ffffff !important;
+}
+
+.footer-text,
+.footer-links a,
+.footer-contact li,
+.copyright,
+.footer-link {
+    color: rgba(255, 255, 255, 0.68) !important;
+}
+
+.footer-links a:hover,
+.footer-link:hover {
+    color: #ffffff !important;
+}
+
+.social-link,
+.social-btn {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.social-link:hover,
+.social-btn:hover {
+    background: var(--accent-color) !important;
+    color: #ffffff !important;
+}
+
+/* Privacy document */
+.privacy-document {
+    padding: clamp(1.5rem, 4vw, 3rem) !important;
+}
+
+.privacy-document h2 {
+    color: var(--ink-900) !important;
+    font-size: 1.45rem !important;
+    margin-top: 2rem !important;
+}
+
+.privacy-document h2:first-child {
+    margin-top: 0 !important;
+}
+
+.privacy-document h3 {
+    color: var(--ink-800) !important;
+    font-size: 1.05rem !important;
+}
+
+.privacy-document li {
+    color: var(--ink-600) !important;
+    margin-bottom: 0.45rem !important;
+}
+
+/* Responsive polish */
+@media (max-width: 991.98px) {
+    #navbarNav {
+        background: #ffffff !important;
+        border: 1px solid var(--line-soft) !important;
+        border-radius: var(--radius-md) !important;
+        margin-top: 0.75rem !important;
+        box-shadow: var(--shadow-panel) !important;
+    }
+
+    #navbarNav .nav-bs-icon {
+        color: var(--primary-color) !important;
+    }
+
+    .hero-content {
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+
+    .hero-title,
+    .hero-subtitle {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .svc-hero {
+        min-height: auto !important;
+        padding: 112px 0 64px !important;
+        text-align: center !important;
+    }
+
+    .svc-hero .lead {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .svc-hero-buttons {
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-padding,
+    .svc-section,
+    .toolkit-section,
+    .services-section,
+    .process-section,
+    .contact-wrapper {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .hero-slider {
+        min-height: 520px !important;
+    }
+
+    .hero-title {
+        font-size: 2.15rem !important;
+    }
+
+    .hero-cta {
+        justify-content: center !important;
+    }
+
+    .service-card-image {
+        height: 210px !important;
+    }
+
+    .card-icon-header {
+        align-items: flex-start !important;
+        gap: 1rem !important;
+    }
+}
+
+/* Light-surface outline buttons need brand contrast; dark hero/CTA outlines stay white above. */
+.btn-outline-primary {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    background: transparent !important;
+}
+
+.btn-outline-primary:hover {
+    color: #ffffff !important;
+    border-color: var(--primary-color) !important;
+    background: var(--primary-color) !important;
+}
